@@ -1,0 +1,233 @@
+import { useState, useEffect } from 'react'
+import { Link, NavLink, useLocation } from 'react-router-dom'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Menu, X, Sun, Moon, Sparkles } from 'lucide-react'
+import { useTheme } from '@/App'
+
+// ============================================================
+// Navigation links config
+// ============================================================
+const navLinks = [
+  { label: 'Home', to: '/' },
+  { label: 'Templates', to: '/templates' },
+  { label: 'Services', to: '/services' },
+  { label: 'Pricing', to: '/pricing' },
+  { label: 'About', to: '/about' },
+  { label: 'Contact', to: '/contact' },
+]
+
+// ============================================================
+// Navbar Component
+// ============================================================
+export default function Navbar() {
+  const [isOpen, setIsOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
+  const { isDark, toggleTheme } = useTheme()
+  const location = useLocation()
+
+  // Close mobile menu on route change
+  useEffect(() => {
+    setIsOpen(false)
+  }, [location.pathname])
+
+  // Add blur/shadow on scroll
+  useEffect(() => {
+    const handler = () => setScrolled(window.scrollY > 20)
+    window.addEventListener('scroll', handler, { passive: true })
+    return () => window.removeEventListener('scroll', handler)
+  }, [])
+
+  return (
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+      style={{
+        position: 'fixed',
+        top: 0,
+        left: 0,
+        right: 0,
+        zIndex: 1000,
+        transition: 'background 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease',
+        background: scrolled ? 'var(--color-bg-dark)' : 'transparent',
+        backdropFilter: scrolled ? 'blur(20px)' : 'none',
+        WebkitBackdropFilter: scrolled ? 'blur(20px)' : 'none',
+        borderBottom: scrolled ? '1px solid var(--color-border)' : '1px solid transparent',
+        boxShadow: scrolled ? '0 4px 30px rgba(0,0,0,0.2)' : 'none',
+      }}
+    >
+      <nav
+        className="container"
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}
+      >
+        {/* Logo */}
+        <Link
+          to="/"
+          style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}
+        >
+          <motion.div
+            whileHover={{ rotate: 10, scale: 1.1 }}
+            transition={{ duration: 0.2 }}
+            style={{
+              width: 36,
+              height: 36,
+              borderRadius: 10,
+              background: 'var(--gradient-primary)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            <Sparkles size={18} color="white" />
+          </motion.div>
+          <span
+            style={{
+              fontWeight: 800,
+              fontSize: '1.125rem',
+              letterSpacing: '-0.02em',
+              color: 'var(--color-text-primary)',
+            }}
+          >
+            PixelNest
+            <span className="gradient-text"> Studio</span>
+          </span>
+        </Link>
+
+        {/* Desktop nav links */}
+        <div
+          className="hidden md:flex"
+          style={{ alignItems: 'center', gap: '0.25rem' }}
+        >
+          {navLinks.map(link => (
+            <NavLink
+              key={link.to}
+              to={link.to}
+              end={link.to === '/'}
+              className={({ isActive }) =>
+                `nav-link${isActive ? ' active' : ''}`
+              }
+            >
+              {link.label}
+            </NavLink>
+          ))}
+        </div>
+
+        {/* Desktop right side */}
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
+          {/* Theme toggle */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={toggleTheme}
+            id="theme-toggle"
+            aria-label="Toggle theme"
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 10,
+              background: 'var(--color-surface)',
+              border: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: 'var(--color-text-secondary)',
+              transition: 'all 0.2s ease',
+            }}
+          >
+            {isDark ? <Sun size={16} /> : <Moon size={16} />}
+          </motion.button>
+
+          {/* CTA button — desktop only */}
+          <Link
+            to="/contact"
+            id="nav-get-started"
+            className="hidden md:inline-flex btn btn-primary"
+            style={{ padding: '0.5rem 1.25rem', fontSize: '0.875rem', borderRadius: '0.625rem' }}
+          >
+            Get Started
+          </Link>
+
+          {/* Mobile hamburger */}
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.9 }}
+            onClick={() => setIsOpen(prev => !prev)}
+            className="md:hidden"
+            aria-label="Toggle menu"
+            aria-expanded={isOpen}
+            style={{
+              width: 38,
+              height: 38,
+              borderRadius: 10,
+              background: 'var(--color-surface)',
+              border: '1px solid var(--color-border)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              cursor: 'pointer',
+              color: 'var(--color-text-primary)',
+            }}
+          >
+            {isOpen ? <X size={18} /> : <Menu size={18} />}
+          </motion.button>
+        </div>
+      </nav>
+
+      {/* Mobile menu overlay */}
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: 'auto' }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            style={{
+              overflow: 'hidden',
+              background: 'var(--color-bg-dark-2)',
+              borderBottom: '1px solid var(--color-border)',
+            }}
+          >
+            <div className="container" style={{ paddingTop: '1rem', paddingBottom: '1.5rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
+                {navLinks.map((link, i) => (
+                  <motion.div
+                    key={link.to}
+                    initial={{ opacity: 0, x: -16 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: i * 0.05 }}
+                  >
+                    <NavLink
+                      to={link.to}
+                      end={link.to === '/'}
+                      className={({ isActive }) =>
+                        `nav-link${isActive ? ' active' : ''}`
+                      }
+                      style={{ display: 'block', padding: '0.625rem 0.75rem' }}
+                    >
+                      {link.label}
+                    </NavLink>
+                  </motion.div>
+                ))}
+                <motion.div
+                  initial={{ opacity: 0, x: -16 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navLinks.length * 0.05 }}
+                  style={{ paddingTop: '0.75rem' }}
+                >
+                  <Link
+                    to="/contact"
+                    className="btn btn-primary"
+                    style={{ display: 'block', textAlign: 'center', borderRadius: '0.625rem' }}
+                  >
+                    Get Started
+                  </Link>
+                </motion.div>
+              </div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
+  )
+}
