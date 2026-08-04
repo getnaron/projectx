@@ -146,7 +146,7 @@ export default function PlaceholderTemplate({
             <motion.div key={i}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.08 }}
               style={{
                 height: i === 0 ? 260 : 180,
@@ -173,7 +173,7 @@ export default function PlaceholderTemplate({
             <motion.div key={service.title}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.08 }}
               whileHover={{ y: -4 }}
               style={{
@@ -217,7 +217,7 @@ export default function PlaceholderTemplate({
             <motion.div key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1 }}
               style={{
                 padding: '1.5rem', borderRadius: 16,

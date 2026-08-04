@@ -94,7 +94,7 @@ export default function CTA({
           variants={staggerContainer}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: true, amount: 0.3 }}
+          viewport={{ once: true, amount: 0 }}
           style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: '1.5rem' }}
         >
           <motion.div variants={fadeInUp}>

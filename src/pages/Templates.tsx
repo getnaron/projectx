@@ -33,7 +33,7 @@ export default function Templates() {
             badge="Template Library"
             title="Browse All"
             highlight="Templates"
-            subtitle={`${templates.length} stunning website templates across 12 industries. Click any template to see a full live preview.`}
+            subtitle={`${templates.length} stunning website templates across 7 industries. Click any template to see a full live preview.`}
           />
 
           {/* Search */}

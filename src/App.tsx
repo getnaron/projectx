@@ -11,6 +11,7 @@ const Services = lazy(() => import('./pages/Services'))
 const Pricing = lazy(() => import('./pages/Pricing'))
 const About = lazy(() => import('./pages/About'))
 const Contact = lazy(() => import('./pages/Contact'))
+const OurWork = lazy(() => import('./pages/OurWork'))
 const NotFound = lazy(() => import('./pages/NotFound'))
 
 // Lazy-loaded template previews
@@ -85,6 +86,7 @@ export default function App() {
             <Route path="/" element={<Home />} />
             <Route path="/templates" element={<Templates />} />
             <Route path="/templates/:category" element={<TemplateCategory />} />
+            <Route path="/our-work" element={<OurWork />} />
             <Route path="/services" element={<Services />} />
             <Route path="/pricing" element={<Pricing />} />
             <Route path="/about" element={<About />} />

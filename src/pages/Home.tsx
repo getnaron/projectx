@@ -9,8 +9,10 @@ import FeatureCard from '@/components/FeatureCard'
 import IndustryCard from '@/components/IndustryCard'
 import TemplateCard from '@/components/TemplateCard'
 import TestimonialCard, { type Testimonial } from '@/components/TestimonialCard'
+import ClientWorkCard from '@/components/ClientWorkCard'
 import CTA from '@/components/CTA'
 import { industryCategories, getFeaturedTemplates } from '@/data/templates'
+import { getFeaturedClientWorks } from '@/data/clientWorks'
 import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/utils/motion'
 
 // ============================================================
@@ -113,9 +115,20 @@ const processSteps = [
 
 const stats = [
   { value: '500+', label: 'Websites Delivered' },
-  { value: '12', label: 'Industries Served' },
+  { value: '7', label: 'Industries Served' },
   { value: '98%', label: 'Client Satisfaction' },
   { value: '7 Days', label: 'Average Delivery' },
+]
+
+const previewSites = [
+  { gradient: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)', label: 'Hotel' },
+  { gradient: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)', label: 'Tech' },
+  { gradient: 'linear-gradient(135deg, #1a0533 0%, #4a1045 100%)', label: 'Salon' },
+  { gradient: 'linear-gradient(135deg, #1c1c1c 0%, #434343 100%)', label: 'Gym' },
+  { gradient: 'linear-gradient(135deg, #141e30 0%, #243b55 100%)', label: 'Events' },
+  { gradient: 'linear-gradient(135deg, #0093E9 0%, #80D0C7 100%)', label: 'Clinic' },
+  { gradient: 'linear-gradient(135deg, #4776E6 0%, #8E54E9 100%)', label: 'Academy' },
+  { gradient: 'linear-gradient(135deg, #f6d365 0%, #fda085 100%)', label: 'Venue' },
 ]
 
 const whyUs = [
@@ -154,14 +167,17 @@ export default function Home() {
         <div className="orb orb-2" />
         <div className="orb orb-3" />
 
-        {/* Dot grid background */}
+        {/* Dot grid */}
         <div
+          className="hero-dot-grid"
           style={{
             position: 'absolute',
             inset: 0,
-            backgroundImage: 'radial-gradient(circle, rgba(99,102,241,0.15) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
+            backgroundImage: 'radial-gradient(circle, rgba(99,102,241,0.12) 1px, transparent 1px)',
+            backgroundSize: '36px 36px',
             pointerEvents: 'none',
+            maskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)',
+            WebkitMaskImage: 'radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 100%)',
           }}
         />
 
@@ -175,19 +191,12 @@ export default function Home() {
               flexDirection: 'column',
               alignItems: 'center',
               textAlign: 'center',
-              gap: '1.75rem',
+              gap: '1.5rem',
             }}
           >
-            {/* Badge */}
-            <motion.div variants={fadeInUp}>
-              <span className="badge">
-                <Sparkles size={12} />
-                Websites for Small Businesses That Actually Convert
-              </span>
-            </motion.div>
 
             {/* Headline */}
-            <motion.h1 variants={fadeInUp} className="heading-xl" style={{ maxWidth: 860 }}>
+            <motion.h1 variants={fadeInUp} className="heading-xl" style={{ maxWidth: 900, margin: 0 }}>
               Beautiful Websites That{' '}
               <span className="gradient-text">Grow Your Business</span>
             </motion.h1>
@@ -196,37 +205,38 @@ export default function Home() {
             <motion.p
               variants={fadeInUp}
               style={{
-                fontSize: 'clamp(1rem, 2vw, 1.25rem)',
+                fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
                 color: 'var(--color-text-secondary)',
-                maxWidth: 600,
-                lineHeight: 1.7,
+                maxWidth: 540,
+                lineHeight: 1.75,
+                margin: 0,
               }}
             >
-              PixelNest Studio creates stunning, conversion-optimized websites for hotels, 
-              restaurants, gyms, salons, and 12 more industries — delivered in just 7 days.
+              PixelNest Studio creates stunning, conversion-optimized websites for gyms,
+              salons, clinics, and 7 more industries — delivered in just 7 days.
             </motion.p>
 
             {/* CTA buttons */}
             <motion.div
               variants={fadeInUp}
-              style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', justifyContent: 'center' }}
+              style={{ display: 'flex', flexWrap: 'wrap', gap: '0.875rem', justifyContent: 'center' }}
             >
               <Link
                 to="/contact"
                 id="hero-cta-primary"
                 className="btn btn-primary"
-                style={{ fontSize: '1.0625rem', padding: '1rem 2.25rem' }}
+                style={{ fontSize: '1rem', padding: '0.9rem 2rem' }}
               >
                 Start Your Project
-                <ArrowRight size={18} />
+                <ArrowRight size={16} />
               </Link>
               <Link
                 to="/templates"
                 id="hero-cta-secondary"
                 className="btn btn-secondary"
-                style={{ fontSize: '1.0625rem', padding: '1rem 2.25rem' }}
+                style={{ fontSize: '1rem', padding: '0.9rem 2rem' }}
               >
-                <Globe size={18} />
+                <Globe size={16} />
                 Browse Templates
               </Link>
             </motion.div>
@@ -237,26 +247,21 @@ export default function Home() {
               style={{
                 display: 'flex',
                 flexWrap: 'wrap',
-                gap: '1.5rem',
+                gap: '1.25rem',
                 justifyContent: 'center',
                 alignItems: 'center',
-                marginTop: '0.5rem',
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
-                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={14} fill="#f59e0b" color="#f59e0b" />)}
-                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', marginLeft: '0.25rem' }}>
-                  4.9/5 from 200+ clients
+                {[1, 2, 3, 4, 5].map(i => <Star key={i} size={13} fill="#f59e0b" color="#f59e0b" />)}
+                <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8125rem', marginLeft: '0.25rem' }}>
+                  4.9/5 · 200+ clients
                 </span>
               </div>
-              <div style={{ width: 1, height: 16, background: 'var(--color-border)' }} />
-              <span style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
-                No hidden fees
-              </span>
-              <div style={{ width: 1, height: 16, background: 'var(--color-border)' }} />
-              <span style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
-                7-day delivery
-              </span>
+              <span style={{ width: 1, height: 14, background: 'var(--color-border)', display: 'block' }} />
+              <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8125rem' }}>No hidden fees</span>
+              <span style={{ width: 1, height: 14, background: 'var(--color-border)', display: 'block' }} />
+              <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8125rem' }}>7-day delivery</span>
             </motion.div>
           </motion.div>
         </div>
@@ -271,7 +276,7 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.3 }}
+            viewport={{ once: true, amount: 0 }}
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(160px, 1fr))',
@@ -314,7 +319,7 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0 }}
             className="grid-auto-fit"
           >
             {features.map((feature, i) => (
@@ -343,7 +348,7 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.05 }}
+            viewport={{ once: true, amount: 0 }}
             className="grid-auto-fit-sm"
           >
             {industryCategories.map((category, i) => (
@@ -372,7 +377,7 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.05 }}
+            viewport={{ once: true, amount: 0 }}
             style={{
               display: 'grid',
               gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
@@ -410,7 +415,7 @@ export default function Home() {
               variants={slideInLeft}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
             >
               <span className="badge" style={{ marginBottom: '1.5rem', display: 'inline-flex' }}>
                 <Sparkles size={12} />
@@ -444,7 +449,7 @@ export default function Home() {
               variants={slideInRight}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               style={{ position: 'relative', height: 400 }}
             >
               {/* Card 1 */}
@@ -544,10 +549,10 @@ export default function Home() {
             {processSteps.map((step, i) => (
               <motion.div
                 key={step.number}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
+                viewport={{ once: true, amount: 0 }}
+                transition={{ delay: i * 0.07, duration: 0.3, ease: 'easeOut' }}
                 style={{
                   padding: '1.75rem',
                   borderRadius: '1.25rem',
@@ -582,6 +587,59 @@ export default function Home() {
       </section>
 
       {/* ======================================================
+          OUR WORK
+      ====================================================== */}
+      <section className="section">
+        <div className="container">
+          <SectionTitle
+            badge="Our Work"
+            title="Real Websites We've"
+            highlight="Built for Clients"
+            subtitle="Every pixel crafted with purpose. Browse live websites we've delivered to real businesses — click any card to visit the live site."
+          />
+
+          <motion.div
+            variants={staggerContainer}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, amount: 0 }}
+            style={{
+              display: 'grid',
+              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+              gap: '1.5rem',
+              marginBottom: '2.5rem',
+            }}
+          >
+            {getFeaturedClientWorks().map((work, i) => (
+              <ClientWorkCard key={work.id} work={work} animationDelay={i * 0.06} />
+            ))}
+          </motion.div>
+
+          {/* Bottom note */}
+          <motion.p
+            initial={{ opacity: 0, y: 8 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, amount: 0 }}
+            transition={{ duration: 0.3 }}
+            style={{
+              textAlign: 'center',
+              color: 'var(--color-text-muted)',
+              fontSize: '0.875rem',
+            }}
+          >
+            More client work available on request —{' '}
+            <a
+              href="/contact"
+              style={{ color: 'var(--color-accent)', fontWeight: 600, textDecoration: 'none' }}
+            >
+              get in touch
+            </a>
+            {' '}to see case studies relevant to your industry.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* ======================================================
           TESTIMONIALS
       ====================================================== */}
       <section className="section" style={{ background: 'var(--color-bg-dark-2)' }}>
@@ -596,11 +654,11 @@ export default function Home() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true, amount: 0.1 }}
+            viewport={{ once: true, amount: 0 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '1.5rem' }}
           >
             {testimonials.map((t, i) => (
-              <TestimonialCard key={t.id} testimonial={t} animationDelay={i * 0.1} />
+              <TestimonialCard key={t.id} testimonial={t} animationDelay={i * 0.06} />
             ))}
           </motion.div>
         </div>

@@ -67,8 +67,8 @@ export default function Footer() {
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
+            viewport={{ once: true, amount: 0 }}
+            transition={{ duration: 0.3 }}
             style={{ gridColumn: 'span 1' }}
           >
             <Link
@@ -131,8 +131,8 @@ export default function Footer() {
               key={groupLabel}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5, delay: groupIdx * 0.08 }}
+              viewport={{ once: true, amount: 0 }}
+              transition={{ duration: 0.3, delay: groupIdx * 0.08 }}
             >
               <h3
                 style={{

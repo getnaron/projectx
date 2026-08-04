@@ -208,7 +208,7 @@ export default function LuxuryHotelTemplate() {
               key={i}
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1 }}
               style={{
                 height: i === 0 ? 300 : 200,
@@ -242,7 +242,7 @@ export default function LuxuryHotelTemplate() {
               key={room.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1 }}
               whileHover={{ y: -4 }}
               style={{
@@ -308,7 +308,7 @@ export default function LuxuryHotelTemplate() {
               key={t.name}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1 }}
               style={{ padding: '1.75rem', borderRadius: 8, border: '1px solid rgba(201,168,76,0.15)', background: 'rgba(201,168,76,0.03)' }}
             >

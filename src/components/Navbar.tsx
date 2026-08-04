@@ -10,6 +10,7 @@ import { useTheme } from '@/App'
 const navLinks = [
   { label: 'Home', to: '/' },
   { label: 'Templates', to: '/templates' },
+  { label: 'Our Work', to: '/our-work' },
   { label: 'Services', to: '/services' },
   { label: 'Pricing', to: '/pricing' },
   { label: 'About', to: '/about' },
@@ -58,7 +59,7 @@ export default function Navbar() {
     >
       <nav
         className="container"
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 72 }}
+        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 68 }}
       >
         {/* Logo */}
         <Link
@@ -69,22 +70,23 @@ export default function Navbar() {
             whileHover={{ rotate: 10, scale: 1.1 }}
             transition={{ duration: 0.2 }}
             style={{
-              width: 36,
-              height: 36,
-              borderRadius: 10,
+              width: 34,
+              height: 34,
+              borderRadius: 9,
               background: 'var(--gradient-primary)',
               display: 'flex',
               alignItems: 'center',
               justifyContent: 'center',
+              boxShadow: '0 2px 12px rgba(99,102,241,0.4)',
             }}
           >
-            <Sparkles size={18} color="white" />
+            <Sparkles size={16} color="white" />
           </motion.div>
           <span
             style={{
               fontWeight: 800,
-              fontSize: '1.125rem',
-              letterSpacing: '-0.02em',
+              fontSize: '1.0625rem',
+              letterSpacing: '-0.03em',
               color: 'var(--color-text-primary)',
             }}
           >
@@ -174,57 +176,60 @@ export default function Navbar() {
         </div>
       </nav>
 
-      {/* Mobile menu overlay */}
+      {/* Mobile menu — compact floating dropdown */}
       <AnimatePresence>
         {isOpen && (
           <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.25, ease: 'easeInOut' }}
+            initial={{ opacity: 0, scale: 0.95, y: -8 }}
+            animate={{ opacity: 1, scale: 1, y: 0 }}
+            exit={{ opacity: 0, scale: 0.95, y: -8 }}
+            transition={{ duration: 0.18, ease: 'easeOut' }}
             style={{
-              overflow: 'hidden',
+              position: 'absolute',
+              top: '100%',
+              right: '1rem',
+              marginTop: '0.5rem',
+              width: 220,
               background: 'var(--color-bg-dark-2)',
-              borderBottom: '1px solid var(--color-border)',
+              border: '1px solid var(--color-border)',
+              borderRadius: '1rem',
+              boxShadow: '0 8px 32px rgba(0,0,0,0.25), 0 2px 8px rgba(0,0,0,0.15)',
+              backdropFilter: 'blur(20px)',
+              WebkitBackdropFilter: 'blur(20px)',
+              padding: '0.5rem',
+              zIndex: 999,
+              transformOrigin: 'top right',
             }}
           >
-            <div className="container" style={{ paddingTop: '1rem', paddingBottom: '1.5rem' }}>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.25rem' }}>
-                {navLinks.map((link, i) => (
-                  <motion.div
-                    key={link.to}
-                    initial={{ opacity: 0, x: -16 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: i * 0.05 }}
-                  >
-                    <NavLink
-                      to={link.to}
-                      end={link.to === '/'}
-                      className={({ isActive }) =>
-                        `nav-link${isActive ? ' active' : ''}`
-                      }
-                      style={{ display: 'block', padding: '0.625rem 0.75rem' }}
-                    >
-                      {link.label}
-                    </NavLink>
-                  </motion.div>
-                ))}
-                <motion.div
-                  initial={{ opacity: 0, x: -16 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  transition={{ delay: navLinks.length * 0.05 }}
-                  style={{ paddingTop: '0.75rem' }}
+            {navLinks.map((link, i) => (
+              <motion.div
+                key={link.to}
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: i * 0.04 }}
+              >
+                <NavLink
+                  to={link.to}
+                  end={link.to === '/'}
+                  className={({ isActive }) =>
+                    `nav-link${isActive ? ' active' : ''}`
+                  }
+                  style={{ display: 'block', padding: '0.5rem 0.75rem', borderRadius: '0.5rem' }}
                 >
-                  <Link
-                    to="/contact"
-                    className="btn btn-primary"
-                    style={{ display: 'block', textAlign: 'center', borderRadius: '0.625rem' }}
-                  >
-                    Get Started
-                  </Link>
-                </motion.div>
-              </div>
-            </div>
+                  {link.label}
+                </NavLink>
+              </motion.div>
+            ))}
+
+            <div style={{ height: 1, background: 'var(--color-border)', margin: '0.375rem 0.25rem' }} />
+
+            <Link
+              to="/contact"
+              className="btn btn-primary"
+              style={{ display: 'block', textAlign: 'center', borderRadius: '0.625rem', padding: '0.6rem', fontSize: '0.875rem', margin: '0.25rem 0 0' }}
+            >
+              Get Started
+            </Link>
           </motion.div>
         )}
       </AnimatePresence>

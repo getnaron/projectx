@@ -66,7 +66,7 @@ export default function Contact() {
               variants={staggerContainer}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true }}
+              viewport={{ once: true, amount: 0 }}
               style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}
             >
               <motion.h2 variants={fadeInUp} style={{ fontWeight: 700, fontSize: '1.375rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>

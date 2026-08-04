@@ -81,7 +81,7 @@ export default function About() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))', gap: '2rem', textAlign: 'center' }}
           >
             {[
@@ -116,7 +116,7 @@ export default function About() {
             variants={staggerContainer}
             initial="hidden"
             whileInView="visible"
-            viewport={{ once: true }}
+            viewport={{ once: true, amount: 0 }}
             className="grid-auto-fit"
           >
             {values.map((value, i) => (
@@ -167,10 +167,10 @@ export default function About() {
             {team.map((member, i) => (
               <motion.div
                 key={member.name}
-                initial={{ opacity: 0, y: 30 }}
+                initial={{ opacity: 0, y: 10 }}
                 whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: i * 0.12, duration: 0.5 }}
+                viewport={{ once: true, amount: 0 }}
+                transition={{ delay: i * 0.07, duration: 0.3 }}
                 whileHover={{ y: -4 }}
                 style={{
                   padding: '2rem',
@@ -241,7 +241,7 @@ export default function About() {
                   key={m.year}
                   initial={{ opacity: 0, x: -20 }}
                   whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
+                  viewport={{ once: true, amount: 0 }}
                   transition={{ delay: i * 0.1 }}
                   style={{ paddingLeft: '3rem', position: 'relative' }}
                 >

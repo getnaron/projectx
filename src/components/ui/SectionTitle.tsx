@@ -47,14 +47,10 @@ export default function SectionTitle({
       variants={staggerContainer}
       initial="hidden"
       whileInView="visible"
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0 }}
       className={cn('flex flex-col gap-3 mb-12', alignClasses[align], className)}
     >
-      {badge && (
-        <motion.div variants={fadeInUp}>
-          <span className="badge">{badge}</span>
-        </motion.div>
-      )}
+
       <motion.h2
         variants={fadeInUp}
         className="heading-lg"

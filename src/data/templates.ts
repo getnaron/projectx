@@ -41,24 +41,6 @@ export interface IndustryCategory {
 // ============================================================
 export const industryCategories: IndustryCategory[] = [
   {
-    id: 'hotels',
-    label: 'Hotels',
-    icon: 'Hotel',
-    description: 'Elegant websites for hotels, resorts, and luxury accommodations',
-    route: '/templates/hotels',
-    gradient: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
-    count: 5,
-  },
-  {
-    id: 'restaurants',
-    label: 'Restaurants',
-    icon: 'UtensilsCrossed',
-    description: 'Mouth-watering designs for cafes, restaurants, and food businesses',
-    route: '/templates/restaurants',
-    gradient: 'linear-gradient(135deg, #f093fb 0%, #f5576c 100%)',
-    count: 4,
-  },
-  {
     id: 'auditoriums',
     label: 'Auditoriums',
     icon: 'Building2',
@@ -66,15 +48,6 @@ export const industryCategories: IndustryCategory[] = [
     route: '/templates/auditoriums',
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
     count: 3,
-  },
-  {
-    id: 'shops',
-    label: 'Shops',
-    icon: 'ShoppingBag',
-    description: 'Beautiful storefronts for retail businesses and local shops',
-    route: '/templates/shops',
-    gradient: 'linear-gradient(135deg, #43e97b 0%, #38f9d7 100%)',
-    count: 2,
   },
   {
     id: 'clinics',
@@ -104,15 +77,6 @@ export const industryCategories: IndustryCategory[] = [
     count: 2,
   },
   {
-    id: 'photographers',
-    label: 'Photographers',
-    icon: 'Camera',
-    description: 'Portfolio-first websites that let stunning photography shine',
-    route: '/templates/photographers',
-    gradient: 'linear-gradient(135deg, #a8edea 0%, #fed6e3 100%)',
-    count: 2,
-  },
-  {
     id: 'personal',
     label: 'Personal Portfolio',
     icon: 'User',
@@ -139,131 +103,12 @@ export const industryCategories: IndustryCategory[] = [
     gradient: 'linear-gradient(135deg, #fddb92 0%, #d1fdff 100%)',
     count: 2,
   },
-  {
-    id: 'real-estate',
-    label: 'Real Estate',
-    icon: 'Home',
-    description: 'Sophisticated property listing websites for agencies and agents',
-    route: '/templates/real-estate',
-    gradient: 'linear-gradient(135deg, #a18cd1 0%, #fbc2eb 100%)',
-    count: 2,
-  },
 ]
 
 // ============================================================
 // All Templates
 // ============================================================
 export const templates: Template[] = [
-  // --- HOTELS ---
-  {
-    id: 'luxury-hotel',
-    title: 'Luxury Hotel',
-    category: 'hotels',
-    categoryLabel: 'Hotels',
-    description: 'A premium dark-themed hotel website with cinematic hero, room showcases, and elegant booking flow.',
-    image: 'linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%)',
-    route: '/templates/hotels/luxury',
-    tags: ['Luxury', 'Dark', 'Elegant', 'Premium'],
-    featured: true,
-    accentColor: '#c9a84c',
-    badge: 'Popular',
-  },
-  {
-    id: 'minimal-hotel',
-    title: 'Minimal Hotel',
-    category: 'hotels',
-    categoryLabel: 'Hotels',
-    description: 'Clean white-space design with bold typography for a modern boutique hotel experience.',
-    image: 'linear-gradient(135deg, #f8f9fa 0%, #dee2e6 100%)',
-    route: '/templates/hotels/minimal',
-    tags: ['Minimal', 'Clean', 'Modern'],
-    accentColor: '#2d3436',
-  },
-  {
-    id: 'beach-resort',
-    title: 'Beach Resort',
-    category: 'hotels',
-    categoryLabel: 'Hotels',
-    description: 'Vibrant tropical vibes with ocean-inspired colors and immersive gallery sections.',
-    image: 'linear-gradient(135deg, #0093E9 0%, #80D0C7 100%)',
-    route: '/templates/hotels/beach-resort',
-    tags: ['Tropical', 'Vibrant', 'Resort'],
-    featured: true,
-    accentColor: '#0093E9',
-    badge: 'New',
-  },
-  {
-    id: 'business-hotel',
-    title: 'Business Hotel',
-    category: 'hotels',
-    categoryLabel: 'Hotels',
-    description: 'Corporate-focused design with conference room highlights and professional amenities.',
-    image: 'linear-gradient(135deg, #2b5876 0%, #4e4376 100%)',
-    route: '/templates/hotels/business',
-    tags: ['Corporate', 'Professional', 'Business'],
-    accentColor: '#4e4376',
-  },
-  {
-    id: 'mountain-resort',
-    title: 'Mountain Resort',
-    category: 'hotels',
-    categoryLabel: 'Hotels',
-    description: 'Rugged natural aesthetic with earthy tones showcasing mountain adventures.',
-    image: 'linear-gradient(135deg, #373b44 0%, #4286f4 100%)',
-    route: '/templates/hotels/mountain-resort',
-    tags: ['Nature', 'Adventure', 'Resort'],
-    accentColor: '#4286f4',
-  },
-
-  // --- RESTAURANTS ---
-  {
-    id: 'modern-cafe',
-    title: 'Modern Café',
-    category: 'restaurants',
-    categoryLabel: 'Restaurants',
-    description: 'A hip, minimal café website with a clean menu layout and Instagram-worthy aesthetic.',
-    image: 'linear-gradient(135deg, #c8a97e 0%, #6b4c30 100%)',
-    route: '/templates/restaurants/modern-cafe',
-    tags: ['Café', 'Minimal', 'Trendy'],
-    featured: true,
-    accentColor: '#c8a97e',
-    badge: 'Popular',
-  },
-  {
-    id: 'fine-dining',
-    title: 'Fine Dining',
-    category: 'restaurants',
-    categoryLabel: 'Restaurants',
-    description: 'Dark, sophisticated template for upscale restaurants with reservation prominence.',
-    image: 'linear-gradient(135deg, #1a0a00 0%, #4a1628 100%)',
-    route: '/templates/restaurants/fine-dining',
-    tags: ['Upscale', 'Dark', 'Elegant'],
-    featured: true,
-    accentColor: '#d4af37',
-  },
-  {
-    id: 'fast-food',
-    title: 'Fast Food',
-    category: 'restaurants',
-    categoryLabel: 'Restaurants',
-    description: 'Bold, energetic design for fast food chains with online ordering integration.',
-    image: 'linear-gradient(135deg, #f7971e 0%, #ffd200 100%)',
-    route: '/templates/restaurants/fast-food',
-    tags: ['Bold', 'Energetic', 'Modern'],
-    accentColor: '#f7971e',
-  },
-  {
-    id: 'coffee-shop',
-    title: 'Coffee Shop',
-    category: 'restaurants',
-    categoryLabel: 'Restaurants',
-    description: 'Warm and cozy coffee shop design with loyalty program section and seasonal menus.',
-    image: 'linear-gradient(135deg, #6f4e37 0%, #c4a35a 100%)',
-    route: '/templates/restaurants/coffee-shop',
-    tags: ['Cozy', 'Warm', 'Coffee'],
-    accentColor: '#c4a35a',
-  },
-
   // --- AUDITORIUMS ---
   {
     id: 'wedding-hall',
@@ -298,32 +143,6 @@ export const templates: Template[] = [
     route: '/templates/auditoriums/party-hall',
     tags: ['Fun', 'Vibrant', 'Events'],
     accentColor: '#e74c3c',
-  },
-
-  // --- SHOPS ---
-  {
-    id: 'fashion-shop',
-    title: 'Fashion Boutique',
-    category: 'shops',
-    categoryLabel: 'Shops',
-    description: 'High-end fashion boutique showcase with editorial layout and lookbook sections.',
-    image: 'linear-gradient(135deg, #e0c3fc 0%, #8ec5fc 100%)',
-    route: '/templates/shops/fashion',
-    tags: ['Fashion', 'Editorial', 'Luxury'],
-    featured: true,
-    accentColor: '#8ec5fc',
-    badge: 'New',
-  },
-  {
-    id: 'electronics-store',
-    title: 'Electronics Store',
-    category: 'shops',
-    categoryLabel: 'Shops',
-    description: 'Modern tech store with sleek dark theme showcasing products and categories.',
-    image: 'linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%)',
-    route: '/templates/shops/electronics',
-    tags: ['Tech', 'Modern', 'Dark'],
-    accentColor: '#5f27cd',
   },
 
   // --- CLINICS ---
@@ -400,32 +219,6 @@ export const templates: Template[] = [
     accentColor: '#3498db',
   },
 
-  // --- PHOTOGRAPHERS ---
-  {
-    id: 'photography-portfolio',
-    title: 'Photography Portfolio',
-    category: 'photographers',
-    categoryLabel: 'Photographers',
-    description: 'Stunning full-screen portfolio showcasing photography work with minimal UI.',
-    image: 'linear-gradient(135deg, #0f0f0f 0%, #2d2d2d 100%)',
-    route: '/templates/photographers/portfolio',
-    tags: ['Portfolio', 'Dark', 'Minimal'],
-    featured: true,
-    accentColor: '#f0f0f0',
-    badge: 'Popular',
-  },
-  {
-    id: 'wedding-photography',
-    title: 'Wedding Photography',
-    category: 'photographers',
-    categoryLabel: 'Photographers',
-    description: 'Romantic wedding photography portfolio with timeline and couple gallery sections.',
-    image: 'linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%)',
-    route: '/templates/photographers/wedding',
-    tags: ['Romantic', 'Wedding', 'Gallery'],
-    accentColor: '#fcb69f',
-  },
-
   // --- PERSONAL ---
   {
     id: 'developer-portfolio',
@@ -499,30 +292,6 @@ export const templates: Template[] = [
     accentColor: '#19547b',
   },
 
-  // --- REAL ESTATE ---
-  {
-    id: 'luxury-real-estate',
-    title: 'Luxury Real Estate',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    description: 'Premium real estate agency website with high-end property showcases and virtual tours.',
-    image: 'linear-gradient(135deg, #c9d6ff 0%, #e2e2e2 100%)',
-    route: '/templates/real-estate/luxury',
-    tags: ['Luxury', 'Premium', 'Property'],
-    featured: true,
-    accentColor: '#2c3e50',
-  },
-  {
-    id: 'property-agency',
-    title: 'Property Agency',
-    category: 'real-estate',
-    categoryLabel: 'Real Estate',
-    description: 'Clean, professional real estate agency site with search filters and listings grid.',
-    image: 'linear-gradient(135deg, #1a1a2e 0%, #2d5016 100%)',
-    route: '/templates/real-estate/agency',
-    tags: ['Agency', 'Professional', 'Listings'],
-    accentColor: '#27ae60',
-  },
 ]
 
 // ============================================================
