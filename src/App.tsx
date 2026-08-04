@@ -67,7 +67,8 @@ export const useTheme = () => useContext(ThemeContext)
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('pixelnest-theme')
-    return saved ? saved === 'dark' : true
+    // Default is always dark; only switch to light if user explicitly chose light
+    return saved === 'light' ? false : true
   })
 
   useEffect(() => {

@@ -26,34 +26,16 @@ const features = [
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
   },
   {
-    icon: <Zap size={22} />,
-    title: 'Lightning Fast',
-    description: 'Optimized for Core Web Vitals with 95+ PageSpeed scores right out of the box. No configuration needed.',
-    gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
-  },
-  {
     icon: <Smartphone size={22} />,
     title: 'Fully Responsive',
     description: 'Every pixel is pixel-perfect across all devices — desktop, tablet, and mobile with zero compromises.',
     gradient: 'linear-gradient(135deg, #10b981, #059669)',
   },
   {
-    icon: <Shield size={22} />,
-    title: 'SEO Optimized',
-    description: 'Built-in schema markup, semantic HTML, meta optimization, and site structure that search engines love.',
-    gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
-  },
-  {
     icon: <Clock size={22} />,
     title: '7-Day Delivery',
     description: 'We deliver your complete, live website in just 7 days. Fast turnaround without compromising quality.',
     gradient: 'linear-gradient(135deg, #ec4899, #be185d)',
-  },
-  {
-    icon: <TrendingUp size={22} />,
-    title: 'Conversion Focused',
-    description: 'Strategic CTAs, trust signals, and UX patterns that turn your website visitors into paying customers.',
-    gradient: 'linear-gradient(135deg, #8b5cf6, #6366f1)',
   },
 ]
 
@@ -114,10 +96,9 @@ const processSteps = [
 ]
 
 const stats = [
-  { value: '500+', label: 'Websites Delivered' },
-  { value: '7', label: 'Industries Served' },
+  { value: '7 Days', label: 'Avg. Delivery' },
   { value: '98%', label: 'Client Satisfaction' },
-  { value: '7 Days', label: 'Average Delivery' },
+  { value: '7', label: 'Industries Served' },
 ]
 
 const previewSites = [
@@ -255,7 +236,7 @@ export default function Home() {
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.375rem' }}>
                 {[1, 2, 3, 4, 5].map(i => <Star key={i} size={13} fill="#f59e0b" color="#f59e0b" />)}
                 <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8125rem', marginLeft: '0.25rem' }}>
-                  4.9/5 · 200+ clients
+                  4.9/5 rating
                 </span>
               </div>
               <span style={{ width: 1, height: 14, background: 'var(--color-border)', display: 'block' }} />
@@ -543,7 +524,7 @@ export default function Home() {
             badge="How It Works"
             title="From Idea to Live"
             highlight="In 7 Days"
-            subtitle="Our proven 4-step process has helped 500+ small businesses get online quickly, beautifully, and affordably."
+            subtitle="Our proven 4-step process takes you from idea to live website quickly, beautifully, and affordably."
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '1.5rem', position: 'relative' }}>
             {processSteps.map((step, i) => (
