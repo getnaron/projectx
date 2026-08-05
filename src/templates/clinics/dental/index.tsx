@@ -503,7 +503,7 @@ export default function DentalWorksTemplate() {
           </div>
           <div style={{ borderTop: '1px solid rgba(255,255,255,0.08)', paddingTop: '1.5rem', display: 'flex', justifyContent: 'space-between', flexWrap: 'wrap', gap: '1rem' }}>
             <p style={{ fontSize: '0.875rem' }}>© 2025 Dental Works. All rights reserved.</p>
-            <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)' }}>Website by PixelNest Studio</p>
+            <p style={{ fontSize: '0.8125rem', color: 'rgba(255,255,255,0.4)' }}>Website by RivixoTech</p>
           </div>
         </div>
       </footer>

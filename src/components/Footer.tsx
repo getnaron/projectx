@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Logo from '@/components/ui/Logo'
 import { motion } from 'framer-motion'
 import {
   Sparkles,
@@ -73,25 +74,9 @@ export default function Footer() {
           >
             <Link
               to="/"
-              style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', marginBottom: '1rem' }}
+              style={{ display: 'inline-block', textDecoration: 'none', marginBottom: '1rem' }}
             >
-              <div
-                style={{
-                  width: 36,
-                  height: 36,
-                  borderRadius: 10,
-                  background: 'var(--gradient-primary)',
-                  display: 'flex',
-                  alignItems: 'center',
-                  justifyContent: 'center',
-                  flexShrink: 0,
-                }}
-              >
-                <Sparkles size={18} color="white" />
-              </div>
-              <span style={{ fontWeight: 800, fontSize: '1.0625rem', color: 'var(--color-text-primary)' }}>
-                PixelNest <span className="gradient-text">Studio</span>
-              </span>
+              <Logo height={44} />
             </Link>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               We craft beautiful, high-converting websites for small businesses that deserve to shine online.
@@ -189,7 +174,7 @@ export default function Footer() {
           }}
         >
           <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem' }}>
-            © {new Date().getFullYear()} PixelNest Studio. All rights reserved.
+            © {new Date().getFullYear()} RivixoTech. All rights reserved.
           </p>
           <p
             style={{

@@ -1253,7 +1253,7 @@ export default function YogaStudioTemplate() {
         </div>
 
         <div style={{ maxWidth: 1280, margin: '0 auto', borderTop: '1px solid rgba(255, 255, 255, 0.1)', paddingTop: '2rem', textAlign: 'center', color: '#788e7f', fontSize: '0.8rem' }}>
-          © {new Date().getFullYear()} Prana Sanctuary Yoga & Wellness Pvt. Ltd. All rights reserved. • Template Preview by PixelNest Studio
+          © {new Date().getFullYear()} Prana Sanctuary Yoga & Wellness Pvt. Ltd. All rights reserved. • Template Preview by RivixoTech
         </div>
       </footer>
 

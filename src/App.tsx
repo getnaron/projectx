@@ -68,14 +68,14 @@ export const useTheme = () => useContext(ThemeContext)
 // ============================================================
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
-    const saved = localStorage.getItem('pixelnest-theme')
+    const saved = localStorage.getItem('rivixo-theme')
     // Default is light; only switch to dark if user explicitly chose dark
     return saved === 'dark' ? true : false
   })
 
   useEffect(() => {
     document.documentElement.classList.toggle('light', !isDark)
-    localStorage.setItem('pixelnest-theme', isDark ? 'dark' : 'light')
+    localStorage.setItem('rivixo-theme', isDark ? 'dark' : 'light')
   }, [isDark])
 
   const toggleTheme = () => setIsDark(prev => !prev)

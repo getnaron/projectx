@@ -8,7 +8,7 @@ const contactInfo = [
   {
     icon: <Mail size={20} />,
     label: 'Email Us',
-    value: 'hello@pixelneststudio.in',
+    value: 'hello@rivixotech.in',
     sub: 'We reply within 4 hours',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
   },

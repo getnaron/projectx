@@ -267,7 +267,7 @@ export default function PlaceholderTemplate({
         <p style={{ color: 'rgba(255,255,255,0.25)', fontSize: '0.8125rem' }}>
           © {new Date().getFullYear()} {brandName}. All rights reserved.
           <span style={{ margin: '0 0.5rem', opacity: 0.3 }}>·</span>
-          <span style={{ color: primaryColor, opacity: 0.6 }}>Template by PixelNest Studio</span>
+          <span style={{ color: primaryColor, opacity: 0.6 }}>Template by RivixoTech</span>
         </p>
       </footer>
     </div>

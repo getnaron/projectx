@@ -15,7 +15,7 @@ export default function Terms() {
             badge="Legal Agreement"
             title="Terms of"
             highlight="Service"
-            subtitle={`Last updated: ${lastUpdated}. Please read these terms carefully before engaging PixelNest Studio for web design, development, or digital services.`}
+            subtitle={`Last updated: ${lastUpdated}. Please read these terms carefully before engaging RivixoTech for web design, development, or digital services.`}
             align="left"
           />
         </div>
@@ -42,7 +42,7 @@ export default function Terms() {
                   Master Client Services Agreement
                 </h2>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                  Governing all website design, custom software development, and digital solutions provided by PixelNest Studio.
+                  Governing all website design, custom software development, and digital solutions provided by RivixoTech.
                 </p>
               </div>
             </div>
@@ -53,7 +53,7 @@ export default function Terms() {
                 1. Acceptance of Terms & Scope of Services
               </h3>
               <p style={{ marginBottom: '1rem' }}>
-                By commissioning PixelNest Studio ("Agency", "we", "us") for website design, template customization, or development services, or by accessing our website, the client ("Client", "you") agrees to be bound by these Terms of Service.
+                By commissioning RivixoTech ("Agency", "we", "us") for website design, template customization, or development services, or by accessing our website, the client ("Client", "you") agrees to be bound by these Terms of Service.
               </p>
               <p>
                 The scope of work for each project shall be defined in the project quotation, proposal, or selected pricing package (Professional or Premium). Any additional feature requests, scope changes, or out-of-scope revisions will be billed separately.
@@ -68,8 +68,8 @@ export default function Terms() {
               <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
                 <li><strong>Client Materials:</strong> The Client retains full ownership of all copy, logos, graphics, and proprietary media supplied to the Agency for project integration.</li>
                 <li><strong>Final Website Ownership:</strong> Upon full and final settlement of all project invoices, full ownership rights to the final compiled code, visual design, and website assets generated specifically for the Client shall transfer to the Client.</li>
-                <li><strong>Agency Frameworks & Tools:</strong> PixelNest Studio retains ownership of pre-existing core boilerplate code, reusable component libraries, build scripts, and developer tools incorporated into the final build. The Client receives a perpetual, non-exclusive license to utilize these components within the project.</li>
-                <li><strong>Portfolio Showcase:</strong> PixelNest Studio reserves the right to showcase completed client websites in our portfolio, case studies, and marketing materials unless a formal Non-Disclosure Agreement (NDA) is executed prior to project kickoff.</li>
+                <li><strong>Agency Frameworks & Tools:</strong> RivixoTech retains ownership of pre-existing core boilerplate code, reusable component libraries, build scripts, and developer tools incorporated into the final build. The Client receives a perpetual, non-exclusive license to utilize these components within the project.</li>
+                <li><strong>Portfolio Showcase:</strong> RivixoTech reserves the right to showcase completed client websites in our portfolio, case studies, and marketing materials unless a formal Non-Disclosure Agreement (NDA) is executed prior to project kickoff.</li>
               </ul>
             </div>
 
@@ -106,7 +106,7 @@ export default function Terms() {
                 5. Third-Party Services, Hosting & Domain Disclaimer
               </h3>
               <p style={{ marginBottom: '1rem' }}>
-                PixelNest Studio is not responsible for outages, service interruptions, price changes, or data loss caused by third-party hosting providers (e.g. AWS, Vercel, Hostinger), domain registrars, payment gateways, or third-party APIs (e.g. Google Maps API, WhatsApp Business API). Clients are responsible for maintaining their own annual domain and hosting renewals directly with providers.
+                RivixoTech is not responsible for outages, service interruptions, price changes, or data loss caused by third-party hosting providers (e.g. AWS, Vercel, Hostinger), domain registrars, payment gateways, or third-party APIs (e.g. Google Maps API, WhatsApp Business API). Clients are responsible for maintaining their own annual domain and hosting renewals directly with providers.
               </p>
             </div>
 
@@ -117,7 +117,7 @@ export default function Terms() {
               </h3>
               <div style={{ padding: '1.25rem', background: 'rgba(239, 68, 68, 0.08)', border: '1px solid rgba(239, 68, 68, 0.2)', borderRadius: '0.75rem', marginBottom: '1rem' }}>
                 <p style={{ fontSize: '0.9rem', color: '#f87171', margin: 0, fontWeight: 500 }}>
-                  To the maximum extent permitted by law, PixelNest Studio shall not be liable for any indirect, incidental, consequential, or punitive damages, including loss of profits, loss of business revenue, or data loss arising from website downtime, third-party cyber attacks, or client misuse of the site. Total liability under any circumstances shall not exceed the fees paid by the Client to the Agency for the specific project.
+                  To the maximum extent permitted by law, RivixoTech shall not be liable for any indirect, incidental, consequential, or punitive damages, including loss of profits, loss of business revenue, or data loss arising from website downtime, third-party cyber attacks, or client misuse of the site. Total liability under any circumstances shall not exceed the fees paid by the Client to the Agency for the specific project.
                 </p>
               </div>
             </div>
@@ -138,7 +138,7 @@ export default function Terms() {
                 <FileText size={18} color="#38bdf8" /> Inquiries Regarding Terms
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                If you have any questions or require custom NDA terms prior to initiating a project, please reach out to us at <strong>legal@pixelnest.studio</strong>.
+                If you have any questions or require custom NDA terms prior to initiating a project, please reach out to us at <strong>legal@rivixotech.in</strong>.
               </p>
             </div>
           </div>

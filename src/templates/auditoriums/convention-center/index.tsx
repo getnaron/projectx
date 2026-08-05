@@ -500,7 +500,7 @@ export default function ConventionCenterTemplate() {
         </div>
         
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '2rem', textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem' }}>
-          &copy; {new Date().getFullYear()} Grand Horizon Convention Centre. Built by PixelNest Studio.
+          &copy; {new Date().getFullYear()} Grand Horizon Convention Centre. Built by RivixoTech.
         </div>
       </section>
       

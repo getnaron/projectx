@@ -3,6 +3,7 @@ import { Link, NavLink, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon, Sparkles } from 'lucide-react'
 import { useTheme } from '@/App'
+import Logo from '@/components/ui/Logo'
 
 // ============================================================
 // Navigation links config
@@ -64,35 +65,9 @@ export default function Navbar() {
         {/* Logo */}
         <Link
           to="/"
-          style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none' }}
+          style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
         >
-          <motion.div
-            whileHover={{ rotate: 10, scale: 1.1 }}
-            transition={{ duration: 0.2 }}
-            style={{
-              width: 34,
-              height: 34,
-              borderRadius: 9,
-              background: 'var(--gradient-primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 2px 12px rgba(99,102,241,0.4)',
-            }}
-          >
-            <Sparkles size={16} color="white" />
-          </motion.div>
-          <span
-            style={{
-              fontWeight: 800,
-              fontSize: '1.0625rem',
-              letterSpacing: '-0.03em',
-              color: 'var(--color-text-primary)',
-            }}
-          >
-            PixelNest
-            <span className="gradient-text"> Studio</span>
-          </span>
+          <Logo height={42} />
         </Link>
 
         {/* Desktop nav links */}

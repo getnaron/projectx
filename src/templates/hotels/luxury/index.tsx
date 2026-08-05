@@ -372,7 +372,7 @@ export default function LuxuryHotelTemplate() {
         <p style={{ color: 'rgba(240,234,214,0.3)', fontSize: '0.8125rem' }}>
           © {new Date().getFullYear()} Grand Imperial Hotel. All rights reserved.
           <span style={{ margin: '0 0.5rem', opacity: 0.3 }}>·</span>
-          <span style={{ color: 'rgba(201,168,76,0.5)', fontSize: '0.8rem' }}>Template by PixelNest Studio</span>
+          <span style={{ color: 'rgba(201,168,76,0.5)', fontSize: '0.8rem' }}>Template by RivixoTech</span>
         </p>
       </footer>
     </div>

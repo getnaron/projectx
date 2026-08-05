@@ -1111,7 +1111,7 @@ export default function OnlineAcademyTemplate() {
         </div>
 
         <div style={{ maxWidth: 1280, margin: '0 auto', borderTop: '1px solid rgba(255, 255, 255, 0.05)', paddingTop: '2rem', textAlign: 'center', color: '#64748b', fontSize: '0.8rem' }}>
-          © {new Date().getFullYear()} BrightPath Tech Academy Pvt. Ltd. All rights reserved. • Template Preview by PixelNest Studio
+          © {new Date().getFullYear()} BrightPath Tech Academy Pvt. Ltd. All rights reserved. • Template Preview by RivixoTech
         </div>
       </footer>
 

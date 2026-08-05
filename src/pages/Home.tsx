@@ -50,7 +50,7 @@ const testimonials: Testimonial[] = [
     role: 'Owner',
     company: 'The Amber Kitchen',
     avatar: 'linear-gradient(135deg, #f093fb, #f5576c)',
-    quote: 'PixelNest Studio transformed our online presence completely. We saw a 3x increase in online reservations within the first month of our new website going live. Absolutely stunning work!',
+    quote: 'RivixoTech transformed our online presence completely. We saw a 3x increase in online reservations within the first month of our new website going live. Absolutely stunning work!',
     rating: 5,
     industry: 'Restaurants',
   },
@@ -70,7 +70,7 @@ const testimonials: Testimonial[] = [
     role: 'Founder',
     company: 'Luxe Hair Studio',
     avatar: 'linear-gradient(135deg, #fda085, #f6d365)',
-    quote: 'I was skeptical about getting a website but PixelNest made the entire process seamless. The website looks better than our competitors who spent 10x more. Best investment ever!',
+    quote: 'I was skeptical about getting a website but RivixoTech made the entire process seamless. The website looks better than our competitors who spent 10x more. Best investment ever!',
     rating: 5,
     industry: 'Salons',
   },
@@ -204,7 +204,7 @@ export default function Home() {
                 margin: 0,
               }}
             >
-              PixelNest Studio creates stunning, conversion-optimized websites for gyms,
+              RivixoTech creates stunning, conversion-optimized websites for gyms,
               salons, clinics, and 7 more industries — delivered in just 7 days.
             </motion.p>
 
@@ -302,7 +302,7 @@ export default function Home() {
       <section className="section">
         <div className="container">
           <SectionTitle
-            badge="Why PixelNest"
+            badge="Why RivixoTech"
             title="Everything You Need to"
             highlight="Succeed Online"
             subtitle="We don't just build websites. We build digital storefronts that attract, engage, and convert your ideal customers."

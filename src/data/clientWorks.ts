@@ -1,5 +1,5 @@
 /**
- * clientWorks.ts — Real client websites built by PixelNest Studio.
+ * clientWorks.ts — Real client websites built by RivixoTech.
  *
  * HOW TO ADD A NEW CLIENT:
  * - Append a new object to the `clientWorks` array

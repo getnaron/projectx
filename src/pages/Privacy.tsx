@@ -15,7 +15,7 @@ export default function Privacy() {
             badge="Legal & Compliance"
             title="Privacy"
             highlight="Policy"
-            subtitle={`Last updated: ${lastUpdated}. At PixelNest Studio, we are committed to protecting your privacy and safeguarding your business data.`}
+            subtitle={`Last updated: ${lastUpdated}. At RivixoTech, we are committed to protecting your privacy and safeguarding your business data.`}
             align="left"
           />
         </div>
@@ -39,7 +39,7 @@ export default function Privacy() {
               <ShieldCheck size={28} color="#38bdf8" />
               <div>
                 <h2 style={{ fontSize: '1.25rem', fontWeight: 700, color: 'var(--color-text-primary)', margin: 0 }}>
-                  PixelNest Studio Privacy Commitment
+                  RivixoTech Privacy Commitment
                 </h2>
                 <p style={{ fontSize: '0.875rem', color: 'var(--color-text-muted)', margin: 0 }}>
                   Transparent data handling practices for clients, visitors, and partners.
@@ -53,13 +53,13 @@ export default function Privacy() {
                 1. Information We Collect
               </h3>
               <p style={{ marginBottom: '1rem' }}>
-                We collect personal and business information when you interact with our website, request a consultation, or engage PixelNest Studio for web design and development services:
+                We collect personal and business information when you interact with our website, request a consultation, or engage RivixoTech for web design and development services:
               </p>
               <ul style={{ paddingLeft: '1.5rem', marginBottom: '1rem' }}>
                 <li><strong>Identity & Contact Data:</strong> Your name, business name, email address, phone number, and physical billing address.</li>
                 <li><strong>Project & Assets Data:</strong> Content, logos, brand guidelines, images, and text supplied to us for project execution.</li>
                 <li><strong>Technical & Analytics Data:</strong> IP addresses, browser types, device specifications, and page navigation metrics collected automatically via cookies and privacy-preserving analytics.</li>
-                <li><strong>Payment Information:</strong> Billing records and transaction confirmations (payment details are processed securely via PCI-DSS compliant third-party gateways; PixelNest Studio never stores full card credentials).</li>
+                <li><strong>Payment Information:</strong> Billing records and transaction confirmations (payment details are processed securely via PCI-DSS compliant third-party gateways; RivixoTech never stores full card credentials).</li>
               </ul>
             </div>
 
@@ -130,7 +130,7 @@ export default function Privacy() {
                 <Mail size={18} color="#38bdf8" /> Contact Privacy Officer
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                For any privacy concerns, data requests, or compliance inquiries, please email our team at <strong>privacy@pixelnest.studio</strong> or contact us via our official support channels.
+                For any privacy concerns, data requests, or compliance inquiries, please email our team at <strong>privacy@rivixotech.in</strong> or contact us via our official support channels.
               </p>
             </div>
           </div>

@@ -1,5 +1,5 @@
 /**
- * templates.ts — Central data file for all PixelNest Studio templates.
+ * templates.ts — Central data file for all RivixoTech templates.
  * 
  * TEAM COLLABORATION GUIDE:
  * - Add new templates here by appending to the `templates` array

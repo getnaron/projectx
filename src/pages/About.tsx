@@ -6,7 +6,7 @@ import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/utils/m
 
 
 const values = [
-  { icon: <Heart size={22} />, title: 'Small Business First', description: 'We started PixelNest specifically to help small businesses compete. Every decision we make is with your success in mind.', gradient: 'linear-gradient(135deg, #ec4899, #be185d)' },
+  { icon: <Heart size={22} />, title: 'Small Business First', description: 'We started RivixoTech specifically to help small businesses compete. Every decision we make is with your success in mind.', gradient: 'linear-gradient(135deg, #ec4899, #be185d)' },
   { icon: <Target size={22} />, title: 'Results Over Aesthetics', description: 'Beautiful websites that don\'t convert are just digital art. We design for results — more calls, bookings, and sales.', gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)' },
   { icon: <Globe size={22} />, title: 'Transparency Always', description: 'No jargon, no hidden fees, no bait-and-switch. What you see is what you get — we\'re refreshingly honest.', gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)' },
   { icon: <Rocket size={22} />, title: 'Speed Is a Feature', description: 'We move fast without cutting corners. 7-day delivery isn\'t a gimmick — it\'s a promise we stand behind on every project.', gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)' },
@@ -32,7 +32,7 @@ export default function About() {
               <span className="gradient-text">Matter</span>
             </motion.h1>
             <motion.p variants={fadeInUp} style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-              PixelNest Studio was born out of frustration. In 2020, our founder Arjun walked into dozens of local businesses and saw the same thing: incredible products and services, held back by outdated or non-existent websites.
+              RivixoTech was born out of frustration. In 2020, our founder Arjun walked into dozens of local businesses and saw the same thing: incredible products and services, held back by outdated or non-existent websites.
             </motion.p>
             <motion.p variants={fadeInUp} style={{ fontSize: '1.0625rem', color: 'var(--color-text-secondary)', lineHeight: 1.8 }}>
               Large agencies were charging ₹1-2 lakhs for websites that took 3+ months. Freelancers were unreliable. We decided to build a better option — a studio that combines agency quality with startup speed and small-business pricing.

@@ -1304,7 +1304,7 @@ export default function SalonTemplate() {
         </div>
 
         <div style={{ maxWidth: 1280, margin: '0 auto', borderTop: '1px solid rgba(255, 255, 255, 0.08)', paddingTop: '1.5rem', textAlign: 'center', color: '#71717a', fontSize: '0.825rem' }}>
-          © 2026 Aura Salon & Spa. All rights reserved. Crafted for PixelNest Studio.
+          © 2026 Aura Salon & Spa. All rights reserved. Crafted for RivixoTech.
         </div>
       </footer>
 

@@ -300,7 +300,7 @@ export default function Services() {
             badge="Common Questions"
             title="Frequently Asked"
             highlight="Questions"
-            subtitle="Everything you need to know about working with PixelNest Studio."
+            subtitle="Everything you need to know about working with RivixoTech."
           />
           <div style={{ maxWidth: 720, margin: '0 auto' }}>
             <FAQAccordion items={faqs} />

@@ -9,28 +9,15 @@ interface PreviewBackBarProps {
 
 /**
  * PreviewBackBar — Sticky bar at the top of every template preview page.
- * Shows the PixelNest brand, the template name, and a "Back" link.
+ * Shows the RivixoTech brand, the template name, and a "Back" link.
  */
 export default function PreviewBackBar({ templateName, category, categoryRoute }: PreviewBackBarProps) {
   return (
     <div className="preview-back-bar">
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
         {/* Logo */}
-        <Link to="/" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', textDecoration: 'none', color: 'white' }}>
-          <div
-            style={{
-              width: 26,
-              height: 26,
-              borderRadius: 7,
-              background: 'var(--gradient-primary)',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-            }}
-          >
-            <Sparkles size={13} color="white" />
-          </div>
-          <span style={{ fontWeight: 700, fontSize: '0.875rem' }}>PixelNest Studio</span>
+        <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
+          <img src="/logo-dark.png" alt="RivixoTech Logo" style={{ height: 28, width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         {/* Separator */}

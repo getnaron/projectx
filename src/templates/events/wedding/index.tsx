@@ -975,7 +975,7 @@ export default function RoyalEventsTemplate() {
 
         <div style={{ borderTop: '1px solid rgba(255,255,255,0.06)', paddingTop: '1.5rem', textAlign: 'center' }}>
           <p style={{ color: '#52525b', fontSize: '0.8rem', margin: 0 }}>
-            © 2025 Royal Events. All rights reserved. | Designed by <span style={{ color: '#d4af37', fontWeight: 600 }}>PixelNest Studio</span>
+            © 2025 Royal Events. All rights reserved. | Designed by <span style={{ color: '#d4af37', fontWeight: 600 }}>RivixoTech</span>
           </p>
         </div>
       </footer>

@@ -20,7 +20,7 @@ interface CTAProps {
 export default function CTA({
   title = 'Ready to Build Your',
   highlight = 'Dream Website?',
-  subtitle = 'Join small businesses that trust PixelNest Studio to create websites that actually convert visitors into customers.',
+  subtitle = 'Join small businesses that trust RivixoTech to create websites that actually convert visitors into customers.',
   primaryCta = 'Get Started Today',
   primaryCtaLink = '/contact',
   secondaryCta = 'Browse Templates',
