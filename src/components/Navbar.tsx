@@ -59,15 +59,22 @@ export default function Navbar() {
       }}
     >
       <nav
-        className="container"
-        style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 68 }}
+        style={{
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          height: 92,
+          width: '100%',
+          paddingLeft: '1.25rem',
+          paddingRight: '1.75rem',
+        }}
       >
         {/* Logo */}
         <Link
           to="/"
-          style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}
+          style={{ display: 'flex', alignItems: 'center', textDecoration: 'none', marginLeft: '-0.25rem' }}
         >
-          <Logo height={42} />
+          <Logo height={80} />
         </Link>
 
         {/* Desktop nav links */}

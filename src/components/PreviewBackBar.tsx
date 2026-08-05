@@ -17,7 +17,7 @@ export default function PreviewBackBar({ templateName, category, categoryRoute }
       <div style={{ display: 'flex', alignItems: 'center', gap: '1.5rem' }}>
         {/* Logo */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center', textDecoration: 'none' }}>
-          <img src="/logo-dark.png" alt="RivixoTech Logo" style={{ height: 28, width: 'auto', objectFit: 'contain' }} />
+          <img src="/logo-dark.png" alt="RivixoTech Logo" style={{ height: 48, width: 'auto', objectFit: 'contain' }} />
         </Link>
 
         {/* Separator */}

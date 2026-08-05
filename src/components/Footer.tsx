@@ -76,7 +76,7 @@ export default function Footer() {
               to="/"
               style={{ display: 'inline-block', textDecoration: 'none', marginBottom: '1rem' }}
             >
-              <Logo height={44} />
+              <Logo height={48} />
             </Link>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
               We craft beautiful, high-converting websites for small businesses that deserve to shine online.
