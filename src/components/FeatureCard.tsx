@@ -7,6 +7,7 @@ interface FeatureCardProps {
   title: string
   description: string
   gradient?: string
+  image?: string
   animationDelay?: number
 }
 
@@ -18,6 +19,7 @@ export default function FeatureCard({
   title,
   description,
   gradient = 'var(--gradient-primary)',
+  image,
   animationDelay = 0,
 }: FeatureCardProps) {
   return (
@@ -26,7 +28,7 @@ export default function FeatureCard({
       transition={{ delay: animationDelay }}
       whileHover={{ y: -4 }}
       style={{
-        padding: '1.75rem',
+        padding: '1.5rem',
         borderRadius: '1.25rem',
         background: 'var(--color-surface)',
         border: '1px solid var(--color-border)',
@@ -43,6 +45,11 @@ export default function FeatureCard({
         el.style.boxShadow = 'none'
       }}
     >
+      {image && (
+        <div style={{ height: 180, borderRadius: '0.875rem', overflow: 'hidden', marginBottom: '1.5rem' }}>
+          <img src={image} alt={title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        </div>
+      )}
       {/* Icon box */}
       <div
         style={{

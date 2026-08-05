@@ -2,6 +2,7 @@ import { Suspense, lazy, createContext, useContext, useState, useEffect } from '
 import { Routes, Route } from 'react-router-dom'
 import MainLayout from './layouts/MainLayout'
 import LoadingSpinner from './components/ui/LoadingSpinner'
+import ScrollToTop from './components/ScrollToTop'
 
 // Lazy-loaded pages
 const Home = lazy(() => import('./pages/Home'))
@@ -54,7 +55,7 @@ interface ThemeContextType {
 }
 
 export const ThemeContext = createContext<ThemeContextType>({
-  isDark: true,
+  isDark: false,
   toggleTheme: () => {},
 })
 
@@ -66,8 +67,8 @@ export const useTheme = () => useContext(ThemeContext)
 export default function App() {
   const [isDark, setIsDark] = useState(() => {
     const saved = localStorage.getItem('pixelnest-theme')
-    // Default is always dark; only switch to light if user explicitly chose light
-    return saved === 'light' ? false : true
+    // Default is light; only switch to dark if user explicitly chose dark
+    return saved === 'dark' ? true : false
   })
 
   useEffect(() => {
@@ -80,6 +81,7 @@ export default function App() {
   return (
     <ThemeContext.Provider value={{ isDark, toggleTheme }}>
       <Suspense fallback={<LoadingSpinner />}>
+        <ScrollToTop />
         <Routes>
           {/* Main site routes with layout */}
           <Route element={<MainLayout />}>

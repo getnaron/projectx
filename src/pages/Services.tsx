@@ -16,6 +16,7 @@ const services = [
     title: 'Custom Website Design',
     description: 'Bespoke designs crafted from scratch to reflect your brand\'s personality. Every element is intentionally placed to guide visitors toward conversion.',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
+    image: '/features/premium-design.png',
     deliverables: ['Custom mockups & wireframes', 'Brand color palette integration', 'Typography system', 'Mobile-first responsive layouts'],
   },
   {
@@ -23,35 +24,16 @@ const services = [
     title: 'Template Customization',
     description: 'Love one of our templates? We take it and customize every detail to make it 100% yours — your colors, content, photos, and brand voice.',
     gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
+    image: '/features/responsive.png',
     deliverables: ['Full color scheme customization', 'Content population', 'Logo & brand integration', 'Domain & hosting setup'],
-  },
-  {
-    icon: <Search size={22} />,
-    title: 'SEO Optimization',
-    description: 'Every website we build is SEO-ready from day one. We handle technical SEO, meta tags, schema markup, and Google Search Console setup.',
-    gradient: 'linear-gradient(135deg, #22c55e, #16a34a)',
-    deliverables: ['Keyword research & mapping', 'On-page SEO setup', 'Schema markup implementation', 'Google Search Console & Analytics'],
   },
   {
     icon: <Wrench size={22} />,
     title: 'Website Maintenance',
     description: 'Keep your website running smoothly with our monthly maintenance plans. Updates, backups, security monitoring, and content changes included.',
     gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
+    image: '/features/delivery.png',
     deliverables: ['Monthly content updates', 'Plugin & software updates', 'Security monitoring', 'Daily automated backups'],
-  },
-  {
-    icon: <BarChart size={22} />,
-    title: 'Analytics & Reporting',
-    description: 'Understand how visitors use your website with monthly performance reports. Know what\'s working and where to improve.',
-    gradient: 'linear-gradient(135deg, #ec4899, #be185d)',
-    deliverables: ['Google Analytics 4 setup', 'Monthly performance reports', 'Heatmap analysis', 'Conversion tracking'],
-  },
-  {
-    icon: <Code2 size={22} />,
-    title: 'Speed Optimization',
-    description: 'We audit and optimize your website to achieve 90+ PageSpeed scores. Faster websites rank higher and convert more visitors.',
-    gradient: 'linear-gradient(135deg, #8b5cf6, #6366f1)',
-    deliverables: ['Image optimization & compression', 'Core Web Vitals improvement', 'Caching & CDN setup', 'Code minification'],
   },
 ]
 
@@ -140,18 +122,20 @@ export default function Services() {
                 key={service.title}
                 variants={fadeInUp}
                 transition={{ delay: i * 0.08 }}
-                whileHover={{ y: -4 }}
+                whileHover={{ y: -6 }}
                 style={{
-                  padding: '2rem',
                   borderRadius: '1.25rem',
                   background: 'var(--color-surface)',
                   border: '1px solid var(--color-border)',
-                  transition: 'border-color 0.3s, box-shadow 0.3s',
+                  transition: 'border-color 0.3s, box-shadow 0.3s, transform 0.3s',
+                  overflow: 'hidden',
+                  display: 'flex',
+                  flexDirection: 'column',
                 }}
                 onMouseEnter={e => {
                   const el = e.currentTarget as HTMLDivElement
                   el.style.borderColor = 'rgba(99,102,241,0.35)'
-                  el.style.boxShadow = '0 8px 32px rgba(99,102,241,0.1)'
+                  el.style.boxShadow = '0 12px 40px rgba(99,102,241,0.1)'
                 }}
                 onMouseLeave={e => {
                   const el = e.currentTarget as HTMLDivElement
@@ -159,34 +143,54 @@ export default function Services() {
                   el.style.boxShadow = 'none'
                 }}
               >
-                <div
-                  style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: 12,
-                    background: service.gradient,
-                    display: 'flex',
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    color: 'white',
-                    marginBottom: '1.25rem',
-                  }}
-                >
-                  {service.icon}
+                {/* Image Section */}
+                <div style={{ position: 'relative', height: 220, overflow: 'hidden' }}>
+                  <img 
+                    src={service.image} 
+                    alt={service.title} 
+                    style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
+                  />
+                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--color-surface) 0%, transparent 100%)' }} />
+                  
+                  {/* Floating Icon Box */}
+                  <div
+                    style={{
+                      position: 'absolute',
+                      bottom: '1rem',
+                      left: '2rem',
+                      width: 48,
+                      height: 48,
+                      borderRadius: 12,
+                      background: service.gradient,
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'center',
+                      color: 'white',
+                      boxShadow: '0 8px 24px rgba(0,0,0,0.3)',
+                    }}
+                  >
+                    {service.icon}
+                  </div>
                 </div>
-                <h3 style={{ fontWeight: 700, fontSize: '1.125rem', color: 'var(--color-text-primary)', marginBottom: '0.625rem' }}>
-                  {service.title}
-                </h3>
-                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1.25rem' }}>
-                  {service.description}
-                </p>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
-                  {service.deliverables.map(item => (
-                    <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                      <CheckCircle size={13} color="#a5b4fc" />
-                      <span style={{ color: 'var(--color-text-muted)', fontSize: '0.8375rem' }}>{item}</span>
-                    </div>
-                  ))}
+
+                {/* Content Section */}
+                <div style={{ padding: '1.5rem 2rem 2rem 2rem', display: 'flex', flexDirection: 'column', flex: 1 }}>
+                  <h3 style={{ fontWeight: 700, fontSize: '1.25rem', color: 'var(--color-text-primary)', marginBottom: '0.75rem', letterSpacing: '-0.01em' }}>
+                    {service.title}
+                  </h3>
+                  <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.95rem', lineHeight: 1.7, marginBottom: '1.5rem', flex: 1 }}>
+                    {service.description}
+                  </p>
+                  
+                  {/* Deliverables */}
+                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem', marginTop: 'auto', paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.05)' }}>
+                    {service.deliverables.map(item => (
+                      <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
+                        <CheckCircle size={14} color="#a5b4fc" style={{ flexShrink: 0 }} />
+                        <span style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
                 </div>
               </motion.div>
             ))}
@@ -205,11 +209,10 @@ export default function Services() {
           />
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '1.5rem' }}>
             {[
-              { icon: <Zap size={20} />, title: 'Quick Start', desc: 'Book a call and share your requirements. We start work within 24 hours of project approval.' },
-              { icon: <Palette size={20} />, title: 'Design First', desc: 'You approve the visual design before we write a single line of code. No surprises.' },
-              { icon: <Code2 size={20} />, title: 'Clean Code', desc: 'Built with best practices — semantic HTML, optimized assets, and maintainable code.' },
-              { icon: <Clock size={20} />, title: 'Fast Delivery', desc: 'We respect deadlines. Your website is live within the agreed timeline, every time.' },
-              { icon: <Shield size={20} />, title: 'Post-Launch', desc: '30 days of free support to handle any issues and make tweaks after you go live.' },
+              { icon: <Zap size={22} />, title: 'Quick Start', desc: 'Book a call and share your requirements. We start work within 24 hours of project approval.', gradient: 'linear-gradient(135deg, #6366f1, #a855f7)' },
+              { icon: <Code2 size={22} />, title: 'Clean Code', desc: 'Built with best practices — semantic HTML, optimized assets, and maintainable code.', gradient: 'linear-gradient(135deg, #3b82f6, #2dd4bf)' },
+              { icon: <Clock size={22} />, title: 'Fast Delivery', desc: 'We respect deadlines. Your website is live within the agreed timeline, every time.', gradient: 'linear-gradient(135deg, #ec4899, #f43f5e)' },
+              { icon: <Shield size={22} />, title: 'Post-Launch', desc: '30 days of free support to handle any issues and make tweaks after you go live.', gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)' },
             ].map((step, i) => (
               <motion.div
                 key={step.title}
@@ -217,36 +220,73 @@ export default function Services() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, amount: 0 }}
                 transition={{ delay: i * 0.1 }}
+                whileHover={{ y: -6 }}
                 style={{
-                  padding: '1.5rem',
+                  padding: '2rem',
                   borderRadius: '1.25rem',
                   background: 'var(--color-surface)',
                   border: '1px solid var(--color-border)',
-                  textAlign: 'center',
+                  position: 'relative',
+                  overflow: 'hidden',
+                  transition: 'all 0.3s ease',
+                  display: 'flex',
+                  flexDirection: 'column',
+                }}
+                onMouseEnter={e => {
+                  const el = e.currentTarget as HTMLDivElement
+                  el.style.borderColor = 'rgba(255,255,255,0.1)'
+                  el.style.boxShadow = `0 12px 40px ${step.gradient.split(',')[1].trim()}15`
+                }}
+                onMouseLeave={e => {
+                  const el = e.currentTarget as HTMLDivElement
+                  el.style.borderColor = 'var(--color-border)'
+                  el.style.boxShadow = 'none'
                 }}
               >
+                {/* Background Step Number Watermark */}
                 <div
                   style={{
-                    width: 48,
-                    height: 48,
-                    borderRadius: '50%',
-                    background: 'var(--gradient-subtle)',
-                    border: '1px solid rgba(99,102,241,0.25)',
+                    position: 'absolute',
+                    top: '-5px',
+                    right: '5px',
+                    fontSize: '5rem',
+                    fontWeight: 900,
+                    letterSpacing: '-0.04em',
+                    opacity: 0.03,
+                    lineHeight: 1,
+                    pointerEvents: 'none',
+                    userSelect: 'none',
+                  }}
+                >
+                  0{i + 1}
+                </div>
+
+                <div
+                  style={{
+                    width: 52,
+                    height: 52,
+                    borderRadius: '14px',
+                    background: step.gradient,
                     display: 'flex',
                     alignItems: 'center',
                     justifyContent: 'center',
-                    color: '#a5b4fc',
-                    margin: '0 auto 1rem',
+                    color: 'white',
+                    marginBottom: '1.5rem',
+                    boxShadow: `0 8px 24px ${step.gradient.split(',')[1].trim()}40`,
                   }}
                 >
                   {step.icon}
                 </div>
-                <h4 style={{ fontWeight: 700, fontSize: '1rem', color: 'var(--color-text-primary)', marginBottom: '0.5rem' }}>
+                
+                <h4 style={{ fontWeight: 700, fontSize: '1.125rem', color: 'var(--color-text-primary)', marginBottom: '0.625rem', letterSpacing: '-0.01em' }}>
                   {step.title}
                 </h4>
-                <p style={{ color: 'var(--color-text-muted)', fontSize: '0.875rem', lineHeight: 1.6 }}>
+                <p style={{ color: 'var(--color-text-secondary)', fontSize: '0.9rem', lineHeight: 1.7, flex: 1 }}>
                   {step.desc}
                 </p>
+                
+                {/* Subtle top border for structure */}
+                <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 2, background: step.gradient, opacity: 0.6 }} />
               </motion.div>
             ))}
           </div>

@@ -7,49 +7,29 @@ import { staggerContainer } from '@/utils/motion'
 import { Check, X } from 'lucide-react'
 
 const plans: PricingPlan[] = [
+
   {
-    id: 'starter',
-    name: 'Starter',
-    price: '₹19,999',
-    description: 'Perfect for local businesses taking their first step online.',
+    id: 'professional',
+    name: 'Professional',
+    price: '₹27,999',
+    description: 'For growing businesses that need more features and visibility.',
     features: [
       '5-page website',
       'Mobile responsive design',
       'Template-based design',
       'Contact form',
-      'Basic SEO setup',
       'Google Analytics',
-      '30-day support',
-      'Free domain consultation',
-    ],
-    cta: 'Get Started',
-    ctaLink: '/contact',
-  },
-  {
-    id: 'professional',
-    name: 'Professional',
-    price: '₹39,999',
-    description: 'For growing businesses that need more features and visibility.',
-    features: [
-      '10-page website',
-      'Custom design elements',
-      'Advanced SEO optimization',
-      'Blog/News section',
-      'Google Business Profile setup',
       'Speed optimization',
       'WhatsApp integration',
-      '3-month support',
-      'Monthly performance report',
+      '30-day support',
     ],
     cta: 'Get Started',
     ctaLink: '/contact',
-    highlighted: true,
-    badge: 'Most Popular',
   },
   {
     id: 'premium',
     name: 'Premium',
-    price: '₹74,999',
+    price: '₹45,999',
     description: 'For established businesses that want the best of everything.',
     features: [
       'Unlimited pages',
@@ -57,7 +37,6 @@ const plans: PricingPlan[] = [
       'Advanced animations',
       'E-commerce ready',
       'CMS integration',
-      'Full SEO package',
       'Social media integration',
       'Priority support',
       '6-month maintenance',
@@ -65,6 +44,8 @@ const plans: PricingPlan[] = [
     ],
     cta: 'Let\'s Talk',
     ctaLink: '/contact',
+    highlighted: true,
+    badge: 'Most Popular',
   },
 ]
 
@@ -93,11 +74,7 @@ const faqs: FAQItem[] = [
     question: 'Can I upgrade my plan later?',
     answer: 'Absolutely. You can start with the Starter plan and upgrade to Professional or Premium at any time. We\'ll apply a credit for your original payment toward the new plan.',
   },
-  {
-    id: 'p3',
-    question: 'Do you offer EMI or installment options?',
-    answer: 'Yes! For Professional and Premium projects, we accept 50% upfront and 50% on delivery. For larger custom projects, we can discuss a milestone-based payment schedule.',
-  },
+
   {
     id: 'p4',
     question: 'What\'s not included in the package price?',
@@ -150,82 +127,6 @@ export default function Pricing() {
               <PricingCard key={plan.id} plan={plan} animationDelay={i * 0.1} />
             ))}
           </motion.div>
-        </div>
-      </section>
-
-      {/* Comparison table */}
-      <section className="section" style={{ background: 'var(--color-bg-dark-2)' }}>
-        <div className="container">
-          <SectionTitle
-            badge="Compare Plans"
-            title="Feature"
-            highlight="Comparison"
-            subtitle="See exactly what's included in each plan before you decide."
-          />
-          <div style={{ overflowX: 'auto' }}>
-            <table
-              style={{
-                width: '100%',
-                borderCollapse: 'separate',
-                borderSpacing: 0,
-                background: 'var(--color-surface)',
-                borderRadius: '1.25rem',
-                overflow: 'hidden',
-                border: '1px solid var(--color-border)',
-                fontSize: '0.9rem',
-              }}
-            >
-              <thead>
-                <tr style={{ background: 'var(--color-bg-dark-3)' }}>
-                  <th style={{ padding: '1rem 1.25rem', textAlign: 'left', color: 'var(--color-text-secondary)', fontWeight: 600, borderBottom: '1px solid var(--color-border)' }}>
-                    Feature
-                  </th>
-                  {plans.map(p => (
-                    <th
-                      key={p.id}
-                      style={{
-                        padding: '1rem 1.25rem',
-                        textAlign: 'center',
-                        color: p.highlighted ? '#a5b4fc' : 'var(--color-text-primary)',
-                        fontWeight: 700,
-                        borderBottom: '1px solid var(--color-border)',
-                        minWidth: 120,
-                      }}
-                    >
-                      {p.name}
-                    </th>
-                  ))}
-                </tr>
-              </thead>
-              <tbody>
-                {comparisonFeatures.map((feature, i) => (
-                  <tr
-                    key={feature.name}
-                    style={{ background: i % 2 === 0 ? 'transparent' : 'rgba(255,255,255,0.02)' }}
-                  >
-                    <td style={{ padding: '0.875rem 1.25rem', color: 'var(--color-text-secondary)', borderBottom: i < comparisonFeatures.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
-                      {feature.name}
-                    </td>
-                    <td style={{ padding: '0.875rem 1.25rem', textAlign: 'center', borderBottom: i < comparisonFeatures.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <ComparisonCell value={feature.starter} />
-                      </div>
-                    </td>
-                    <td style={{ padding: '0.875rem 1.25rem', textAlign: 'center', background: 'rgba(99,102,241,0.04)', borderBottom: i < comparisonFeatures.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <ComparisonCell value={feature.professional} />
-                      </div>
-                    </td>
-                    <td style={{ padding: '0.875rem 1.25rem', textAlign: 'center', borderBottom: i < comparisonFeatures.length - 1 ? '1px solid var(--color-border)' : 'none' }}>
-                      <div style={{ display: 'flex', justifyContent: 'center' }}>
-                        <ComparisonCell value={feature.premium} />
-                      </div>
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
         </div>
       </section>
 
