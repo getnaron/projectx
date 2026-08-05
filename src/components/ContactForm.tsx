@@ -25,10 +25,25 @@ export default function ContactForm() {
 
   const validate = (): boolean => {
     const newErrors: Partial<FormState> = {}
-    if (!form.name.trim()) newErrors.name = 'Name is required'
-    if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-      newErrors.email = 'Valid email is required'
+    if (!form.name.trim()) newErrors.name = 'Full name is required'
+    
+    // Strict Email Validation
+    if (!form.email.trim()) {
+      newErrors.email = 'Email address is required'
+    } else if (!/^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/.test(form.email.trim())) {
+      newErrors.email = 'Please enter a valid email address'
     }
+
+    // Indian Phone Number Validation
+    if (!form.phone.trim()) {
+      newErrors.phone = 'Phone number is required'
+    } else {
+      const cleanPhone = form.phone.replace(/[\s-]/g, '')
+      if (!/^(?:\+91)?[6-9]\d{9}$/.test(cleanPhone)) {
+        newErrors.phone = 'Please enter a valid 10-digit phone number'
+      }
+    }
+
     if (!form.message.trim()) newErrors.message = 'Message is required'
     setErrors(newErrors)
     return Object.keys(newErrors).length === 0
@@ -203,11 +218,12 @@ export default function ContactForm() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+1 (555) 000-0000"
-            style={inputStyle}
+            placeholder="+91 00000 00000"
+            style={{ ...inputStyle, borderColor: errors.phone ? '#f87171' : 'var(--color-border)' }}
             onFocus={e => e.currentTarget.style.borderColor = 'rgba(99,102,241,0.6)'}
-            onBlur={e => e.currentTarget.style.borderColor = 'var(--color-border)'}
+            onBlur={e => e.currentTarget.style.borderColor = errors.phone ? '#f87171' : 'var(--color-border)'}
           />
+          {errors.phone && <p style={errorStyle}>{errors.phone}</p>}
         </div>
         <div>
           <label htmlFor="contact-company" style={labelStyle}>
@@ -242,10 +258,9 @@ export default function ContactForm() {
           onBlur={e => e.currentTarget.style.borderColor = 'var(--color-border)'}
         >
           <option value="">Select a service…</option>
-          <option value="starter">Starter Website — ₹19,999</option>
-          <option value="professional">Professional Website — ₹39,999</option>
-          <option value="premium">Premium Website — ₹74,999</option>
-          <option value="custom">Custom Project</option>
+          <option value="professional">Professional Website — ₹27,999</option>
+          <option value="premium">Premium Website — ₹45,999</option>
+          <option value="custom">Custom / Enterprise Project</option>
         </select>
       </div>
 

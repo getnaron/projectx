@@ -23,16 +23,16 @@ const footerLinks = {
     { label: 'Hosting & Maintenance', to: '/services' },
   ],
   Templates: [
-    { label: 'Hotels & Resorts', to: '/templates/hotels' },
-    { label: 'Restaurants & Cafes', to: '/templates/restaurants' },
     { label: 'Gyms & Fitness', to: '/templates/gyms' },
-    { label: 'Browse All', to: '/templates' },
+    { label: 'Salons & Beauty', to: '/templates/salons' },
+    { label: 'Auditoriums', to: '/templates/auditoriums' },
+    { label: 'Browse All Templates', to: '/templates' },
   ],
   Resources: [
     { label: 'Pricing', to: '/pricing' },
     { label: 'FAQ', to: '/pricing#faq' },
-    { label: 'Privacy Policy', to: '/about' },
-    { label: 'Terms of Service', to: '/about' },
+    { label: 'Privacy Policy', to: '/privacy' },
+    { label: 'Terms of Service', to: '/terms' },
   ],
 }
 

@@ -165,7 +165,7 @@ export const templates: Template[] = [
     category: 'gyms',
     categoryLabel: 'Gyms',
     description: 'Serene and mindful yoga studio website with class schedules and instructor profiles.',
-    image: 'url(https://images.unsplash.com/photo-1599901860904-17e6ed7083a0?auto=format&fit=crop&q=80&w=1200) center/cover no-repeat',
+    image: 'url(https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&q=80&w=1200) center/cover no-repeat',
     route: '/templates/gyms/yoga',
     tags: ['Zen', 'Minimal', 'Wellness'],
     accentColor: '#b06f7a',
@@ -178,7 +178,7 @@ export const templates: Template[] = [
     category: 'salons',
     categoryLabel: 'Salons',
     description: 'Luxury hair, beauty, and grooming salon website with service menus, pricing, gallery lightbox, and instant WhatsApp booking.',
-    image: 'url(https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800) center/cover no-repeat',
+    image: 'url(https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=1200) center/cover no-repeat',
     route: '/templates/salons/luxury',
     tags: ['Luxury', 'Hair & Beauty', 'Grooming', 'Gold Theme'],
     accentColor: '#d4af37',
@@ -188,14 +188,15 @@ export const templates: Template[] = [
   // --- PERSONAL ---
   {
     id: 'developer-portfolio',
-    title: 'Developer Portfolio',
+    title: 'Photographer Portfolio',
     category: 'personal',
     categoryLabel: 'Personal Portfolio',
-    description: 'Sleek developer portfolio with skills, projects, and terminal-inspired aesthetics.',
-    image: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)',
+    description: 'Sleek, image-centric portfolio for photographers with gallery lightbox, package pricing, gear breakdown, and booking modal.',
+    image: 'url(https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800) center/cover no-repeat',
     route: '/templates/personal/developer',
-    tags: ['Developer', 'Tech', 'Dark'],
-    accentColor: '#00d2ff',
+    tags: ['Photography', 'Dark', 'Gallery'],
+    accentColor: '#38bdf8',
+    badge: 'New',
   },
 
   // --- EVENTS ---

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MapPin, Clock, MessageSquare, Camera, Share2, Users } from 'lucide-react'
+import { Mail, Phone, MessageSquare, Camera, Share2, Users } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ContactForm from '@/components/ContactForm'
 import { staggerContainer, fadeInUp } from '@/utils/motion'
@@ -15,23 +15,9 @@ const contactInfo = [
   {
     icon: <Phone size={20} />,
     label: 'Call Us',
-    value: '+91 98765 43210',
-    sub: 'Mon–Sat, 9am–7pm IST',
+    value: '+91 00000 00000',
+    sub: 'Quick response on phone & WhatsApp',
     gradient: 'linear-gradient(135deg, #22c55e, #16a34a)',
-  },
-  {
-    icon: <MapPin size={20} />,
-    label: 'Our Office',
-    value: 'Bangalore, Karnataka',
-    sub: 'We serve clients pan-India',
-    gradient: 'linear-gradient(135deg, #ec4899, #be185d)',
-  },
-  {
-    icon: <Clock size={20} />,
-    label: 'Working Hours',
-    value: 'Mon–Sat: 9am–7pm',
-    sub: 'Closed on Sundays',
-    gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
   },
 ]
 
@@ -185,26 +171,6 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Map placeholder */}
-      <section style={{ height: 300, position: 'relative', overflow: 'hidden', borderTop: '1px solid var(--color-border)' }}>
-        <div
-          style={{
-            width: '100%',
-            height: '100%',
-            background: 'linear-gradient(135deg, var(--color-bg-dark-2) 0%, var(--color-bg-dark-3) 100%)',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            gap: '0.75rem',
-          }}
-        >
-          <MapPin size={48} style={{ color: '#a5b4fc', opacity: 0.5 }} />
-          <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9375rem' }}>
-            Based in Bangalore, serving clients across India
-          </p>
-        </div>
-      </section>
     </div>
   )
 }
