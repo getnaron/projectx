@@ -33,6 +33,7 @@ export interface IndustryCategory {
   description: string
   route: string              // links to /templates/:category
   gradient: string           // CSS gradient for card
+  image?: string             // optional image path for card background
   count: number              // number of templates
 }
 
@@ -47,6 +48,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Grand venues and event hall websites that impress at every booking',
     route: '/templates/auditoriums',
     gradient: 'linear-gradient(135deg, #4facfe 0%, #00f2fe 100%)',
+    image: '/categories/auditoriums.png',
     count: 3,
   },
   {
@@ -56,6 +58,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Professional and trustworthy websites for medical practices',
     route: '/templates/clinics',
     gradient: 'linear-gradient(135deg, #30cfd0 0%, #330867 100%)',
+    image: '/categories/clinics.png',
     count: 2,
   },
   {
@@ -65,6 +68,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'High-energy fitness center websites that motivate clients',
     route: '/templates/gyms',
     gradient: 'linear-gradient(135deg, #f77062 0%, #fe5196 100%)',
+    image: '/categories/gyms.png',
     count: 2,
   },
   {
@@ -74,6 +78,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Stylish and glamorous websites for hair and beauty salons',
     route: '/templates/salons',
     gradient: 'linear-gradient(135deg, #fda085 0%, #f6d365 100%)',
+    image: '/categories/salons.png',
     count: 1,
   },
   {
@@ -83,6 +88,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Clean, modern portfolios for creatives and professionals',
     route: '/templates/personal',
     gradient: 'linear-gradient(135deg, #d299c2 0%, #fef9d7 100%)',
+    image: '/categories/personal.png',
     count: 2,
   },
   {
@@ -92,6 +98,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Dynamic event management and planning company websites',
     route: '/templates/events',
     gradient: 'linear-gradient(135deg, #89f7fe 0%, #66a6ff 100%)',
+    image: '/categories/events.png',
     count: 2,
   },
   {
@@ -101,6 +108,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Inspiring education and e-learning websites for institutions',
     route: '/templates/education',
     gradient: 'linear-gradient(135deg, #fddb92 0%, #d1fdff 100%)',
+    image: '/categories/education.png',
     count: 2,
   },
 ]
@@ -148,25 +156,15 @@ export const templates: Template[] = [
   // --- CLINICS ---
   {
     id: 'dental-clinic',
-    title: 'Dental Clinic',
+    title: 'Dental Works',
     category: 'clinics',
     categoryLabel: 'Clinics',
-    description: 'Clean and professional dental clinic website with appointment booking emphasis.',
-    image: 'linear-gradient(135deg, #e0f7fa 0%, #b2ebf2 100%)',
+    description: 'Premium dental clinic website with hero photo, 9 services, doctor team, technology showcase, FAQ, blog, and appointment booking modal.',
+    image: '/templates/clinics/dental-hero.png',
     route: '/templates/clinics/dental',
-    tags: ['Medical', 'Clean', 'Professional'],
-    accentColor: '#00acc1',
-  },
-  {
-    id: 'wellness-clinic',
-    title: 'Wellness Center',
-    category: 'clinics',
-    categoryLabel: 'Clinics',
-    description: 'Calming and holistic wellness center website with service and team showcase.',
-    image: 'linear-gradient(135deg, #a8e6cf 0%, #dcedc1 100%)',
-    route: '/templates/clinics/wellness',
-    tags: ['Wellness', 'Calm', 'Holistic'],
-    accentColor: '#27ae60',
+    tags: ['Medical', 'Premium', 'Appointments'],
+    accentColor: '#0F766E',
+    featured: true,
   },
 
   // --- GYMS ---

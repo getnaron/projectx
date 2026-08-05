@@ -330,51 +330,31 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0 }}
-            className="grid-auto-fit-sm"
-          >
-            {industryCategories.map((category, i) => (
-              <IndustryCard
-                key={category.id}
-                category={category}
-                animationDelay={i * 0.05}
-              />
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* ======================================================
-          FEATURED TEMPLATES
-      ====================================================== */}
-      <section className="section">
-        <div className="container">
-          <SectionTitle
-            badge="Featured Templates"
-            title="Hand-Picked for"
-            highlight="Maximum Impact"
-            subtitle="Our most popular templates — loved by business owners for their stunning designs and impressive conversion rates."
-          />
-          <motion.div
-            variants={staggerContainer}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, amount: 0 }}
             style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+              display: 'flex',
               gap: '1.5rem',
+              overflowX: 'auto',
+              paddingBottom: '1.5rem',
+              scrollSnapType: 'x mandatory',
+              WebkitOverflowScrolling: 'touch',
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none'
             }}
           >
-            {featuredTemplates.map((template, i) => (
-              <TemplateCard key={template.id} template={template} animationDelay={i * 0.08} />
+            <style>{`
+              .hide-scrollbar::-webkit-scrollbar {
+                display: none;
+              }
+            `}</style>
+            {industryCategories.map((category, i) => (
+              <div key={category.id} style={{ scrollSnapAlign: 'start', width: '260px', minWidth: '260px', flex: '0 0 auto' }} className="hide-scrollbar">
+                <IndustryCard
+                  category={category}
+                  animationDelay={i * 0.05}
+                />
+              </div>
             ))}
           </motion.div>
-          <div style={{ textAlign: 'center', marginTop: '3rem' }}>
-            <Link to="/templates" className="btn btn-secondary" style={{ fontSize: '1rem', padding: '0.875rem 2rem' }}>
-              View All Templates
-              <ChevronRight size={18} />
-            </Link>
-          </div>
         </div>
       </section>
 
