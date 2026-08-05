@@ -41,7 +41,7 @@ export default function IndustryCard({ category, animationDelay = 0 }: IndustryC
       <Link
         to={category.route}
         id={`industry-${category.id}`}
-        style={{ textDecoration: 'none', display: 'block', flex: 1, display: 'flex', flexDirection: 'column' }}
+        style={{ textDecoration: 'none', flex: 1, display: 'flex', flexDirection: 'column' }}
       >
         <motion.div
           whileHover={{ y: -5, scale: 1.01 }}

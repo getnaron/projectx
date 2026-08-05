@@ -43,6 +43,19 @@ export const clientWorks: ClientWork[] = [
     featured: true,
     year: '2025',
   },
+  {
+    id: 'rocode-academy',
+    name: 'Rocode Academy',
+    url: 'https://rocode.academy/',
+    industry: 'Education',
+    description: 'A sleek, interactive platform for Python, FastAPI, DBs, & GenAI mentorship by Adhwaith K — featuring track syllabi, live code previews, and direct demo booking.',
+    gradient: 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #4338CA 100%)',
+    accentColor: '#6366F1',
+    image: '/clients/rocode-academy.jpg',
+    tags: ['Education', 'Mentorship', 'GenAI', 'Python'],
+    featured: true,
+    year: '2026',
+  },
 ]
 
 /** Return only featured client works */
