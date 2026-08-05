@@ -187,15 +187,16 @@ export const templates: Template[] = [
 
   // --- PERSONAL ---
   {
-    id: 'developer-portfolio',
-    title: 'Developer Portfolio',
+    id: 'photographer-portfolio',
+    title: 'Photographer Portfolio',
     category: 'personal',
     categoryLabel: 'Personal Portfolio',
-    description: 'Sleek developer portfolio with skills, projects, and terminal-inspired aesthetics.',
-    image: 'linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%)',
-    route: '/templates/personal/developer',
-    tags: ['Developer', 'Tech', 'Dark'],
-    accentColor: '#00d2ff',
+    description: 'Sleek, image-centric portfolio for photographers with masonry gallery, pricing, and journal.',
+    image: 'url(https://images.unsplash.com/photo-1516035069371-29a1b244cc32?auto=format&fit=crop&q=80&w=800) center/cover no-repeat',
+    route: '/templates/personal/photographer',
+    tags: ['Photography', 'Dark', 'Gallery'],
+    accentColor: '#ffffff',
+    badge: 'New',
   },
 
   // --- EVENTS ---

@@ -39,6 +39,7 @@ const PhotographyPortfolio = lazy(() => import('./templates/photographers/portfo
 const WeddingPhotography = lazy(() => import('./templates/photographers/wedding'))
 const PersonalPortfolio = lazy(() => import('./templates/personal/developer'))
 const DesignerPortfolio = lazy(() => import('./templates/personal/designer'))
+const PhotographerPortfolio = lazy(() => import('./templates/personal/photographer'))
 const EventManagement = lazy(() => import('./templates/events/corporate'))
 const WeddingEvents = lazy(() => import('./templates/events/wedding'))
 const OnlineAcademy = lazy(() => import('./templates/education/academy'))
@@ -119,6 +120,7 @@ export default function App() {
           <Route path="/templates/photographers/wedding" element={<WeddingPhotography />} />
           <Route path="/templates/personal/developer" element={<PersonalPortfolio />} />
           <Route path="/templates/personal/designer" element={<DesignerPortfolio />} />
+          <Route path="/templates/personal/photographer" element={<PhotographerPortfolio />} />
           <Route path="/templates/events/corporate" element={<EventManagement />} />
           <Route path="/templates/events/wedding" element={<WeddingEvents />} />
           <Route path="/templates/education/academy" element={<OnlineAcademy />} />
