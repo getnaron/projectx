@@ -46,7 +46,7 @@ export const clientWorks: ClientWork[] = [
   {
     id: 'rocode-academy',
     name: 'Rocode Academy',
-    url: 'https://rocode.academy/',
+    url: 'https://rocode-zavi.onrender.com/',
     industry: 'Education',
     description: 'A sleek, interactive platform for Python, FastAPI, DBs, & GenAI mentorship by Adhwaith K — featuring track syllabi, live code previews, and direct demo booking.',
     gradient: 'linear-gradient(135deg, #0F172A 0%, #1E1B4B 50%, #4338CA 100%)',
