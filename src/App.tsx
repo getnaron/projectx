@@ -34,7 +34,6 @@ const WellnessClinic = lazy(() => import('./templates/clinics/wellness'))
 const PowerGym = lazy(() => import('./templates/gyms/power'))
 const YogaStudio = lazy(() => import('./templates/gyms/yoga'))
 const LuxurySalon = lazy(() => import('./templates/salons/luxury'))
-const BarberShop = lazy(() => import('./templates/salons/barber'))
 const PhotographyPortfolio = lazy(() => import('./templates/photographers/portfolio'))
 const WeddingPhotography = lazy(() => import('./templates/photographers/wedding'))
 const PersonalPortfolio = lazy(() => import('./templates/personal/developer'))
@@ -114,7 +113,6 @@ export default function App() {
           <Route path="/templates/gyms/power" element={<PowerGym />} />
           <Route path="/templates/gyms/yoga" element={<YogaStudio />} />
           <Route path="/templates/salons/luxury" element={<LuxurySalon />} />
-          <Route path="/templates/salons/barber" element={<BarberShop />} />
           <Route path="/templates/photographers/portfolio" element={<PhotographyPortfolio />} />
           <Route path="/templates/photographers/wedding" element={<WeddingPhotography />} />
           <Route path="/templates/personal/developer" element={<PersonalPortfolio />} />

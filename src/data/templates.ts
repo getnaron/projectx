@@ -74,7 +74,7 @@ export const industryCategories: IndustryCategory[] = [
     description: 'Stylish and glamorous websites for hair and beauty salons',
     route: '/templates/salons',
     gradient: 'linear-gradient(135deg, #fda085 0%, #f6d365 100%)',
-    count: 2,
+    count: 1,
   },
   {
     id: 'personal',
@@ -197,27 +197,17 @@ export const templates: Template[] = [
 
   // --- SALONS ---
   {
-    id: 'luxury-salon',
-    title: 'Luxury Salon',
+    id: 'salon',
+    title: 'Salon',
     category: 'salons',
     categoryLabel: 'Salons',
-    description: 'Glamorous beauty salon website with service menus and before/after galleries.',
-    image: 'linear-gradient(135deg, #1a0533 0%, #4a1045 100%)',
+    description: 'Luxury hair, beauty, and grooming salon website with service menus, pricing, gallery lightbox, and instant WhatsApp booking.',
+    image: 'url(https://images.unsplash.com/photo-1560066984-138dadb4c035?auto=format&fit=crop&q=80&w=800) center/cover no-repeat',
     route: '/templates/salons/luxury',
-    tags: ['Glamorous', 'Luxury', 'Beauty'],
-    accentColor: '#c0397b',
+    tags: ['Luxury', 'Hair & Beauty', 'Grooming', 'Gold Theme'],
+    accentColor: '#d4af37',
   },
-  {
-    id: 'barber-shop',
-    title: 'Barber Shop',
-    category: 'salons',
-    categoryLabel: 'Salons',
-    description: 'Classic yet modern barbershop website with booking, team, and price list sections.',
-    image: 'linear-gradient(135deg, #2c3e50 0%, #3498db 100%)',
-    route: '/templates/salons/barber',
-    tags: ['Classic', 'Modern', 'Men\'s'],
-    accentColor: '#3498db',
-  },
+
 
   // --- PERSONAL ---
   {
@@ -257,15 +247,16 @@ export const templates: Template[] = [
   },
   {
     id: 'wedding-events',
-    title: 'Wedding Planner',
+    title: 'Royal Events',
     category: 'events',
     categoryLabel: 'Event Management',
-    description: 'Elegant wedding planning company website with packages and real wedding galleries.',
-    image: 'linear-gradient(135deg, #fff1eb 0%, #ace0f9 100%)',
+    description: 'Premium luxury event management company website with portfolio, packages, inquiry form, and WhatsApp booking.',
+    image: 'url(https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&q=80&w=800) center/cover no-repeat',
     route: '/templates/events/wedding',
-    tags: ['Wedding', 'Romantic', 'Planning'],
+    tags: ['Luxury', 'Events', 'Wedding', 'Gold Theme'],
     featured: true,
-    accentColor: '#ace0f9',
+    accentColor: '#d4af37',
+    badge: 'New',
   },
 
   // --- EDUCATION ---
