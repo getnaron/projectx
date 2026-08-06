@@ -118,3 +118,24 @@ export const getServiceSchema = (serviceName: string, description: string, servi
     name: 'India',
   },
 })
+
+export const getTemplateProductSchema = (name: string, description: string, category: string, route: string) => ({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name: `${name} — Website Template`,
+  description: description,
+  category: category,
+  url: route.startsWith('http') ? route : `${SITE_URL}${route}`,
+  brand: {
+    '@type': 'Brand',
+    name: 'RivixoTech',
+  },
+  offers: {
+    '@type': 'Offer',
+    priceCurrency: 'INR',
+    price: '14999',
+    availability: 'https://schema.org/InStock',
+    url: `${SITE_URL}/pricing`,
+  },
+})
+

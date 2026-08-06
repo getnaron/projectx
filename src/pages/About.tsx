@@ -39,14 +39,13 @@ export default function About() {
           >
 
             <motion.h1 variants={fadeInUp} className="heading-xl" style={{ marginBottom: '1.5rem' }}>
-              We Build Websites That{' '}
-              <span className="gradient-text">Matter</span>
+              About RivixoTech — Website Development Company & <span className="gradient-text">Design Studio</span>
             </motion.h1>
             <motion.p variants={fadeInUp} style={{ fontSize: '1.125rem', color: 'var(--color-text-secondary)', lineHeight: 1.8, marginBottom: '1.25rem' }}>
-              RivixoTech was born out of frustration. In 2020, our founder Arjun walked into dozens of local businesses and saw the same thing: incredible products and services, held back by outdated or non-existent websites.
+              RivixoTech is a full-service website development company created to help small businesses succeed online. We specialize in custom web development, responsive website design, static websites, AI solutions, and SEO services.
             </motion.p>
             <motion.p variants={fadeInUp} style={{ fontSize: '1.0625rem', color: 'var(--color-text-secondary)', lineHeight: 1.8 }}>
-              Large agencies were charging ₹1-2 lakhs for websites that took 3+ months. Freelancers were unreliable. We decided to build a better option — a studio that combines agency quality with startup speed and small-business pricing.
+              Large agencies charge exorbitant prices for websites that take months to complete. We build high-performing, SEO-optimized web applications and websites with 7-day express delivery, transparent pricing, and 100% source code ownership.
             </motion.p>
           </motion.div>
         </div>

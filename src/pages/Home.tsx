@@ -144,9 +144,10 @@ export default function Home() {
   return (
     <div className="page-transition">
       <SEO
-        title="RivixoTech — Website Development Company | Web Design Kerala & India"
-        description="RivixoTech (Rivixo) is a top Website Development Company in Kerala & India. We craft high-speed, SEO-optimized, high-converting websites for small businesses, dental clinics, gyms, salons, & restaurants."
+        title="Website Development Company & Web Design Studio | RivixoTech"
+        description="RivixoTech is a premier Website Development Company in Kerala & India. We build high-speed, SEO-optimized static websites, responsive web applications, and custom software for small businesses."
         canonicalUrl="/"
+        keywords="Website Development Company, Website Design Company, Web Development Kerala, Website Development India, Custom Software Development, AI Solutions, Business Automation, UI/UX Design, Digital Marketing, SEO Services, Static Websites, Responsive Web Applications"
         schemas={[getOrganizationSchema(), getWebSiteSchema()]}
       />
       {/* ======================================================
@@ -198,8 +199,8 @@ export default function Home() {
 
             {/* Headline */}
             <motion.h1 variants={fadeInUp} className="heading-xl" style={{ maxWidth: 900, margin: 0 }}>
-              Beautiful Websites That{' '}
-              <span className="gradient-text">Grow Your Business</span>
+              Website Development Company &{' '}
+              <span className="gradient-text">Web Design Studio</span>
             </motion.h1>
 
             {/* Subheadline */}
@@ -208,13 +209,12 @@ export default function Home() {
               style={{
                 fontSize: 'clamp(1rem, 1.8vw, 1.2rem)',
                 color: 'var(--color-text-secondary)',
-                maxWidth: 540,
+                maxWidth: 620,
                 lineHeight: 1.75,
                 margin: 0,
               }}
             >
-              RivixoTech creates stunning, conversion-optimized websites for gyms,
-              salons, clinics, and 7 more industries — delivered in just 7 days.
+              RivixoTech is a leading Website Development Company. We build fast, SEO-optimized static websites, responsive web applications, and custom software for small businesses — delivered in just 7 days.
             </motion.p>
 
             {/* CTA buttons */}
@@ -427,7 +427,7 @@ export default function Home() {
               viewport={{ once: true, amount: 0 }}
               style={{ position: 'relative', height: '100%', minHeight: 400, borderRadius: '1.5rem', overflow: 'hidden', boxShadow: '0 24px 60px rgba(0,0,0,0.3)' }}
             >
-              <img src="/sections/why-us.png" alt="Business Results Dashboard" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
+              <img src="/sections/why-us.png" alt="RivixoTech Website Development & Business Growth Dashboard" loading="lazy" decoding="async" style={{ width: '100%', height: '100%', objectFit: 'cover', position: 'absolute', inset: 0 }} />
             </motion.div>
           </div>
         </div>

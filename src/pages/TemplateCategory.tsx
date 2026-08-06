@@ -3,9 +3,11 @@ import { motion } from 'framer-motion'
 import { ArrowLeft, ChevronRight } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import TemplateCard from '@/components/TemplateCard'
+import SEO from '@/components/SEO'
 import CTA from '@/components/CTA'
 import { getTemplatesByCategory, getCategoryById } from '@/data/templates'
 import { staggerContainer } from '@/utils/motion'
+import { getBreadcrumbSchema, getTemplateProductSchema } from '@/utils/schemaGenerator'
 
 /**
  * TemplateCategory — Dynamically renders all templates for a given category.
@@ -29,8 +31,25 @@ export default function TemplateCategory() {
     )
   }
 
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Templates', url: '/templates' },
+    { name: categoryData.label, url: `/templates/${categoryData.id}` },
+  ])
+
+  const productSchemas = categoryTemplates.map(t =>
+    getTemplateProductSchema(t.title, t.description, categoryData.label, t.route)
+  )
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title={`${categoryData.label} Website Templates & Web Design | RivixoTech`}
+        description={`Explore high-converting, responsive ${categoryData.label.toLowerCase()} website templates by RivixoTech. Delivered live in 7 days.`}
+        canonicalUrl={`/templates/${categoryData.id}`}
+        keywords={`${categoryData.label} Website Template, ${categoryData.label} Web Design, ${categoryData.label} Website Development`}
+        schemas={[breadcrumbSchema, ...productSchemas]}
+      />
       {/* Header */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">
@@ -45,6 +64,7 @@ export default function TemplateCategory() {
           </div>
 
           <SectionTitle
+            as="h1"
             badge={`${categoryTemplates.length} Templates`}
             title={`${categoryData.label}`}
             highlight="Websites"

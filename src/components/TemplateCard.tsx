@@ -152,6 +152,7 @@ export default function TemplateCard({ template, animationDelay = 0 }: TemplateC
         <Link
           to={template.route}
           id={`preview-${template.id}`}
+          aria-label={`Preview ${template.title} — ${template.categoryLabel} Website Template`}
           style={{
             marginTop: 'auto',
             display: 'flex',

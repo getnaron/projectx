@@ -79,7 +79,7 @@ export default function Footer() {
               <Logo height={48} />
             </Link>
             <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem', lineHeight: 1.7, marginBottom: '1.5rem' }}>
-              We craft beautiful, high-converting websites for small businesses that deserve to shine online.
+              RivixoTech builds high-performing, SEO-optimized websites, responsive web applications, and custom software for small businesses worldwide.
             </p>
             {/* Social links */}
             <div style={{ display: 'flex', gap: '0.625rem' }}>
@@ -87,7 +87,8 @@ export default function Footer() {
                 <motion.a
                   key={label}
                   href={href}
-                  aria-label={label}
+                  aria-label={`Follow RivixoTech on ${label}`}
+                  title={`RivixoTech on ${label}`}
                   whileHover={{ scale: 1.15, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                   style={{
@@ -119,7 +120,7 @@ export default function Footer() {
               viewport={{ once: true, amount: 0 }}
               transition={{ duration: 0.3, delay: groupIdx * 0.08 }}
             >
-              <h3
+              <h4
                 style={{
                   fontWeight: 700,
                   fontSize: '0.875rem',
@@ -130,7 +131,7 @@ export default function Footer() {
                 }}
               >
                 {groupLabel}
-              </h3>
+              </h4>
               <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
                 {links.map(link => (
                   <li key={link.label}>

@@ -6,7 +6,7 @@ import CTA from '@/components/CTA'
 import SEO from '@/components/SEO'
 import { staggerContainer } from '@/utils/motion'
 import { Check, X } from 'lucide-react'
-import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
+import { getBreadcrumbSchema, getFAQSchema } from '@/utils/schemaGenerator'
 
 const plans: PricingPlan[] = [
 
@@ -100,23 +100,26 @@ export default function Pricing() {
     { name: 'Home', url: '/' },
     { name: 'Pricing', url: '/pricing' },
   ])
+  const faqSchema = getFAQSchema(faqs)
 
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
       <SEO
         title="Website Development Pricing & Packages | RivixoTech"
-        description="Transparent website development packages starting at ₹27,999 and ₹45,999. Fast 7-day express delivery, 100% source code ownership, & zero hidden fees."
+        description="Transparent website development packages starting at ₹27,999. Fast 7-day delivery, 100% source code ownership, SEO optimization, and zero hidden fees."
         canonicalUrl="/pricing"
-        schemas={[breadcrumbSchema]}
+        keywords="Website Development Pricing, Website Design Packages, Web Development Cost India, Custom Software Development Price, Static Website Package, Responsive Web Application Cost"
+        schemas={[breadcrumbSchema, faqSchema]}
       />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">
           <SectionTitle
+            as="h1"
             badge="Transparent Pricing"
-            title="Simple, Honest"
+            title="Simple, Honest Website Development"
             highlight="Pricing"
-            subtitle="No hidden fees, no surprises. Choose the plan that fits your business and get started today."
+            subtitle="No hidden fees, no surprises. Choose the web development or design plan that fits your business goals."
           />
         </div>
       </section>

@@ -10,32 +10,32 @@ import FAQAccordion, { type FAQItem } from '@/components/FAQAccordion'
 import CTA from '@/components/CTA'
 import SEO from '@/components/SEO'
 import { staggerContainer, fadeInUp } from '@/utils/motion'
-import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
+import { getBreadcrumbSchema, getFAQSchema, getServiceSchema } from '@/utils/schemaGenerator'
 
 const services = [
   {
     icon: <Palette size={22} />,
-    title: 'Custom Website Design',
-    description: 'Bespoke designs crafted from scratch to reflect your brand\'s personality. Every element is intentionally placed to guide visitors toward conversion.',
+    title: 'Custom Website Development & Design',
+    description: 'Bespoke static websites and responsive web applications crafted from scratch. Every element is intentionally built with UI/UX design principles to convert visitors.',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
     image: '/features/premium-design.png',
-    deliverables: ['Custom mockups & wireframes', 'Brand color palette integration', 'Typography system', 'Mobile-first responsive layouts'],
+    deliverables: ['Custom UI/UX mockups & wireframes', 'Brand color palette & typography', 'SEO & Core Web Vitals optimization', 'Mobile-first responsive layouts'],
   },
   {
     icon: <Globe size={22} />,
-    title: 'Template Customization',
-    description: 'Love one of our templates? We take it and customize every detail to make it 100% yours — your colors, content, photos, and brand voice.',
+    title: 'Website Design & Template Customization',
+    description: 'We customize our industry-specific website templates with custom branding, responsive layouts, fast loading speeds, and optimized copy for your business.',
     gradient: 'linear-gradient(135deg, #0ea5e9, #2563eb)',
     image: '/features/responsive.png',
-    deliverables: ['Full color scheme customization', 'Content population', 'Logo & brand integration', 'Domain & hosting setup'],
+    deliverables: ['Full color scheme customization', 'SEO content population', 'Logo & brand integration', 'Domain & hosting setup'],
   },
   {
     icon: <Wrench size={22} />,
-    title: 'Website Maintenance',
-    description: 'Keep your website running smoothly with our monthly maintenance plans. Updates, backups, security monitoring, and content changes included.',
+    title: 'SEO Services & Website Maintenance',
+    description: 'Keep your web application and static website running fast and secure with our SEO services, technical monitoring, and monthly maintenance plans.',
     gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)',
     image: '/features/delivery.png',
-    deliverables: ['Monthly content updates', 'Plugin & software updates', 'Security monitoring', 'Daily automated backups'],
+    deliverables: ['Technical SEO & sitemap updates', 'Performance & speed optimization', 'Security monitoring', 'Daily automated backups'],
   },
 ]
 
@@ -96,22 +96,30 @@ export default function Services() {
     { name: 'Services', url: '/services' },
   ])
 
+  const serviceSchemas = services.map(s =>
+    getServiceSchema(s.title, s.description, '/services')
+  )
+
+  const faqSchema = getFAQSchema(faqs)
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
       <SEO
-        title="Website Development & Design Services | RivixoTech"
-        description="Explore custom website development services by RivixoTech. SEO-optimized, Core Web Vitals ready websites for dental clinics, gyms, salons, restaurants, & small businesses."
+        title="Web Development & Website Design Services | RivixoTech"
+        description="Custom Web Development, Website Design, SEO Services, UI/UX Design, and Website Maintenance by RivixoTech. High-speed, responsive websites for growing businesses."
         canonicalUrl="/services"
-        schemas={[breadcrumbSchema]}
+        keywords="Web Development, Website Design, Custom Software Development, AI Solutions, Business Automation, UI/UX Design, Digital Marketing, SEO Services, Static Websites, Responsive Web Applications"
+        schemas={[breadcrumbSchema, faqSchema, ...serviceSchemas]}
       />
       {/* Hero */}
       <section style={{ padding: '4rem 0', position: 'relative', overflow: 'hidden' }}>
         <div className="container">
           <SectionTitle
+            as="h1"
             badge="What We Offer"
-            title="Services That Drive"
+            title="Website Development & Design Services That Drive"
             highlight="Real Results"
-            subtitle="We offer a complete suite of web services for small businesses — from design and development to SEO, maintenance, and beyond."
+            subtitle="We offer a complete suite of website development services — from custom web design and UI/UX to technical SEO, performance optimization, and maintenance."
           />
         </div>
       </section>
@@ -160,7 +168,9 @@ export default function Services() {
                 <div style={{ position: 'relative', height: 220, overflow: 'hidden' }}>
                   <img 
                     src={service.image} 
-                    alt={service.title} 
+                    alt={`RivixoTech ${service.title}`}
+                    loading="lazy"
+                    decoding="async" 
                     style={{ width: '100%', height: '100%', objectFit: 'cover' }} 
                   />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, var(--color-surface) 0%, transparent 100%)' }} />

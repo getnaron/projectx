@@ -13,12 +13,13 @@ export default function Privacy() {
         title="Privacy Policy | RivixoTech"
         description="Privacy Policy for RivixoTech website development and design services."
         canonicalUrl="/privacy"
-        robots="noindex, follow"
+        robots="index, follow"
       />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container" style={{ maxWidth: 900 }}>
           <SectionTitle
+            as="h1"
             badge="Legal & Compliance"
             title="Privacy"
             highlight="Policy"

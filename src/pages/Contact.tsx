@@ -35,14 +35,16 @@ export default function Contact() {
         title="Contact RivixoTech — Get a Free Website Proposal"
         description="Get in touch with RivixoTech. Request a free website proposal, consultation, or custom quote for your business website."
         canonicalUrl="/contact"
+        keywords="Contact RivixoTech, Website Proposal, Custom Website Quote, Website Development Consultation, Web Design Services India"
         schemas={[breadcrumbSchema]}
       />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">
           <SectionTitle
+            as="h1"
             badge="Get In Touch"
-            title="Let's Start Your"
+            title="Let's Start Your Website"
             highlight="Project Today"
             subtitle="Ready to transform your online presence? Fill out the form or reach out directly. We typically respond within 4 hours."
           />

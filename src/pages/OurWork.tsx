@@ -28,8 +28,10 @@ export default function OurWork() {
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">
           <SectionTitle
-            title="Real Websites We've"
+            as="h1"
+            title="Real Website Development Projects We've"
             highlight="Built for Clients"
+            subtitle="Browse real, live websites engineered by RivixoTech for businesses across India and worldwide."
           />
 
           {/* Client work grid */}

@@ -9,6 +9,7 @@ interface SectionTitleProps {
   subtitle?: string
   align?: 'left' | 'center' | 'right'
   className?: string
+  as?: 'h1' | 'h2' | 'h3' | 'h4'
 }
 
 /**
@@ -22,6 +23,7 @@ export default function SectionTitle({
   subtitle,
   align = 'center',
   className,
+  as: HeadingTag = 'h2',
 }: SectionTitleProps) {
   const alignClasses = {
     left: 'text-left items-start',
@@ -51,13 +53,12 @@ export default function SectionTitle({
       className={cn('flex flex-col gap-3 mb-12', alignClasses[align], className)}
     >
 
-      <motion.h2
-        variants={fadeInUp}
+      <HeadingTag
         className="heading-lg"
         style={{ color: 'var(--color-text-primary)' }}
       >
         {renderTitle()}
-      </motion.h2>
+      </HeadingTag>
       {subtitle && (
         <motion.p
           variants={fadeInUp}

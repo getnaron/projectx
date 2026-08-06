@@ -13,12 +13,13 @@ export default function Terms() {
         title="Terms of Service | RivixoTech"
         description="Terms of Service and Client Agreement for RivixoTech web design and development services."
         canonicalUrl="/terms"
-        robots="noindex, follow"
+        robots="index, follow"
       />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container" style={{ maxWidth: 900 }}>
           <SectionTitle
+            as="h1"
             badge="Legal Agreement"
             title="Terms of"
             highlight="Service"

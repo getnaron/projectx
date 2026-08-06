@@ -7,7 +7,7 @@ import CTA from '@/components/CTA'
 import SEO from '@/components/SEO'
 import { templates, industryCategories } from '@/data/templates'
 import { staggerContainer } from '@/utils/motion'
-import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
+import { getBreadcrumbSchema, getTemplateProductSchema } from '@/utils/schemaGenerator'
 
 export default function Templates() {
   const [activeCategory, setActiveCategory] = useState<string>('all')
@@ -17,6 +17,10 @@ export default function Templates() {
     { name: 'Home', url: '/' },
     { name: 'Templates', url: '/templates' },
   ])
+
+  const templateProductSchemas = templates.slice(0, 10).map(t =>
+    getTemplateProductSchema(t.title, t.description, t.categoryLabel, t.route)
+  )
 
   // Filter templates
   const filteredTemplates = templates.filter(t => {
@@ -34,19 +38,21 @@ export default function Templates() {
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
       <SEO
-        title="Website Templates & Industry Designs | RivixoTech"
-        description="Browse premium website templates for clinics, gyms, salons, hotels, auditoriums, and small businesses engineered by RivixoTech."
+        title="Website Templates & Industry Web Designs | RivixoTech"
+        description="Browse premium website templates for clinics, gyms, salons, hotels, auditoriums, and small businesses engineered by RivixoTech for speed, responsiveness, and conversions."
         canonicalUrl="/templates"
-        schemas={[breadcrumbSchema]}
+        keywords="Website Templates, Industry Web Designs, Static Website Templates, Dental Clinic Template, Gym Website Design, Salon Website Template, Restaurant Website Template"
+        schemas={[breadcrumbSchema, ...templateProductSchemas]}
       />
       {/* Header */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">
           <SectionTitle
+            as="h1"
             badge="Template Library"
-            title="Browse All"
+            title="Browse Industry Website"
             highlight="Templates"
-            subtitle={`${templates.length} stunning website templates across 7 industries. Click any template to see a full live preview.`}
+            subtitle={`${templates.length} stunning website templates engineered for small businesses. Click any template to see a full live preview.`}
           />
 
           {/* Search */}

@@ -14,7 +14,9 @@ export default function Logo({ height = 40, className = '', style = {}, variant 
     return (
       <img
         src="/logo-emblem.png"
-        alt="RivixoTech Emblem"
+        alt="RivixoTech — Website Development Company Emblem"
+        fetchPriority="high"
+        decoding="async"
         className={className}
         style={{
           height,
@@ -30,7 +32,9 @@ export default function Logo({ height = 40, className = '', style = {}, variant 
   return (
     <img
       src={isDark ? '/logo-dark.png' : '/logo-light.png'}
-      alt="RivixoTech Logo"
+      alt="RivixoTech — Website Development Company & Web Design Studio"
+      fetchPriority="high"
+      decoding="async"
       className={className}
       style={{
         height,
