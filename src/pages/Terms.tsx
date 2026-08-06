@@ -146,7 +146,7 @@ export default function Terms() {
                 <FileText size={18} color="#38bdf8" /> Inquiries Regarding Terms
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                If you have any questions or require custom NDA terms prior to initiating a project, please reach out to us at <strong>legal@rivixotech.in</strong>.
+                If you have any questions or require custom NDA terms prior to initiating a project, please reach out to us at <strong>rivixotech@gmail.com</strong>.
               </p>
             </div>
           </div>

@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { MessageCircle } from 'lucide-react'
 
 export default function FloatingWhatsApp() {
-  const whatsappNumber = '919000000000'
+  const whatsappNumber = '917306001675'
   const defaultText = encodeURIComponent(
     'Hello RivixoTech! I visited your website and would like a free website development quote for my business.'
   )

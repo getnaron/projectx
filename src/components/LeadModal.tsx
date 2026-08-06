@@ -18,13 +18,41 @@ export default function LeadModal({ isOpen, onClose, initialSubject }: LeadModal
   })
   const [submitted, setSubmitted] = useState(false)
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const [loading, setLoading] = useState(false)
+
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    setSubmitted(true)
-    setTimeout(() => {
-      setSubmitted(false)
-      onClose()
-    }, 2500)
+    setLoading(true)
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '5a818e04-ed48-43bd-baee-e7dda6d441fb'
+
+    try {
+      await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: formData.name,
+          phone: formData.phone,
+          email: formData.email || 'Not provided',
+          subject: `New Proposal Request from ${formData.name} — RivixoTech`,
+          requirement: formData.industry,
+          from_name: 'RivixoTech Website Proposal Modal',
+        }),
+      })
+    } catch (err) {
+      console.error('LeadModal submission error:', err)
+    } finally {
+      setLoading(false)
+      setSubmitted(true)
+      setTimeout(() => {
+        setSubmitted(false)
+        onClose()
+      }, 3000)
+    }
   }
 
   return (
@@ -139,7 +167,7 @@ export default function LeadModal({ isOpen, onClose, initialSubject }: LeadModal
                       <input
                         type="tel"
                         required
-                        placeholder="+91 90000 00000"
+                        placeholder="+91 98765 43210"
                         value={formData.phone}
                         onChange={e => setFormData({ ...formData, phone: e.target.value })}
                         style={{

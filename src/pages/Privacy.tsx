@@ -138,7 +138,7 @@ export default function Privacy() {
                 <Mail size={18} color="#38bdf8" /> Contact Privacy Officer
               </h3>
               <p style={{ fontSize: '0.9rem', color: 'var(--color-text-muted)', margin: 0 }}>
-                For any privacy concerns, data requests, or compliance inquiries, please email our team at <strong>privacy@rivixotech.in</strong> or contact us via our official support channels.
+                For any privacy concerns, data requests, or compliance inquiries, please email our team at <strong>rivixotech@gmail.com</strong> or contact us via our official support channels.
               </p>
             </div>
           </div>

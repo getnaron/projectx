@@ -34,10 +34,8 @@ export default function ContactForm() {
       newErrors.email = 'Please enter a valid email address'
     }
 
-    // Indian Phone Number Validation
-    if (!form.phone.trim()) {
-      newErrors.phone = 'Phone number is required'
-    } else {
+    // Indian Phone Number Validation (Optional)
+    if (form.phone.trim()) {
       const cleanPhone = form.phone.replace(/[\s-]/g, '')
       if (!/^(?:\+91)?[6-9]\d{9}$/.test(cleanPhone)) {
         newErrors.phone = 'Please enter a valid 10-digit phone number'
@@ -53,10 +51,55 @@ export default function ContactForm() {
     e.preventDefault()
     if (!validate()) return
     setLoading(true)
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500))
-    setLoading(false)
-    setSubmitted(true)
+
+    const accessKey = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY || '5a818e04-ed48-43bd-baee-e7dda6d441fb'
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          name: form.name,
+          email: form.email,
+          phone: form.phone || 'Not provided',
+          company: form.company || 'Not provided',
+          service: form.service || 'General Inquiry',
+          message: form.message,
+          subject: `New Contact Request from ${form.name} — RivixoTech`,
+          from_name: 'RivixoTech Website',
+        }),
+      })
+
+      const result = await response.json()
+      if (result.success) {
+        setSubmitted(true)
+      } else {
+        console.warn('Web3Forms notice:', result.message)
+        // Fallback: Open mailto link if Web3Forms key is placeholder
+        const mailtoUrl = `mailto:rivixotech@gmail.com?subject=${encodeURIComponent(
+          `New Contact Inquiry from ${form.name}`
+        )}&body=${encodeURIComponent(
+          `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nBusiness: ${form.company || 'N/A'}\nService: ${form.service || 'General Inquiry'}\n\nMessage:\n${form.message}`
+        )}`
+        window.location.href = mailtoUrl
+        setSubmitted(true)
+      }
+    } catch (err) {
+      console.error('Failed to send message via Web3Forms:', err)
+      const mailtoUrl = `mailto:rivixotech@gmail.com?subject=${encodeURIComponent(
+        `New Contact Inquiry from ${form.name}`
+      )}&body=${encodeURIComponent(
+        `Name: ${form.name}\nEmail: ${form.email}\nPhone: ${form.phone || 'N/A'}\nBusiness: ${form.company || 'N/A'}\nService: ${form.service || 'General Inquiry'}\n\nMessage:\n${form.message}`
+      )}`
+      window.location.href = mailtoUrl
+      setSubmitted(true)
+    } finally {
+      setLoading(false)
+    }
   }
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
@@ -218,7 +261,7 @@ export default function ContactForm() {
             type="tel"
             value={form.phone}
             onChange={handleChange}
-            placeholder="+91 00000 00000"
+            placeholder="+91 98765 43210 (Optional)"
             style={{ ...inputStyle, borderColor: errors.phone ? '#f87171' : 'var(--color-border)' }}
             onFocus={e => e.currentTarget.style.borderColor = 'rgba(99,102,241,0.6)'}
             onBlur={e => e.currentTarget.style.borderColor = errors.phone ? '#f87171' : 'var(--color-border)'}

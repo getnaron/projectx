@@ -16,8 +16,8 @@ export const getOrganizationSchema = () => ({
   image: `${SITE_URL}/og-image.jpg`,
   description:
     'RivixoTech is a leading website design and development company in Kerala & India, crafting high-performance, conversion-optimized, fast websites for small businesses.',
-  telephone: '+919000000000',
-  email: 'hello@rivixotech.in',
+  telephone: '+917306001675',
+  email: 'rivixotech@gmail.com',
   priceRange: '₹₹',
   address: {
     '@type': 'PostalAddress',

@@ -1,5 +1,5 @@
 import { motion } from 'framer-motion'
-import { Mail, Phone, MessageSquare, Camera, Share2, Users } from 'lucide-react'
+import { Mail, MessageSquare, Camera, Share2, Users } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ContactForm from '@/components/ContactForm'
 import SEO from '@/components/SEO'
@@ -10,16 +10,16 @@ const contactInfo = [
   {
     icon: <Mail size={20} />,
     label: 'Email Us',
-    value: 'hello@rivixotech.in',
+    value: 'rivixotech@gmail.com',
     sub: 'We reply within 4 hours',
     gradient: 'linear-gradient(135deg, #6366f1, #8b5cf6)',
   },
   {
-    icon: <Phone size={20} />,
-    label: 'Call Us',
-    value: '+91 00000 00000',
-    sub: 'Quick response on phone & WhatsApp',
-    gradient: 'linear-gradient(135deg, #22c55e, #16a34a)',
+    icon: <MessageSquare size={20} />,
+    label: 'WhatsApp Us',
+    value: '+91 73060 01675',
+    sub: 'Quick response on WhatsApp',
+    gradient: 'linear-gradient(135deg, #25D366, #128C7E)',
   },
 ]
 
@@ -119,7 +119,7 @@ export default function Contact() {
               {/* WhatsApp CTA */}
               <motion.a
                 variants={fadeInUp}
-                href="https://wa.me/919876543210"
+                href="https://wa.me/917306001675"
                 target="_blank"
                 rel="noopener noreferrer"
                 whileHover={{ scale: 1.02, y: -2 }}
