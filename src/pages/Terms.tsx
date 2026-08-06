@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionTitle from '@/components/ui/SectionTitle'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { FileText, ShieldAlert, CheckCircle2, Scale, AlertCircle } from 'lucide-react'
 
 export default function Terms() {
@@ -8,6 +9,12 @@ export default function Terms() {
 
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Terms of Service | RivixoTech"
+        description="Terms of Service and Client Agreement for RivixoTech web design and development services."
+        canonicalUrl="/terms"
+        robots="noindex, follow"
+      />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container" style={{ maxWidth: 900 }}>

@@ -3,12 +3,25 @@ import { Globe, ArrowUpRight } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ClientWorkCard from '@/components/ClientWorkCard'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { clientWorks } from '@/data/clientWorks'
 import { staggerContainer } from '@/utils/motion'
+import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 export default function OurWork() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Our Work', url: '/our-work' },
+  ])
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Our Work & Portfolio Showcase | RivixoTech Client Websites"
+        description="Explore real website development projects engineered by RivixoTech for dental clinics, gyms, salons, resorts, and small businesses."
+        canonicalUrl="/our-work"
+        schemas={[breadcrumbSchema]}
+      />
       {/* ======================================================
           HEADER
       ====================================================== */}

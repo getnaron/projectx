@@ -12,9 +12,11 @@ import TemplateCard from '@/components/TemplateCard'
 import TestimonialCard, { type Testimonial } from '@/components/TestimonialCard'
 import ClientWorkCard from '@/components/ClientWorkCard'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { industryCategories, getFeaturedTemplates } from '@/data/templates'
 import { getFeaturedClientWorks } from '@/data/clientWorks'
 import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/utils/motion'
+import { getOrganizationSchema, getWebSiteSchema } from '@/utils/schemaGenerator'
 
 // ============================================================
 // Static Data
@@ -137,9 +139,16 @@ const whyUs = [
 // ============================================================
 export default function Home() {
   const featuredTemplates = getFeaturedTemplates().slice(0, 6)
+  const featuredClientWorks = getFeaturedClientWorks().slice(0, 3)
 
   return (
     <div className="page-transition">
+      <SEO
+        title="RivixoTech — Website Development Company | Web Design Kerala & India"
+        description="RivixoTech (Rivixo) is a top Website Development Company in Kerala & India. We craft high-speed, SEO-optimized, high-converting websites for small businesses, dental clinics, gyms, salons, & restaurants."
+        canonicalUrl="/"
+        schemas={[getOrganizationSchema(), getWebSiteSchema()]}
+      />
       {/* ======================================================
           HERO SECTION
       ====================================================== */}

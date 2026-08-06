@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import SectionTitle from '@/components/ui/SectionTitle'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { ShieldCheck, Lock, Eye, FileText, Mail } from 'lucide-react'
 
 export default function Privacy() {
@@ -8,6 +9,12 @@ export default function Privacy() {
 
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Privacy Policy | RivixoTech"
+        description="Privacy Policy for RivixoTech website development and design services."
+        canonicalUrl="/privacy"
+        robots="noindex, follow"
+      />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container" style={{ maxWidth: 900 }}>

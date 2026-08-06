@@ -3,8 +3,10 @@ import SectionTitle from '@/components/ui/SectionTitle'
 import PricingCard, { type PricingPlan } from '@/components/PricingCard'
 import FAQAccordion, { type FAQItem } from '@/components/FAQAccordion'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { staggerContainer } from '@/utils/motion'
 import { Check, X } from 'lucide-react'
+import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 const plans: PricingPlan[] = [
 
@@ -94,8 +96,19 @@ function ComparisonCell({ value }: { value: string | boolean | undefined }) {
 }
 
 export default function Pricing() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Pricing', url: '/pricing' },
+  ])
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Website Development Pricing & Packages | RivixoTech"
+        description="Transparent website development packages starting at ₹27,999 and ₹45,999. Fast 7-day express delivery, 100% source code ownership, & zero hidden fees."
+        canonicalUrl="/pricing"
+        schemas={[breadcrumbSchema]}
+      />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">

@@ -4,12 +4,19 @@ import { Search, Filter, LayoutGrid } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import TemplateCard from '@/components/TemplateCard'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { templates, industryCategories } from '@/data/templates'
 import { staggerContainer } from '@/utils/motion'
+import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 export default function Templates() {
   const [activeCategory, setActiveCategory] = useState<string>('all')
   const [searchQuery, setSearchQuery] = useState('')
+
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Templates', url: '/templates' },
+  ])
 
   // Filter templates
   const filteredTemplates = templates.filter(t => {
@@ -26,6 +33,12 @@ export default function Templates() {
 
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Website Templates & Industry Designs | RivixoTech"
+        description="Browse premium website templates for clinics, gyms, salons, hotels, auditoriums, and small businesses engineered by RivixoTech."
+        canonicalUrl="/templates"
+        schemas={[breadcrumbSchema]}
+      />
       {/* Header */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">

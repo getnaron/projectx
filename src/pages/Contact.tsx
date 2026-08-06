@@ -2,7 +2,9 @@ import { motion } from 'framer-motion'
 import { Mail, Phone, MessageSquare, Camera, Share2, Users } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import ContactForm from '@/components/ContactForm'
+import SEO from '@/components/SEO'
 import { staggerContainer, fadeInUp } from '@/utils/motion'
+import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 const contactInfo = [
   {
@@ -22,8 +24,19 @@ const contactInfo = [
 ]
 
 export default function Contact() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Contact', url: '/contact' },
+  ])
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Contact RivixoTech — Get a Free Website Proposal"
+        description="Get in touch with RivixoTech. Request a free website proposal, consultation, or custom quote for your business website."
+        canonicalUrl="/contact"
+        schemas={[breadcrumbSchema]}
+      />
       {/* Hero */}
       <section style={{ padding: '4rem 0 2rem' }}>
         <div className="container">

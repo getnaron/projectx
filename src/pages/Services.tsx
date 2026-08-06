@@ -8,7 +8,9 @@ import SectionTitle from '@/components/ui/SectionTitle'
 import FeatureCard from '@/components/FeatureCard'
 import FAQAccordion, { type FAQItem } from '@/components/FAQAccordion'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { staggerContainer, fadeInUp } from '@/utils/motion'
+import { getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 const services = [
   {
@@ -89,8 +91,19 @@ const faqs: FAQItem[] = [
 ]
 
 export default function Services() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'Services', url: '/services' },
+  ])
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="Website Development & Design Services | RivixoTech"
+        description="Explore custom website development services by RivixoTech. SEO-optimized, Core Web Vitals ready websites for dental clinics, gyms, salons, restaurants, & small businesses."
+        canonicalUrl="/services"
+        schemas={[breadcrumbSchema]}
+      />
       {/* Hero */}
       <section style={{ padding: '4rem 0', position: 'relative', overflow: 'hidden' }}>
         <div className="container">

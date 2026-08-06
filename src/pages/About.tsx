@@ -2,8 +2,9 @@ import { motion } from 'framer-motion'
 import { Sparkles, Target, Heart, Rocket, Users, Globe, Award } from 'lucide-react'
 import SectionTitle from '@/components/ui/SectionTitle'
 import CTA from '@/components/CTA'
+import SEO from '@/components/SEO'
 import { staggerContainer, fadeInUp, slideInLeft, slideInRight } from '@/utils/motion'
-
+import { getOrganizationSchema, getBreadcrumbSchema } from '@/utils/schemaGenerator'
 
 const values = [
   { icon: <Heart size={22} />, title: 'Small Business First', description: 'We started RivixoTech specifically to help small businesses compete. Every decision we make is with your success in mind.', gradient: 'linear-gradient(135deg, #ec4899, #be185d)' },
@@ -12,10 +13,20 @@ const values = [
   { icon: <Rocket size={22} />, title: 'Speed Is a Feature', description: 'We move fast without cutting corners. 7-day delivery isn\'t a gimmick — it\'s a promise we stand behind on every project.', gradient: 'linear-gradient(135deg, #f59e0b, #ef4444)' },
 ]
 
-
 export default function About() {
+  const breadcrumbSchema = getBreadcrumbSchema([
+    { name: 'Home', url: '/' },
+    { name: 'About', url: '/about' },
+  ])
+
   return (
     <div className="page-transition" style={{ paddingTop: '6rem' }}>
+      <SEO
+        title="About RivixoTech — Top Website Development Company"
+        description="Learn about RivixoTech (Rivixo), a top Website Development & Design Company based in Kerala & India. We craft high-speed, conversion-ready websites for small businesses."
+        canonicalUrl="/about"
+        schemas={[getOrganizationSchema(), breadcrumbSchema]}
+      />
       {/* Hero */}
       <section style={{ padding: '5rem 0', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: 'radial-gradient(circle, rgba(99,102,241,0.15) 0%, transparent 70%)', filter: 'blur(40px)' }} />

@@ -19,8 +19,6 @@ const navLinks = [
 ]
 
 // ============================================================
-// Navbar Component
-// ============================================================
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
