@@ -1,6 +1,7 @@
+import { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { motion } from 'framer-motion'
-import { Star, MapPin, Phone, Mail, Wifi, Car, Utensils, Dumbbell, ArrowRight, ChevronDown, Check } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import { Star, MapPin, Phone, Mail, Wifi, Car, Utensils, Dumbbell, ArrowRight, ChevronDown, Check, Menu, X } from 'lucide-react'
 import PreviewBackBar from '@/components/PreviewBackBar'
 
 // ============================================================
@@ -31,8 +32,10 @@ const TESTIMONIALS = [
 ]
 
 export default function LuxuryHotelTemplate() {
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
+
   return (
-    <div style={{ background: '#0a0a12', color: '#f0ead6', fontFamily: 'Georgia, serif', minHeight: '100vh' }}>
+    <div style={{ background: '#0a0a12', color: '#f0ead6', fontFamily: 'Georgia, serif', minHeight: '100vh', overflowX: 'hidden' }}>
       {/* Preview back bar */}
       <PreviewBackBar
         templateName="Luxury Hotel"
@@ -46,26 +49,28 @@ export default function LuxuryHotelTemplate() {
       <nav
         style={{
           position: 'fixed',
-          top: 40,
+          top: 44,
           left: 0,
           right: 0,
           zIndex: 100,
-          padding: '1rem 2.5rem',
+          padding: '0.75rem 1.25rem',
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
-          background: 'rgba(10, 10, 18, 0.8)',
+          background: 'rgba(10, 10, 18, 0.9)',
           backdropFilter: 'blur(20px)',
           borderBottom: '1px solid rgba(201, 168, 76, 0.15)',
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
           <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#c9a84c' }} />
-          <span style={{ fontWeight: 700, fontSize: '1.125rem', letterSpacing: '0.12em', textTransform: 'uppercase', color: '#f0ead6' }}>
+          <span style={{ fontWeight: 700, fontSize: '1rem', letterSpacing: '0.1em', textTransform: 'uppercase', color: '#f0ead6' }}>
             Grand Imperial
           </span>
         </div>
-        <div style={{ display: 'flex', gap: '2rem' }}>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex" style={{ gap: '2rem', alignItems: 'center' }}>
           {NAV_ITEMS.map(item => (
             <a key={item} href={`#${item.toLowerCase()}`}
               style={{ color: 'rgba(240, 234, 214, 0.7)', textDecoration: 'none', fontSize: '0.875rem', letterSpacing: '0.08em', transition: 'color 0.2s' }}
@@ -75,33 +80,56 @@ export default function LuxuryHotelTemplate() {
               {item}
             </a>
           ))}
+          <a href="#contact"
+            style={{
+              padding: '0.45rem 1.25rem',
+              border: '1px solid #c9a84c',
+              color: '#c9a84c',
+              textDecoration: 'none',
+              fontSize: '0.8125rem',
+              letterSpacing: '0.1em',
+              textTransform: 'uppercase',
+              borderRadius: 4,
+            }}
+          >
+            Book Suite
+          </a>
         </div>
-        <a href="#contact"
-          style={{
-            padding: '0.5rem 1.5rem',
-            border: '1px solid #c9a84c',
-            color: '#c9a84c',
-            textDecoration: 'none',
-            fontSize: '0.8125rem',
-            letterSpacing: '0.1em',
-            textTransform: 'uppercase',
-            transition: 'all 0.2s',
-            borderRadius: 4,
-          }}
-          onMouseEnter={e => {
-            const el = e.currentTarget as HTMLAnchorElement
-            el.style.background = '#c9a84c'
-            el.style.color = '#0a0a12'
-          }}
-          onMouseLeave={e => {
-            const el = e.currentTarget as HTMLAnchorElement
-            el.style.background = 'transparent'
-            el.style.color = '#c9a84c'
-          }}
-        >
-          Book Now
-        </a>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: '#c9a84c', cursor: 'pointer', padding: '0.25rem' }}>
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              style={{
+                position: 'absolute', top: '100%', left: 0, right: 0,
+                background: '#0a0a12', borderBottom: '1px solid rgba(201, 168, 76, 0.2)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.5)', padding: '1rem 1.25rem',
+                display: 'flex', flexDirection: 'column', gap: '0.85rem'
+              }}
+            >
+              {NAV_ITEMS.map(item => (
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} style={{ color: '#f0ead6', textDecoration: 'none', fontSize: '0.9rem', letterSpacing: '0.08em' }}>
+                  {item}
+                </a>
+              ))}
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} style={{ border: '1px solid #c9a84c', color: '#c9a84c', textDecoration: 'none', padding: '0.5rem', textAlign: 'center', borderRadius: 4, fontSize: '0.85rem', letterSpacing: '0.1em', marginTop: '0.25rem' }}>
+                Book Suite
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
+
 
       {/* ====================================================
           HERO

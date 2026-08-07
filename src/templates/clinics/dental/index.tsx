@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   Phone, Mail, MapPin, Clock, Star, ChevronDown, ChevronUp,
-  Check, ArrowRight, Shield, Zap, Heart, Award, Microscope, CalendarDays, X,
+  Check, ArrowRight, Shield, Zap, Heart, Award, Microscope, CalendarDays, X, Menu,
 } from 'lucide-react'
 import PreviewBackBar from '@/components/PreviewBackBar'
 
@@ -101,22 +101,25 @@ function Stars() {
 export default function DentalWorksTemplate() {
   const [openFaq, setOpenFaq] = useState<number | null>(null)
   const [showModal, setShowModal] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
     <div style={{ fontFamily: "'Inter', sans-serif", background: '#fff', color: '#1e293b', overflowX: 'hidden' }}>
       <PreviewBackBar templateName="Dental Clinic" category="Clinics" categoryRoute="/templates/clinics" />
 
       {/* NAV */}
-      <nav style={{ position: 'fixed', top: 40, left: 0, right: 0, zIndex: 200, background: 'rgba(255,255,255,0.93)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(15,118,110,0.12)', padding: '0 2rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 64, boxShadow: '0 2px 20px rgba(15,118,110,0.08)' }}>
+      <nav style={{ position: 'fixed', top: 44, left: 0, right: 0, zIndex: 200, background: 'rgba(255,255,255,0.95)', backdropFilter: 'blur(20px)', borderBottom: '1px solid rgba(15,118,110,0.12)', padding: '0 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between', height: 60, boxShadow: '0 2px 20px rgba(15,118,110,0.08)' }}>
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem' }}>
-          <div style={{ width: 36, height: 36, borderRadius: 10, background: `linear-gradient(135deg,${T},${TA})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-            <span style={{ color: '#fff', fontSize: 18 }}>🦷</span>
+          <div style={{ width: 34, height: 34, borderRadius: 10, background: `linear-gradient(135deg,${T},${TA})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <span style={{ color: '#fff', fontSize: 16 }}>🦷</span>
           </div>
-          <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.125rem', color: T }}>
+          <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.05rem', color: T }}>
             DENTAL <span style={{ color: AC }}>WORKS</span>
           </span>
         </div>
-        <div style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
+
+        {/* Desktop links */}
+        <div className="hidden md:flex" style={{ gap: '1.5rem', alignItems: 'center' }}>
           {NAV.map(item => (
             <a key={item} href={`#${item.toLowerCase()}`} style={{ color: '#475569', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
               onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.color = T }}
@@ -124,16 +127,49 @@ export default function DentalWorksTemplate() {
               {item}
             </a>
           ))}
-          <button onClick={() => setShowModal(true)} style={{ background: `linear-gradient(135deg,${T},${TA})`, color: '#fff', border: 'none', borderRadius: 999, padding: '0.5rem 1.25rem', fontWeight: 600, fontSize: '0.875rem', cursor: 'pointer', boxShadow: `0 4px 14px rgba(15,118,110,0.35)` }}>
+          <button onClick={() => setShowModal(true)} style={{ background: `linear-gradient(135deg,${T},${TA})`, color: '#fff', border: 'none', borderRadius: 999, padding: '0.45rem 1.15rem', fontWeight: 600, fontSize: '0.85rem', cursor: 'pointer', boxShadow: `0 4px 14px rgba(15,118,110,0.35)` }}>
             Book Appointment
           </button>
         </div>
+
+        {/* Mobile toggle button */}
+        <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <button onClick={() => setShowModal(true)} style={{ background: `linear-gradient(135deg,${T},${TA})`, color: '#fff', border: 'none', borderRadius: 999, padding: '0.35rem 0.75rem', fontWeight: 600, fontSize: '0.75rem', cursor: 'pointer' }}>
+            Book
+          </button>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: T, cursor: 'pointer', padding: '0.25rem' }}>
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              style={{
+                position: 'absolute', top: '100%', left: 0, right: 0,
+                background: '#fff', borderBottom: '1px solid rgba(15,118,110,0.15)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.1)', padding: '1rem 1.5rem',
+                display: 'flex', flexDirection: 'column', gap: '0.75rem'
+              }}
+            >
+              {NAV.map(item => (
+                <a key={item} href={`#${item.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} style={{ color: '#334155', textDecoration: 'none', fontSize: '0.95rem', fontWeight: 600 }}>
+                  {item}
+                </a>
+              ))}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* HERO */}
-      <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 40%,#e0f2fe 100%)', paddingTop: 120, position: 'relative', overflow: 'hidden' }}>
+      <section id="home" style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', background: 'linear-gradient(135deg,#f0fdfa 0%,#ccfbf1 40%,#e0f2fe 100%)', paddingTop: 110, position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: -120, right: -120, width: 500, height: 500, borderRadius: '50%', background: `radial-gradient(circle,rgba(20,184,166,0.15),transparent 70%)`, filter: 'blur(60px)', pointerEvents: 'none' }} />
-        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '4rem 2rem', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '4rem', alignItems: 'center', width: '100%' }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', padding: '3rem 1.25rem', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center', width: '100%' }}>
           <motion.div variants={stagger} initial="hidden" animate="visible">
             <motion.div variants={fadeUp}>
               <span style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', background: 'rgba(15,118,110,0.1)', color: T, borderRadius: 999, padding: '0.35rem 1rem', fontSize: '0.8rem', fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase' as const, marginBottom: '1.5rem' }}>

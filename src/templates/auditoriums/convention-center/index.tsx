@@ -3,7 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { 
   MapPin, Phone, Mail, Calendar, Users, Star, 
   ChevronDown, CheckCircle2, Wifi, Car, Coffee, 
-  Mic, Camera, Wind, Zap, Palette, ArrowRight 
+  Mic, Camera, Wind, Zap, Palette, ArrowRight, Menu, X 
 } from 'lucide-react'
 import PreviewBackBar from '@/components/PreviewBackBar'
 
@@ -103,6 +103,7 @@ const stagger = {
 export default function ConventionCenterTemplate() {
   const [scrolled, setScrolled] = useState(false)
   const [activeFaq, setActiveFaq] = useState<number | null>(null)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   
   // Theme styling (Gold, Charcoal, White, Beige)
   const theme = {
@@ -124,29 +125,64 @@ export default function ConventionCenterTemplate() {
       
       {/* --- STICKY NAV --- */}
       <nav style={{
-        position: 'fixed', top: 40, left: 0, right: 0, zIndex: 100,
-        padding: '1.25rem 2rem',
-        background: scrolled ? 'rgba(26, 26, 26, 0.95)' : 'transparent',
-        backdropFilter: scrolled ? 'blur(10px)' : 'none',
-        borderBottom: scrolled ? '1px solid rgba(255,255,255,0.1)' : 'none',
+        position: 'fixed', top: 44, left: 0, right: 0, zIndex: 100,
+        padding: '0.75rem 1.25rem',
+        background: scrolled || mobileMenuOpen ? 'rgba(26, 26, 26, 0.96)' : 'rgba(26, 26, 26, 0.6)',
+        backdropFilter: 'blur(10px)',
+        borderBottom: '1px solid rgba(255,255,255,0.1)',
         transition: 'all 0.3s ease',
         display: 'flex', justifyContent: 'space-between', alignItems: 'center'
       }}>
-        <div style={{ color: theme.white, fontSize: '1.5rem', fontWeight: 800, letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          <div style={{ width: 24, height: 24, background: theme.primary, borderRadius: 4 }} />
+        <div style={{ color: theme.white, fontSize: '1.2rem', fontWeight: 800, letterSpacing: '-0.02em', display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <div style={{ width: 22, height: 22, background: theme.primary, borderRadius: 4 }} />
           GRAND HORIZON
         </div>
-        <div style={{ display: 'flex', gap: '2rem', alignItems: 'center' }}>
+
+        {/* Desktop nav */}
+        <div className="hidden md:flex" style={{ gap: '1.75rem', alignItems: 'center' }}>
           {['Venues', 'Amenities', 'Pricing', 'Gallery', 'Contact'].map(link => (
             <a key={link} href={`#${link.toLowerCase()}`} style={{ color: theme.white, textDecoration: 'none', fontSize: '0.9rem', fontWeight: 500, opacity: 0.8, transition: 'opacity 0.2s' }}
                onMouseEnter={e => e.currentTarget.style.opacity = '1'} onMouseLeave={e => e.currentTarget.style.opacity = '0.8'}>
               {link}
             </a>
           ))}
-          <a href="#contact" style={{ background: theme.primary, color: theme.white, padding: '0.6rem 1.25rem', borderRadius: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem' }}>
+          <a href="#contact" style={{ background: theme.primary, color: theme.white, padding: '0.5rem 1.15rem', borderRadius: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.85rem' }}>
             Book Now
           </a>
         </div>
+
+        {/* Mobile menu button */}
+        <div className="md:hidden" style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+          <button onClick={() => setMobileMenuOpen(!mobileMenuOpen)} aria-label="Toggle Menu" style={{ background: 'none', border: 'none', color: theme.white, cursor: 'pointer', padding: '0.25rem' }}>
+            {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
+        </div>
+
+        {/* Mobile Dropdown */}
+        <AnimatePresence>
+          {mobileMenuOpen && (
+            <motion.div
+              initial={{ opacity: 0, y: -10 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -10 }}
+              style={{
+                position: 'absolute', top: '100%', left: 0, right: 0,
+                background: 'rgba(26, 26, 26, 0.98)', borderBottom: '1px solid rgba(255,255,255,0.1)',
+                boxShadow: '0 10px 30px rgba(0,0,0,0.4)', padding: '1rem 1.25rem',
+                display: 'flex', flexDirection: 'column', gap: '0.85rem'
+              }}
+            >
+              {['Venues', 'Amenities', 'Pricing', 'Gallery', 'Contact'].map(link => (
+                <a key={link} href={`#${link.toLowerCase()}`} onClick={() => setMobileMenuOpen(false)} style={{ color: theme.white, textDecoration: 'none', fontSize: '0.95rem', fontWeight: 500 }}>
+                  {link}
+                </a>
+              ))}
+              <a href="#contact" onClick={() => setMobileMenuOpen(false)} style={{ background: theme.primary, color: theme.white, padding: '0.6rem 1rem', borderRadius: '4px', textDecoration: 'none', fontWeight: 600, fontSize: '0.9rem', textAlign: 'center', marginTop: '0.25rem' }}>
+                Book Now
+              </a>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </nav>
 
       {/* --- HERO SECTION --- */}
@@ -172,7 +208,7 @@ export default function ConventionCenterTemplate() {
           <h4 style={{ color: theme.primary, textTransform: 'uppercase', letterSpacing: '0.2em', fontSize: '0.9rem', marginBottom: '1rem', fontWeight: 600 }}>
             The Epitome of Luxury & Scale
           </h4>
-          <h1 style={{ color: theme.white, fontSize: '5rem', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
+          <h1 style={{ color: theme.white, fontSize: 'clamp(2.25rem, 6vw, 5rem)', fontWeight: 800, lineHeight: 1.1, marginBottom: '1.5rem', letterSpacing: '-0.02em' }}>
             Where Grand Visions <br/> <span style={{ color: theme.primary }}>Come to Life.</span>
           </h1>
           <p style={{ color: 'rgba(255,255,255,0.8)', fontSize: '1.25rem', marginBottom: '2.5rem', maxWidth: 600, margin: '0 auto 2.5rem', lineHeight: 1.6 }}>

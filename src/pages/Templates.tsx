@@ -95,37 +95,53 @@ export default function Templates() {
 
           {/* Category tabs */}
           <div
+            className="hide-scrollbar"
             style={{
               display: 'flex',
-              flexWrap: 'wrap',
+              overflowX: 'auto',
               gap: '0.5rem',
-              justifyContent: 'center',
-              marginBottom: '3rem',
+              justifyContent: 'flex-start',
+              marginBottom: '2.5rem',
+              paddingBottom: '0.5rem',
+              width: '100%',
+              WebkitOverflowScrolling: 'touch',
             }}
           >
-            {allCategories.map(cat => (
-              <motion.button
-                key={cat.id}
-                whileHover={{ scale: 1.03 }}
-                whileTap={{ scale: 0.97 }}
-                onClick={() => setActiveCategory(cat.id)}
-                id={`filter-${cat.id}`}
-                style={{
-                  padding: '0.5rem 1rem',
-                  borderRadius: '999px',
-                  border: '1px solid',
-                  borderColor: activeCategory === cat.id ? 'transparent' : 'var(--color-border)',
-                  background: activeCategory === cat.id ? 'var(--gradient-primary)' : 'var(--color-surface)',
-                  color: activeCategory === cat.id ? 'white' : 'var(--color-text-secondary)',
-                  cursor: 'pointer',
-                  fontSize: '0.875rem',
-                  fontWeight: 500,
-                  transition: 'all 0.2s ease',
-                }}
-              >
-                {cat.label}
-              </motion.button>
-            ))}
+            <div
+              style={{
+                display: 'flex',
+                flexWrap: 'wrap',
+                gap: '0.5rem',
+                justifyContent: 'center',
+                margin: '0 auto',
+              }}
+            >
+              {allCategories.map(cat => (
+                <motion.button
+                  key={cat.id}
+                  whileHover={{ scale: 1.03 }}
+                  whileTap={{ scale: 0.97 }}
+                  onClick={() => setActiveCategory(cat.id)}
+                  id={`filter-${cat.id}`}
+                  style={{
+                    padding: '0.5rem 1rem',
+                    borderRadius: '999px',
+                    border: '1px solid',
+                    borderColor: activeCategory === cat.id ? 'transparent' : 'var(--color-border)',
+                    background: activeCategory === cat.id ? 'var(--gradient-primary)' : 'var(--color-surface)',
+                    color: activeCategory === cat.id ? 'white' : 'var(--color-text-secondary)',
+                    cursor: 'pointer',
+                    fontSize: '0.875rem',
+                    fontWeight: 500,
+                    whiteSpace: 'nowrap',
+                    flexShrink: 0,
+                    transition: 'all 0.2s ease',
+                  }}
+                >
+                  {cat.label}
+                </motion.button>
+              ))}
+            </div>
           </div>
 
           {/* Results count */}
@@ -145,7 +161,7 @@ export default function Templates() {
               animate="visible"
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
+                gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 280px), 1fr))',
                 gap: '1.5rem',
               }}
             >

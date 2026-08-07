@@ -350,24 +350,28 @@ export default function Home() {
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true, amount: 0 }}
+            className="hide-scrollbar"
             style={{
               display: 'flex',
-              gap: '1.5rem',
+              gap: '1rem',
               overflowX: 'auto',
               paddingBottom: '1.5rem',
               scrollSnapType: 'x mandatory',
               WebkitOverflowScrolling: 'touch',
-              scrollbarWidth: 'none',
-              msOverflowStyle: 'none'
+              paddingLeft: '0.25rem',
+              paddingRight: '0.25rem',
             }}
           >
-            <style>{`
-              .hide-scrollbar::-webkit-scrollbar {
-                display: none;
-              }
-            `}</style>
             {industryCategories.map((category, i) => (
-              <div key={category.id} style={{ scrollSnapAlign: 'start', width: '260px', minWidth: '260px', flex: '0 0 auto' }} className="hide-scrollbar">
+              <div
+                key={category.id}
+                style={{
+                  scrollSnapAlign: 'start',
+                  width: 'clamp(230px, 72vw, 270px)',
+                  minWidth: '220px',
+                  flex: '0 0 auto'
+                }}
+              >
                 <IndustryCard
                   category={category}
                   animationDelay={i * 0.05}
