@@ -218,28 +218,28 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* STATS */}
-      <section style={{ background: `linear-gradient(135deg,${T},${TA})`, padding: '3.5rem 2rem' }}>
-        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '2rem', textAlign: 'center' as const }}>
+      <section style={{ background: `linear-gradient(135deg,${T},${TA})`, padding: '3rem 1.25rem' }}>
+        <div style={{ maxWidth: 1000, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '1.5rem', textAlign: 'center' as const }}>
           {STATS.map((s, i) => (
             <motion.div key={s.label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}>
-              <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '2.5rem', color: '#fff', lineHeight: 1 }}>{s.value}</div>
-              <div style={{ color: 'rgba(255,255,255,0.8)', fontSize: '0.9375rem', marginTop: '0.375rem' }}>{s.label}</div>
+              <div style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '2rem', color: '#fff', lineHeight: 1 }}>{s.value}</div>
+              <div style={{ color: 'rgba(255,255,255,0.85)', fontSize: '0.875rem', marginTop: '0.375rem' }}>{s.label}</div>
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* ABOUT */}
-      <section id="about" style={{ padding: '6rem 2rem', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '5rem', alignItems: 'center' }}>
+      <section id="about" style={{ padding: '4rem 1.25rem', background: '#f8fafc' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} transition={{ duration: 0.6 }}>
-            <div style={{ borderRadius: '2rem', overflow: 'hidden', aspectRatio: '4/5', boxShadow: '0 24px 60px rgba(15,118,110,0.2)' }}>
+            <div style={{ borderRadius: '2rem', overflow: 'hidden', aspectRatio: '4/3', maxHeight: 400, boxShadow: '0 24px 60px rgba(15,118,110,0.2)' }}>
               <img src="/templates/clinics/dental-about.png" alt="Dental consultation" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
             </div>
           </motion.div>
           <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }}>
             <motion.p variants={fadeUp} style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.75rem' }}>About Dental Works</motion.p>
-            <motion.h2 variants={fadeUp} style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', lineHeight: 1.25, marginBottom: '1.25rem', letterSpacing: '-0.03em' }}>
+            <motion.h2 variants={fadeUp} style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', lineHeight: 1.25, marginBottom: '1.25rem', letterSpacing: '-0.03em' }}>
               Advanced Care. <span style={{ color: T }}>Gentle Touch.</span>
             </motion.h2>
             <motion.p variants={fadeUp} style={{ color: '#475569', lineHeight: 1.8, marginBottom: '1rem' }}>Founded in 2009, Dental Works has been Bangalore's most trusted dental practice for over 15 years. We combine cutting-edge technology with a deeply personal approach — because every patient deserves both expert treatment and genuine compassion.</motion.p>
@@ -247,7 +247,7 @@ export default function DentalWorksTemplate() {
             <motion.div variants={fadeUp}>
               {['Pain-free procedures as standard', 'ISO-certified sterilization protocols', 'Personalised treatment plans', 'Multilingual, family-friendly team'].map(item => (
                 <div key={item} style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '0.625rem' }}>
-                  <div style={{ width: 22, height: 22, borderRadius: '50%', background: `rgba(15,118,110,0.12)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ width: 22, height: 22, borderRadius: '50%', background: `rgba(15,118,110,0.12)`, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}>
                     <Check size={13} color={T} strokeWidth={3} />
                   </div>
                   <span style={{ color: '#334155', fontSize: '0.9375rem' }}>{item}</span>
@@ -259,19 +259,19 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* WHY CHOOSE US */}
-      <section style={{ padding: '6rem 2rem', background: '#fff' }}>
+      <section style={{ padding: '4rem 1.25rem', background: '#fff' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Why Patients Choose Us</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>The Dental Works <span style={{ color: T }}>Difference</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>The Dental Works <span style={{ color: T }}>Difference</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {WHY_US.map(w => (
               <motion.div key={w.title} variants={fadeUp} whileHover={{ y: -6 }}
-                style={{ padding: '2rem', borderRadius: '1.5rem', background: '#f8fafc', border: '1px solid #e2e8f0', transition: 'border-color 0.2s, box-shadow 0.2s' }}
+                style={{ padding: '1.5rem', borderRadius: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', transition: 'border-color 0.2s, box-shadow 0.2s' }}
                 onMouseEnter={e => { const el = e.currentTarget as HTMLDivElement; el.style.borderColor = 'rgba(15,118,110,0.3)'; el.style.boxShadow = '0 12px 40px rgba(15,118,110,0.1)' }}
                 onMouseLeave={e => { const el = e.currentTarget as HTMLDivElement; el.style.borderColor = '#e2e8f0'; el.style.boxShadow = 'none' }}>
-                <div style={{ width: 56, height: 56, borderRadius: 16, background: 'linear-gradient(135deg,rgba(15,118,110,0.12),rgba(20,184,166,0.1))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: T, marginBottom: '1.125rem' }}>{w.icon}</div>
+                <div style={{ width: 48, height: 48, borderRadius: 14, background: 'linear-gradient(135deg,rgba(15,118,110,0.12),rgba(20,184,166,0.1))', display: 'flex', alignItems: 'center', justifyContent: 'center', color: T, marginBottom: '1rem' }}>{w.icon}</div>
                 <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.0625rem', color: '#0f172a', marginBottom: '0.5rem' }}>{w.title}</h3>
                 <p style={{ color: '#64748b', fontSize: '0.9rem', lineHeight: 1.7 }}>{w.desc}</p>
               </motion.div>
@@ -281,19 +281,19 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* SERVICES */}
-      <section id="services" style={{ padding: '6rem 2rem', background: '#f0fdfa' }}>
+      <section id="services" style={{ padding: '4rem 1.25rem', background: '#f0fdfa' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>What We Offer</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Our <span style={{ color: T }}>Services</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Our <span style={{ color: T }}>Services</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {SERVICES.map(s => (
               <motion.div key={s.title} variants={fadeUp} whileHover={{ y: -5 }}
-                style={{ borderRadius: '1.5rem', overflow: 'hidden', background: '#fff', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(15,118,110,0.06)', transition: 'box-shadow 0.2s' }}
+                style={{ borderRadius: '1.25rem', overflow: 'hidden', background: '#fff', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(15,118,110,0.06)', transition: 'box-shadow 0.2s' }}
                 onMouseEnter={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 16px 48px rgba(15,118,110,0.14)' }}
                 onMouseLeave={e => { (e.currentTarget as HTMLDivElement).style.boxShadow = '0 4px 16px rgba(15,118,110,0.06)' }}>
-                <div style={{ height: 80, background: s.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.5rem' }}>{s.icon}</div>
+                <div style={{ height: 75, background: s.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2.25rem' }}>{s.icon}</div>
                 <div style={{ padding: '1.25rem' }}>
                   <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.0625rem', color: '#0f172a', marginBottom: '0.375rem' }}>{s.title}</h3>
                   <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: 1.65, marginBottom: '1rem' }}>{s.desc}</p>
@@ -309,17 +309,17 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* DOCTORS */}
-      <section id="doctors" style={{ padding: '6rem 2rem', background: '#fff' }}>
+      <section id="doctors" style={{ padding: '4rem 1.25rem', background: '#fff' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Expert Team</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Meet Our <span style={{ color: T }}>Dentists</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Meet Our <span style={{ color: T }}>Dentists</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(4,1fr)', gap: '1.5rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 230px), 1fr))', gap: '1.25rem' }}>
             {DOCTORS.map(d => (
-              <motion.div key={d.name} variants={fadeUp} whileHover={{ y: -6 }} style={{ borderRadius: '1.5rem', background: '#f8fafc', border: '1px solid #e2e8f0', overflow: 'hidden', textAlign: 'center' as const }}>
-                <div style={{ height: 140, background: d.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                  <div style={{ width: 80, height: 80, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.75rem', border: '3px solid rgba(255,255,255,0.5)' }}>{d.initials}</div>
+              <motion.div key={d.name} variants={fadeUp} whileHover={{ y: -6 }} style={{ borderRadius: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', overflow: 'hidden', textAlign: 'center' as const }}>
+                <div style={{ height: 130, background: d.gradient, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+                  <div style={{ width: 72, height: 72, borderRadius: '50%', background: 'rgba(255,255,255,0.2)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: '#fff', fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '1.5rem', border: '3px solid rgba(255,255,255,0.5)' }}>{d.initials}</div>
                 </div>
                 <div style={{ padding: '1.25rem' }}>
                   <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1rem', color: '#0f172a', marginBottom: '0.25rem' }}>{d.name}</h3>
@@ -335,17 +335,17 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* TECHNOLOGY */}
-      <section style={{ padding: '6rem 2rem', background: 'linear-gradient(135deg,#0f172a,#134e4a)' }}>
+      <section style={{ padding: '4rem 1.25rem', background: 'linear-gradient(135deg,#0f172a,#134e4a)' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: TA, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>State of the Art</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#fff', letterSpacing: '-0.03em' }}>Technology That <span style={{ color: TA }}>Delivers</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#fff', letterSpacing: '-0.03em' }}>Technology That <span style={{ color: TA }}>Delivers</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.25rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1.25rem' }}>
             {TECH.map(t => (
               <motion.div key={t.title} variants={fadeUp} whileHover={{ background: 'rgba(255,255,255,0.1)' } as any}
-                style={{ padding: '1.75rem', borderRadius: '1.25rem', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', transition: 'background 0.2s' }}>
-                <div style={{ fontSize: '2.25rem', marginBottom: '0.875rem' }}>{t.icon}</div>
+                style={{ padding: '1.5rem', borderRadius: '1.25rem', background: 'rgba(255,255,255,0.06)', backdropFilter: 'blur(10px)', border: '1px solid rgba(255,255,255,0.1)', transition: 'background 0.2s' }}>
+                <div style={{ fontSize: '2rem', marginBottom: '0.75rem' }}>{t.icon}</div>
                 <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, color: '#fff', fontSize: '1.0625rem', marginBottom: '0.5rem' }}>{t.title}</h3>
                 <p style={{ color: 'rgba(255,255,255,0.65)', fontSize: '0.9rem', lineHeight: 1.7 }}>{t.desc}</p>
               </motion.div>
@@ -355,15 +355,15 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* TESTIMONIALS */}
-      <section id="testimonials" style={{ padding: '6rem 2rem', background: '#f8fafc' }}>
+      <section id="testimonials" style={{ padding: '4rem 1.25rem', background: '#f8fafc' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3.5rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Patient Stories</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>What Our <span style={{ color: T }}>Patients Say</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>What Our <span style={{ color: T }}>Patients Say</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {TESTIMONIALS.map(t => (
-              <motion.div key={t.name} variants={fadeUp} style={{ padding: '1.75rem', borderRadius: '1.5rem', background: '#fff', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(15,118,110,0.06)' }}>
+              <motion.div key={t.name} variants={fadeUp} style={{ padding: '1.5rem', borderRadius: '1.25rem', background: '#fff', border: '1px solid #e2e8f0', boxShadow: '0 4px 16px rgba(15,118,110,0.06)' }}>
                 <Stars />
                 <p style={{ color: '#475569', fontSize: '0.9375rem', lineHeight: 1.75, margin: '1rem 0' }}>"{t.text}"</p>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
@@ -380,14 +380,14 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* PROCESS */}
-      <section style={{ padding: '6rem 2rem', background: '#fff' }}>
+      <section style={{ padding: '4rem 1.25rem', background: '#fff' }}>
         <div style={{ maxWidth: 900, margin: '0 auto', textAlign: 'center' as const }}>
           <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Simple Process</p>
-          <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '3rem' }}>4 Steps to Your <span style={{ color: T }}>Healthy Smile</span></h2>
-          <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'center', gap: '1rem', flexWrap: 'wrap' as const }}>
+          <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '2.5rem' }}>4 Steps to Your <span style={{ color: T }}>Healthy Smile</span></h2>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 180px), 1fr))', gap: '1.5rem' }}>
             {[{ step: '01', title: 'Book Appointment', desc: 'Call, WhatsApp, or book online — we confirm within 2 hours.', icon: '📅' }, { step: '02', title: 'Consultation', desc: 'Meet your dentist for a thorough exam and digital X-rays.', icon: '🔍' }, { step: '03', title: 'Treatment Plan', desc: 'Receive a personalised, transparent treatment plan.', icon: '📋' }, { step: '04', title: 'Healthy Smile', desc: 'Complete your treatment and enjoy your confident new smile.', icon: '😁' }].map((p, i) => (
-              <motion.div key={p.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} style={{ flex: 1, minWidth: 180, display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-                <div style={{ width: 72, height: 72, borderRadius: '50%', background: `linear-gradient(135deg,${T},${TA})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '2rem', marginBottom: '1rem', boxShadow: `0 8px 24px rgba(15,118,110,0.25)` }}>{p.icon}</div>
+              <motion.div key={p.step} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.12 }} style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+                <div style={{ width: 64, height: 64, borderRadius: '50%', background: `linear-gradient(135deg,${T},${TA})`, display: 'flex', alignItems: 'center', justifyContent: 'center', fontSize: '1.75rem', marginBottom: '1rem', boxShadow: `0 8px 24px rgba(15,118,110,0.25)` }}>{p.icon}</div>
                 <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 800, fontSize: '0.8rem', color: T, letterSpacing: '0.08em', marginBottom: '0.375rem' }}>STEP {p.step}</span>
                 <h3 style={{ fontWeight: 700, fontSize: '1.0625rem', color: '#0f172a', marginBottom: '0.5rem' }}>{p.title}</h3>
                 <p style={{ color: '#64748b', fontSize: '0.875rem', lineHeight: 1.6 }}>{p.desc}</p>
@@ -398,24 +398,24 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* FAQ */}
-      <section id="faq" style={{ padding: '6rem 2rem', background: '#f0fdfa' }}>
+      <section id="faq" style={{ padding: '4rem 1.25rem', background: '#f0fdfa' }}>
         <div style={{ maxWidth: 760, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>FAQ</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Frequently Asked <span style={{ color: T }}>Questions</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Frequently Asked <span style={{ color: T }}>Questions</span></h2>
           </div>
           <div style={{ display: 'flex', flexDirection: 'column', gap: '0.75rem' }}>
             {FAQS.map((faq, i) => (
               <motion.div key={i} initial={{ opacity: 0, y: 10 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.05 }}
                 style={{ borderRadius: '1rem', background: '#fff', border: `1px solid ${openFaq === i ? 'rgba(15,118,110,0.3)' : '#e2e8f0'}`, overflow: 'hidden', boxShadow: openFaq === i ? '0 8px 24px rgba(15,118,110,0.1)' : 'none', transition: 'all 0.2s' }}>
-                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1.125rem 1.5rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' as const, gap: '1rem' }}>
-                  <span style={{ fontWeight: 600, fontSize: '1rem', color: '#0f172a' }}>{faq.q}</span>
+                <button onClick={() => setOpenFaq(openFaq === i ? null : i)} style={{ width: '100%', display: 'flex', justifyContent: 'space-between', alignItems: 'center', padding: '1rem 1.25rem', background: 'none', border: 'none', cursor: 'pointer', textAlign: 'left' as const, gap: '1rem' }}>
+                  <span style={{ fontWeight: 600, fontSize: '0.95rem', color: '#0f172a' }}>{faq.q}</span>
                   {openFaq === i ? <ChevronUp size={18} color={T} /> : <ChevronDown size={18} color="#94a3b8" />}
                 </button>
                 <AnimatePresence>
                   {openFaq === i && (
                     <motion.div initial={{ height: 0 }} animate={{ height: 'auto' }} exit={{ height: 0 }} style={{ overflow: 'hidden' }}>
-                      <p style={{ padding: '0 1.5rem 1.25rem', color: '#475569', fontSize: '0.9375rem', lineHeight: 1.75, margin: 0 }}>{faq.a}</p>
+                      <p style={{ padding: '0 1.25rem 1.25rem', color: '#475569', fontSize: '0.9rem', lineHeight: 1.75, margin: 0 }}>{faq.a}</p>
                     </motion.div>
                   )}
                 </AnimatePresence>
@@ -426,13 +426,13 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* BLOG */}
-      <section style={{ padding: '6rem 2rem', background: '#fff' }}>
+      <section style={{ padding: '4rem 1.25rem', background: '#fff' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center' as const, marginBottom: '3rem' }}>
+          <div style={{ textAlign: 'center' as const, marginBottom: '2.5rem' }}>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Dental Insights</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Our <span style={{ color: T }}>Blog</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.5rem)', color: '#0f172a', letterSpacing: '-0.03em' }}>Our <span style={{ color: T }}>Blog</span></h2>
           </div>
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(3,1fr)', gap: '1.5rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '1.25rem' }}>
             {BLOGS.map(b => (
               <motion.div key={b.title} variants={fadeUp} whileHover={{ y: -4 }}
                 style={{ borderRadius: '1.25rem', background: '#f8fafc', border: '1px solid #e2e8f0', overflow: 'hidden', cursor: 'pointer', transition: 'box-shadow 0.2s' }}
