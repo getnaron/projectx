@@ -313,14 +313,14 @@ export default function PowerGymTemplate() {
       <header
         style={{
           position: 'fixed',
-          top: 40,
+          top: 44,
           left: 0,
           right: 0,
           zIndex: 90,
-          background: 'rgba(9, 10, 15, 0.85)',
+          background: 'rgba(9, 10, 15, 0.95)',
           backdropFilter: 'blur(16px)',
           borderBottom: '1px solid rgba(239, 68, 68, 0.2)',
-          padding: '0.85rem 2rem',
+          padding: '0.75rem 1.25rem',
         }}
       >
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -328,30 +328,31 @@ export default function PowerGymTemplate() {
           <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
             <div
               style={{
-                width: 38,
-                height: 38,
+                width: 36,
+                height: 36,
                 borderRadius: 10,
                 background: 'linear-gradient(135deg, #ef4444 0%, #991b1b 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 boxShadow: '0 0 20px rgba(239, 68, 68, 0.5)',
+                flexShrink: 0
               }}
             >
-              <Dumbbell size={22} color="#ffffff" />
+              <Dumbbell size={20} color="#ffffff" />
             </div>
             <div>
-              <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase' }}>
+              <span style={{ fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#ffffff', textTransform: 'uppercase' }}>
                 IRONFORGE<span style={{ color: '#ef4444' }}>CULT</span>
               </span>
-              <span style={{ display: 'block', fontSize: '0.65rem', color: '#94a3b8', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              <span style={{ display: 'block', fontSize: '0.6rem', color: '#94a3b8', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 INDIRANAGAR • BANGALORE
               </span>
             </div>
           </a>
 
           {/* Desktop Links */}
-          <nav style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
+          <nav className="hidden md:flex" style={{ gap: '1.5rem', alignItems: 'center' }}>
             {[
               { label: 'Zones', href: '#zones' },
               { label: 'Schedule', href: '#schedule' },
@@ -386,27 +387,19 @@ export default function PowerGymTemplate() {
               background: 'linear-gradient(135deg, #ef4444 0%, #dc2626 100%)',
               color: '#ffffff',
               border: 'none',
-              padding: '0.65rem 1.35rem',
+              padding: '0.55rem 1rem',
               borderRadius: 8,
               fontWeight: 700,
-              fontSize: '0.85rem',
+              fontSize: '0.8rem',
               cursor: 'pointer',
               boxShadow: '0 0 15px rgba(239, 68, 68, 0.4)',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.4rem',
-              transition: 'transform 0.2s, boxShadow 0.2s'
-            }}
-            onMouseEnter={e => {
-              e.currentTarget.style.transform = 'translateY(-2px)'
-              e.currentTarget.style.boxShadow = '0 0 25px rgba(239, 68, 68, 0.7)'
-            }}
-            onMouseLeave={e => {
-              e.currentTarget.style.transform = 'translateY(0)'
-              e.currentTarget.style.boxShadow = '0 0 15px rgba(239, 68, 68, 0.4)'
+              gap: '0.35rem',
+              whiteSpace: 'nowrap'
             }}
           >
-            <Zap size={16} fill="#ffffff" />
+            <Zap size={14} fill="#ffffff" />
             FREE 3-DAY PASS
           </button>
         </div>
@@ -418,15 +411,15 @@ export default function PowerGymTemplate() {
       <section
         id="hero"
         style={{
-          paddingTop: '10rem',
-          paddingBottom: '5rem',
-          paddingLeft: '2rem',
-          paddingRight: '2rem',
+          paddingTop: '8rem',
+          paddingBottom: '4rem',
+          paddingLeft: '1.25rem',
+          paddingRight: '1.25rem',
           position: 'relative',
           background: 'radial-gradient(circle at 50% 20%, rgba(239, 68, 68, 0.15) 0%, rgba(9, 10, 15, 1) 70%)',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -638,10 +631,10 @@ export default function PowerGymTemplate() {
                   background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.9) 0%, rgba(9, 10, 15, 0.95) 100%)',
                   border: `1px solid ${current.accent}40`,
                   borderRadius: 24,
-                  padding: '3rem',
+                  padding: '2rem 1.25rem',
                   display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
-                  gap: '3rem',
+                  gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+                  gap: '2.5rem',
                   alignItems: 'center'
                 }}
               >
@@ -649,16 +642,16 @@ export default function PowerGymTemplate() {
                   <span style={{ color: current.accent, fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.1em', textTransform: 'uppercase' }}>
                     {current.tagline}
                   </span>
-                  <h3 style={{ fontSize: '2.25rem', fontWeight: 900, color: '#ffffff', margin: '0.5rem 0 1rem' }}>
+                  <h3 style={{ fontSize: 'clamp(1.75rem, 4vw, 2.25rem)', fontWeight: 900, color: '#ffffff', margin: '0.5rem 0 1rem' }}>
                     {current.title}
                   </h3>
-                  <p style={{ color: '#94a3b8', lineHeight: 1.8, fontSize: '1rem', marginBottom: '2rem' }}>
+                  <p style={{ color: '#94a3b8', lineHeight: 1.8, fontSize: '0.95rem', marginBottom: '1.5rem' }}>
                     {current.description}
                   </p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '2rem' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '0.875rem', marginBottom: '1.5rem' }}>
                     {current.features.map(f => (
-                      <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#e2e8f0', fontSize: '0.9rem', fontWeight: 600 }}>
-                        <CheckCircle2 size={18} color={current.accent} />
+                      <div key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', color: '#e2e8f0', fontSize: '0.875rem', fontWeight: 600 }}>
+                        <CheckCircle2 size={16} color={current.accent} />
                         {f}
                       </div>
                     ))}
@@ -1319,8 +1312,8 @@ export default function PowerGymTemplate() {
       {/* ====================================================
           FOOTER
       ==================================================== */}
-      <footer style={{ background: '#06070a', borderTop: '1px solid rgba(255, 255, 255, 0.08)', padding: '4rem 2rem 2rem' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+      <footer style={{ background: '#06070a', borderTop: '1px solid rgba(255, 255, 255, 0.08)', padding: '3rem 1.25rem 2rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
               <div style={{ width: 32, height: 32, borderRadius: 8, background: '#ef4444', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

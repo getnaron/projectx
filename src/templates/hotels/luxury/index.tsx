@@ -222,10 +222,10 @@ export default function LuxuryHotelTemplate() {
       {/* ====================================================
           GALLERY PLACEHOLDER
       ==================================================== */}
-      <section style={{ padding: '5rem 2.5rem', background: '#0f0f1e' }}>
+      <section style={{ padding: '4rem 1.25rem', background: '#0f0f1e' }}>
         <p style={{ textAlign: 'center', color: '#c9a84c', letterSpacing: '0.2em', fontSize: '0.75rem', textTransform: 'uppercase', marginBottom: '1rem' }}>Our Property</p>
-        <h2 style={{ textAlign: 'center', fontSize: '2.5rem', fontWeight: 400, color: '#f0ead6', marginBottom: '2.5rem' }}>A Glimpse of Grandeur</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '1rem', maxWidth: 1200, margin: '0 auto' }}>
+        <h2 style={{ textAlign: 'center', fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 400, color: '#f0ead6', marginBottom: '2.5rem' }}>A Glimpse of Grandeur</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 250px), 1fr))', gap: '1rem', maxWidth: 1200, margin: '0 auto' }}>
           {[
             'linear-gradient(135deg, #1a1a35 0%, #2d1b4e 100%)',
             'linear-gradient(135deg, #0f1923 0%, #1a2a3a 100%)',
@@ -239,7 +239,7 @@ export default function LuxuryHotelTemplate() {
               viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.1 }}
               style={{
-                height: i === 0 ? 300 : 200,
+                height: 220,
                 borderRadius: 8,
                 background: bg,
                 border: '1px solid rgba(201,168,76,0.1)',
@@ -249,7 +249,6 @@ export default function LuxuryHotelTemplate() {
                 color: 'rgba(201,168,76,0.3)',
                 fontSize: '0.875rem',
                 letterSpacing: '0.1em',
-                gridColumn: i === 0 ? 'span 2' : 'span 1',
               }}
             >
               [ Gallery Image {i + 1} ]

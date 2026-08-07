@@ -290,10 +290,12 @@ export default function SalonTemplate() {
       ==================================================== */}
       <header
         style={{
-          position: 'sticky',
-          top: 42,
+          position: 'fixed',
+          top: 44,
+          left: 0,
+          right: 0,
           zIndex: 100,
-          background: 'rgba(10, 10, 12, 0.85)',
+          background: 'rgba(10, 10, 12, 0.95)',
           backdropFilter: 'blur(16px)',
           borderBottom: '1px solid rgba(212, 175, 55, 0.18)'
         }}
@@ -542,9 +544,9 @@ export default function SalonTemplate() {
             <div
               style={{
                 display: 'grid',
-                gridTemplateColumns: 'repeat(3, 1fr)',
-                gap: '1.5rem',
-                marginTop: '4rem',
+                gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 120px), 1fr))',
+                gap: '1.25rem',
+                marginTop: '3rem',
                 paddingTop: '2rem',
                 borderTop: '1px solid rgba(255, 255, 255, 0.1)'
               }}
@@ -575,7 +577,7 @@ export default function SalonTemplate() {
           2. ABOUT US
       ==================================================== */}
       <section id="about" style={{ padding: '5rem 1.5rem 6rem', background: '#0e0e11', borderBottom: '1px solid rgba(255,255,255,0.05)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '4rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '3rem', alignItems: 'center' }}>
           
           {/* Image Showcase */}
           <motion.div
@@ -596,29 +598,29 @@ export default function SalonTemplate() {
               <img
                 src="https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&q=80&w=800"
                 alt="Aura Salon Stylists"
-                style={{ width: '100%', height: 420, objectFit: 'cover', display: 'block' }}
+                style={{ width: '100%', height: 360, objectFit: 'cover', display: 'block' }}
               />
             </div>
             {/* Floating Gold Card */}
             <div
               style={{
                 position: 'absolute',
-                bottom: -25,
-                right: -20,
+                bottom: -20,
+                right: 0,
                 background: '#18181b',
                 border: '1px solid #d4af37',
-                padding: '1.2rem 1.5rem',
-                borderRadius: 18,
+                padding: '1rem 1.25rem',
+                borderRadius: 16,
                 display: 'flex',
                 alignItems: 'center',
-                gap: '1rem',
+                gap: '0.875rem',
                 boxShadow: '0 10px 30px rgba(0, 0, 0, 0.5)'
               }}
             >
-              <Award size={36} color="#d4af37" />
+              <Award size={32} color="#d4af37" />
               <div>
-                <p style={{ margin: 0, fontWeight: 800, fontSize: '1rem', color: '#ffffff' }}>100% Certified</p>
-                <p style={{ margin: 0, fontSize: '0.8rem', color: '#a1a1aa' }}>Master Stylists & Beauticians</p>
+                <p style={{ margin: 0, fontWeight: 800, fontSize: '0.95rem', color: '#ffffff' }}>100% Certified</p>
+                <p style={{ margin: 0, fontSize: '0.75rem', color: '#a1a1aa' }}>Master Stylists & Beauticians</p>
               </div>
             </div>
           </motion.div>
@@ -633,15 +635,15 @@ export default function SalonTemplate() {
             <span style={{ color: '#d4af37', fontWeight: 800, fontSize: '0.8rem', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
               ABOUT AURA SALON
             </span>
-            <h2 style={{ fontSize: '2.5rem', fontWeight: 900, marginTop: '0.5rem', marginBottom: '1.25rem', color: '#ffffff' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 2.5rem)', fontWeight: 900, marginTop: '0.5rem', marginBottom: '1.25rem', color: '#ffffff' }}>
               Redefining Luxury & Personal Grooming
             </h2>
-            <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '1rem', marginBottom: '2rem' }}>
+            <p style={{ color: '#a1a1aa', lineHeight: 1.7, fontSize: '0.95rem', marginBottom: '2rem' }}>
               Welcome to <strong>Aura Salon & Spa</strong>, your premier destination for high-end hair design, radiant skin care, and refined grooming. We believe every individual deserves personalized care in a tranquil, ultra-hygienic sanctuary.
             </p>
 
             {/* Key Pillars */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.25rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '1.25rem' }}>
               <div style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem' }}>
                 <ShieldCheck size={22} color="#d4af37" style={{ flexShrink: 0, marginTop: 2 }} />
                 <div>

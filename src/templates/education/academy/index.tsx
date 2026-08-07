@@ -307,14 +307,14 @@ export default function OnlineAcademyTemplate() {
       <header
         style={{
           position: 'fixed',
-          top: 40,
+          top: 44,
           left: 0,
           right: 0,
           zIndex: 90,
-          background: 'rgba(9, 13, 22, 0.88)',
+          background: 'rgba(9, 13, 22, 0.95)',
           backdropFilter: 'blur(16px)',
           borderBottom: '1px solid rgba(139, 92, 246, 0.2)',
-          padding: '0.85rem 2rem',
+          padding: '0.75rem 1.25rem',
         }}
       >
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
@@ -322,30 +322,31 @@ export default function OnlineAcademyTemplate() {
           <a href="#hero" style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', textDecoration: 'none' }}>
             <div
               style={{
-                width: 38,
-                height: 38,
+                width: 36,
+                height: 36,
                 borderRadius: 10,
                 background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
                 display: 'flex',
                 alignItems: 'center',
                 justifyContent: 'center',
                 boxShadow: '0 0 20px rgba(139, 92, 246, 0.5)',
+                flexShrink: 0
               }}
             >
-              <GraduationCap size={22} color="#ffffff" />
+              <GraduationCap size={20} color="#ffffff" />
             </div>
             <div>
-              <span style={{ fontWeight: 900, fontSize: '1.25rem', letterSpacing: '-0.02em', color: '#ffffff' }}>
+              <span style={{ fontWeight: 900, fontSize: '1.1rem', letterSpacing: '-0.02em', color: '#ffffff' }}>
                 BRIGHTPATH<span style={{ color: '#8b5cf6' }}>ACADEMY</span>
               </span>
-              <span style={{ display: 'block', fontSize: '0.65rem', color: '#94a3b8', letterSpacing: '0.15em', textTransform: 'uppercase' }}>
+              <span style={{ display: 'block', fontSize: '0.6rem', color: '#94a3b8', letterSpacing: '0.12em', textTransform: 'uppercase' }}>
                 LIVE TECH BOOTCAMPS • HYDERABAD & BENGALURU
               </span>
             </div>
           </a>
 
           {/* Nav Links */}
-          <nav style={{ display: 'flex', gap: '1.75rem', alignItems: 'center' }}>
+          <nav className="hidden md:flex" style={{ gap: '1.5rem', alignItems: 'center' }}>
             {[
               { label: 'Bootcamps', href: '#courses' },
               { label: 'Calculator', href: '#calculator' },
@@ -379,18 +380,19 @@ export default function OnlineAcademyTemplate() {
               background: 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
               color: '#ffffff',
               border: 'none',
-              padding: '0.65rem 1.35rem',
+              padding: '0.55rem 1rem',
               borderRadius: 10,
               fontWeight: 700,
-              fontSize: '0.85rem',
+              fontSize: '0.8rem',
               cursor: 'pointer',
               boxShadow: '0 0 15px rgba(139, 92, 246, 0.4)',
               display: 'flex',
               alignItems: 'center',
-              gap: '0.4rem'
+              gap: '0.35rem',
+              whiteSpace: 'nowrap'
             }}
           >
-            <Sparkles size={16} fill="#ffffff" />
+            <Sparkles size={14} fill="#ffffff" />
             FREE CAREER CALL
           </button>
         </div>
@@ -402,15 +404,15 @@ export default function OnlineAcademyTemplate() {
       <section
         id="hero"
         style={{
-          paddingTop: '10rem',
-          paddingBottom: '5rem',
-          paddingLeft: '2rem',
-          paddingRight: '2rem',
+          paddingTop: '8rem',
+          paddingBottom: '4rem',
+          paddingLeft: '1.25rem',
+          paddingRight: '1.25rem',
           position: 'relative',
           background: 'radial-gradient(circle at 50% 20%, rgba(139, 92, 246, 0.18) 0%, rgba(9, 13, 22, 1) 70%)',
         }}
       >
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '1.2fr 0.8fr', gap: '3rem', alignItems: 'center' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             animate={{ opacity: 1, x: 0 }}
@@ -714,10 +716,10 @@ export default function OnlineAcademyTemplate() {
               background: 'rgba(15, 23, 42, 0.8)',
               border: '1px solid rgba(139, 92, 246, 0.3)',
               borderRadius: 24,
-              padding: '2.5rem',
+              padding: '2rem 1.25rem',
               display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '3rem',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))',
+              gap: '2.5rem',
               alignItems: 'center'
             }}
           >
@@ -1067,8 +1069,8 @@ export default function OnlineAcademyTemplate() {
       {/* ====================================================
           FOOTER
       ==================================================== */}
-      <footer style={{ background: '#05070d', borderTop: '1px solid rgba(255, 255, 255, 0.08)', padding: '4rem 2rem 2rem' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
+      <footer style={{ background: '#05070d', borderTop: '1px solid rgba(255, 255, 255, 0.08)', padding: '3rem 1.25rem 2rem' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
           <div>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem' }}>
               <div style={{ width: 32, height: 32, borderRadius: 8, background: '#8b5cf6', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>

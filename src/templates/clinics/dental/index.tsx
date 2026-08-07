@@ -454,11 +454,11 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* CONTACT */}
-      <section id="contact" style={{ padding: '6rem 2rem', background: '#f8fafc' }}>
-        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: '1fr 1.5fr', gap: '4rem', alignItems: 'start' }}>
+      <section id="contact" style={{ padding: '4rem 1.25rem', background: '#f8fafc' }}>
+        <div style={{ maxWidth: 1100, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'start' }}>
           <div>
             <p style={{ color: T, fontWeight: 700, fontSize: '0.85rem', letterSpacing: '0.1em', textTransform: 'uppercase' as const, marginBottom: '0.5rem' }}>Contact Us</p>
-            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.75rem,3vw,2.25rem)', color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '2rem' }}>We're Here to <span style={{ color: T }}>Help</span></h2>
+            <h2 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: 'clamp(1.65rem,3vw,2.25rem)', color: '#0f172a', letterSpacing: '-0.03em', marginBottom: '2rem' }}>We're Here to <span style={{ color: T }}>Help</span></h2>
             {[{ icon: <MapPin size={18} />, label: 'Address', val: '42, 3rd Main, Indiranagar, Bangalore 560038' }, { icon: <Phone size={18} />, label: 'Phone', val: '+91 80 4567 8900' }, { icon: <Mail size={18} />, label: 'Email', val: 'hello@dentalworks.in' }, { icon: <Clock size={18} />, label: 'Hours', val: 'Mon–Sat: 9AM–8PM  |  Sun: 10AM–3PM' }].map(c => (
               <div key={c.label} style={{ display: 'flex', gap: '1rem', marginBottom: '1.25rem', alignItems: 'flex-start' }}>
                 <div style={{ width: 40, height: 40, borderRadius: 12, background: 'rgba(15,118,110,0.1)', display: 'flex', alignItems: 'center', justifyContent: 'center', color: T, flexShrink: 0 }}>{c.icon}</div>
@@ -474,19 +474,19 @@ export default function DentalWorksTemplate() {
             </div>
           </div>
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}
-            style={{ background: '#fff', borderRadius: '2rem', padding: '2.5rem', boxShadow: '0 16px 48px rgba(15,118,110,0.1)', border: '1px solid #e2e8f0' }}>
-            <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.375rem', color: '#0f172a', marginBottom: '0.25rem' }}>Book an Appointment</h3>
-            <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '1.75rem' }}>Fill in your details and we'll confirm within 2 hours.</p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+            style={{ background: '#fff', borderRadius: '1.5rem', padding: '1.5rem', boxShadow: '0 16px 48px rgba(15,118,110,0.1)', border: '1px solid #e2e8f0', width: '100%', boxSizing: 'border-box' }}>
+            <h3 style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, fontSize: '1.25rem', color: '#0f172a', marginBottom: '0.25rem' }}>Book an Appointment</h3>
+            <p style={{ color: '#64748b', fontSize: '0.875rem', marginBottom: '1.5rem' }}>Fill in your details and we'll confirm within 2 hours.</p>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))', gap: '0.875rem' }}>
               {[{ label: 'Full Name', span: 1 }, { label: 'Phone', span: 1 }, { label: 'Email', span: 2 }].map(f => (
-                <div key={f.label} style={{ gridColumn: `span ${f.span}` }}>
+                <div key={f.label} style={{ gridColumn: f.span === 2 ? '1 / -1' : 'auto' }}>
                   <label style={{ display: 'block', fontWeight: 600, fontSize: '0.8125rem', color: '#374151', marginBottom: '0.375rem' }}>{f.label}</label>
                   <input placeholder={`Your ${f.label}`} style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.9375rem', outline: 'none', boxSizing: 'border-box' as const }}
                     onFocus={e => { (e.currentTarget as HTMLInputElement).style.borderColor = T }}
                     onBlur={e => { (e.currentTarget as HTMLInputElement).style.borderColor = '#e2e8f0' }} />
                 </div>
               ))}
-              <div style={{ gridColumn: 'span 2' }}>
+              <div style={{ gridColumn: '1 / -1' }}>
                 <label style={{ display: 'block', fontWeight: 600, fontSize: '0.8125rem', color: '#374151', marginBottom: '0.375rem' }}>Treatment</label>
                 <select style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.9375rem', outline: 'none', boxSizing: 'border-box' as const, color: '#374151', background: '#fff' }}>
                   <option>Select Treatment</option>
@@ -495,17 +495,17 @@ export default function DentalWorksTemplate() {
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 600, fontSize: '0.8125rem', color: '#374151', marginBottom: '0.375rem' }}>Preferred Date</label>
-                <input type="date" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.9375rem', outline: 'none', boxSizing: 'border-box' as const }} />
+                <input type="date" style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.875rem', outline: 'none', boxSizing: 'border-box' as const }} />
               </div>
               <div>
                 <label style={{ display: 'block', fontWeight: 600, fontSize: '0.8125rem', color: '#374151', marginBottom: '0.375rem' }}>Preferred Time</label>
-                <select style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.9375rem', outline: 'none', boxSizing: 'border-box' as const, color: '#374151', background: '#fff' }}>
+                <select style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.875rem', outline: 'none', boxSizing: 'border-box' as const, color: '#374151', background: '#fff' }}>
                   <option>Morning (9AM–12PM)</option>
                   <option>Afternoon (12PM–4PM)</option>
                   <option>Evening (4PM–8PM)</option>
                 </select>
               </div>
-              <div style={{ gridColumn: 'span 2' }}>
+              <div style={{ gridColumn: '1 / -1' }}>
                 <label style={{ display: 'block', fontWeight: 600, fontSize: '0.8125rem', color: '#374151', marginBottom: '0.375rem' }}>Message (optional)</label>
                 <textarea rows={3} placeholder="Any additional notes..." style={{ width: '100%', padding: '0.75rem 1rem', borderRadius: '0.75rem', border: '1.5px solid #e2e8f0', fontSize: '0.9375rem', outline: 'none', resize: 'none' as const, boxSizing: 'border-box' as const, fontFamily: 'inherit' }}
                   onFocus={e => { (e.currentTarget as HTMLTextAreaElement).style.borderColor = T }}
@@ -520,10 +520,10 @@ export default function DentalWorksTemplate() {
       </section>
 
       {/* FOOTER */}
-      <footer style={{ background: '#0f172a', color: 'rgba(255,255,255,0.7)', padding: '4rem 2rem 2rem' }}>
+      <footer style={{ background: '#0f172a', color: 'rgba(255,255,255,0.7)', padding: '3rem 1.25rem 2rem' }}>
         <div style={{ maxWidth: 1100, margin: '0 auto' }}>
-          <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr 1fr 1fr', gap: '3rem', marginBottom: '3rem' }}>
-            <div>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 160px), 1fr))', gap: '2rem', marginBottom: '2.5rem' }}>
+            <div style={{ gridColumn: 'span min(2, 100%)' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', marginBottom: '1rem' }}>
                 <div style={{ width: 34, height: 34, borderRadius: 10, background: `linear-gradient(135deg,${T},${TA})`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}><span style={{ fontSize: 16 }}>🦷</span></div>
                 <span style={{ fontFamily: "'Poppins',sans-serif", fontWeight: 700, color: '#fff', fontSize: '1.0625rem' }}>DENTAL WORKS</span>
@@ -545,14 +545,16 @@ export default function DentalWorksTemplate() {
       </footer>
 
       {/* FLOATING BUTTONS */}
-      <a href="https://wa.me/918045678900" target="_blank" rel="noopener noreferrer"
-        style={{ position: 'fixed', bottom: 100, right: 24, width: 52, height: 52, borderRadius: '50%', background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 8px 24px rgba(37,211,102,0.5)', zIndex: 300, textDecoration: 'none', fontSize: '1.5rem' }}>
-        💬
-      </a>
-      <motion.button onClick={() => setShowModal(true)} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.5, type: 'spring' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
-        style={{ position: 'fixed', bottom: 24, right: 24, background: `linear-gradient(135deg,${T},${TA})`, color: '#fff', border: 'none', borderRadius: 999, padding: '0.75rem 1.25rem', fontWeight: 700, fontSize: '0.875rem', cursor: 'pointer', boxShadow: `0 8px 24px rgba(15,118,110,0.45)`, zIndex: 300, display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
-        <CalendarDays size={16} /> Book Now
-      </motion.button>
+      <div style={{ position: 'fixed', bottom: 16, right: 16, zIndex: 300, display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+        <a href="https://wa.me/918045678900" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp Us"
+          style={{ width: 44, height: 44, borderRadius: '50%', background: '#25d366', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 16px rgba(37,211,102,0.4)', textDecoration: 'none', fontSize: '1.25rem', flexShrink: 0 }}>
+          💬
+        </a>
+        <motion.button onClick={() => setShowModal(true)} initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ delay: 1.5, type: 'spring' }} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.97 }}
+          style={{ background: `linear-gradient(135deg,${T},${TA})`, color: '#fff', border: 'none', borderRadius: 999, padding: '0.6rem 1rem', fontWeight: 700, fontSize: '0.8125rem', cursor: 'pointer', boxShadow: `0 4px 16px rgba(15,118,110,0.4)`, display: 'flex', alignItems: 'center', gap: '0.35rem', whiteSpace: 'nowrap' }}>
+          <CalendarDays size={15} /> Book Now
+        </motion.button>
+      </div>
 
       {/* MODAL */}
       <AnimatePresence>

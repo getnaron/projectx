@@ -236,21 +236,21 @@ export default function RoyalEventsTemplate() {
       <PreviewBackBar templateName="Royal Events" category="Event Management" categoryRoute="/templates/events" />
 
       {/* ===== STICKY NAVIGATION ===== */}
-      <header style={{ position: 'sticky', top: 42, zIndex: 100, background: 'rgba(10, 10, 12, 0.88)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(212, 175, 55, 0.18)' }}>
-        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0.85rem 1.5rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
+      <header style={{ position: 'fixed', top: 44, left: 0, right: 0, zIndex: 100, background: 'rgba(10, 10, 12, 0.95)', backdropFilter: 'blur(16px)', borderBottom: '1px solid rgba(212, 175, 55, 0.18)' }}>
+        <div style={{ maxWidth: 1280, margin: '0 auto', padding: '0.75rem 1.25rem', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Logo */}
           <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', textDecoration: 'none' }}>
-            <div style={{ width: 42, height: 42, borderRadius: 10, background: 'linear-gradient(135deg, #d4af37 0%, #aa7c11 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)' }}>
-              <Crown size={22} color="#0a0a0c" />
+            <div style={{ width: 38, height: 38, borderRadius: 10, background: 'linear-gradient(135deg, #d4af37 0%, #aa7c11 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 15px rgba(212, 175, 55, 0.3)', flexShrink: 0 }}>
+              <Crown size={20} color="#0a0a0c" />
             </div>
             <div>
-              <span style={{ fontSize: '1.25rem', fontWeight: 900, letterSpacing: '0.06em', color: '#ffffff', display: 'block', lineHeight: 1.1 }}>ROYAL</span>
-              <span style={{ fontSize: '0.6rem', fontWeight: 700, letterSpacing: '0.22em', color: '#d4af37', textTransform: 'uppercase' }}>EVENTS & CELEBRATIONS</span>
+              <span style={{ fontSize: '1.1rem', fontWeight: 900, letterSpacing: '0.06em', color: '#ffffff', display: 'block', lineHeight: 1.1 }}>ROYAL</span>
+              <span style={{ fontSize: '0.55rem', fontWeight: 700, letterSpacing: '0.18em', color: '#d4af37', textTransform: 'uppercase' }}>EVENTS & CELEBRATIONS</span>
             </div>
           </a>
 
           {/* Desktop Nav */}
-          <nav style={{ display: 'none', alignItems: 'center', gap: '1.75rem' }} className="re-desktop-nav">
+          <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '1.5rem' }}>
             {['About', 'Services', 'Portfolio', 'Packages', 'Team', 'Reviews', 'Contact'].map(link => (
               <a key={link} href={`#${link.toLowerCase()}`} style={{ color: '#d4d4d8', textDecoration: 'none', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s' }}
                 onMouseEnter={e => (e.currentTarget.style.color = '#d4af37')}
@@ -260,14 +260,14 @@ export default function RoyalEventsTemplate() {
           </nav>
 
           {/* Header CTAs */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
-            <a href="tel:+919876543210" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.5rem 0.9rem', borderRadius: 999, border: '1px solid rgba(212,175,55,0.4)', background: 'rgba(212,175,55,0.08)', color: '#f4e0a5', textDecoration: 'none', fontWeight: 600, fontSize: '0.8rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+            <a href="tel:+919876543210" style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.45rem 0.75rem', borderRadius: 999, border: '1px solid rgba(212,175,55,0.4)', background: 'rgba(212,175,55,0.08)', color: '#f4e0a5', textDecoration: 'none', fontWeight: 600, fontSize: '0.8rem' }}>
               <Phone size={14} />
             </a>
-            <button onClick={() => handleWhatsApp()} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.5rem', padding: '0.5rem 1.1rem', borderRadius: 999, background: 'linear-gradient(135deg, #d4af37 0%, #aa7c11 100%)', color: '#0a0a0c', border: 'none', fontWeight: 700, fontSize: '0.825rem', cursor: 'pointer', boxShadow: '0 4px 15px rgba(212,175,55,0.25)' }}>
+            <button onClick={() => handleWhatsApp()} style={{ display: 'inline-flex', alignItems: 'center', gap: '0.4rem', padding: '0.45rem 0.9rem', borderRadius: 999, background: 'linear-gradient(135deg, #d4af37 0%, #aa7c11 100%)', color: '#0a0a0c', border: 'none', fontWeight: 700, fontSize: '0.8rem', cursor: 'pointer', boxShadow: '0 4px 15px rgba(212,175,55,0.25)', whiteSpace: 'nowrap' }}>
               <MessageCircle size={14} /> Get Quote
             </button>
-            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', padding: '0.4rem', display: 'flex' }} className="re-mobile-hamburger">
+            <button onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} style={{ background: 'none', border: 'none', color: '#fff', cursor: 'pointer', padding: '0.4rem', display: 'flex' }} className="md:hidden">
               {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
           </div>

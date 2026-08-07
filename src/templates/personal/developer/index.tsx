@@ -233,35 +233,33 @@ export default function DeveloperPortfolioTemplate() {
       {/* Sticky Header Preview Bar */}
       <PreviewBackBar templateName="Photographer Portfolio" category="Personal Portfolio" categoryRoute="/templates/personal" />
 
-      {/* Navigation Header */}
+      {/* STICKY NAVIGATION */}
       <header
         style={{
           position: 'fixed',
-          top: 40,
+          top: 44,
           left: 0,
           right: 0,
           zIndex: 900,
-          background: scrolled ? 'rgba(7, 7, 10, 0.9)' : 'transparent',
-          backdropFilter: scrolled ? 'blur(16px)' : 'none',
-          WebkitBackdropFilter: scrolled ? 'blur(16px)' : 'none',
-          borderBottom: scrolled ? '1px solid rgba(255, 255, 255, 0.08)' : '1px solid transparent',
-          transition: 'all 0.3s ease',
-          padding: '1.1rem 2rem'
+          background: 'rgba(7, 7, 10, 0.95)',
+          backdropFilter: 'blur(16px)',
+          borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
+          padding: '0.75rem 1.25rem'
         }}
       >
         <div style={{ maxWidth: 1280, margin: '0 auto', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
           {/* Brand Logo */}
           <a href="#" style={{ display: 'flex', alignItems: 'center', gap: '0.625rem', textDecoration: 'none', color: '#ffffff' }}>
-            <div style={{ width: 36, height: 36, borderRadius: '50%', background: 'linear-gradient(135deg, #e2e8f0 0%, #64748b 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-              <Camera size={18} color="#07070a" />
+            <div style={{ width: 34, height: 34, borderRadius: '50%', background: 'linear-gradient(135deg, #e2e8f0 0%, #64748b 100%)', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+              <Camera size={16} color="#07070a" />
             </div>
-            <span style={{ fontWeight: 800, fontSize: '1.15rem', letterSpacing: '-0.02em' }}>
+            <span style={{ fontWeight: 800, fontSize: '1.05rem', letterSpacing: '-0.02em' }}>
               ALEX <span style={{ color: '#38bdf8', fontWeight: 600 }}>VERMA</span>
             </span>
           </a>
 
           {/* Desktop Navigation Links */}
-          <nav style={{ display: 'flex', alignItems: 'center', gap: '2rem' }} className="hidden-mobile">
+          <nav className="hidden md:flex" style={{ alignItems: 'center', gap: '1.5rem' }}>
             {['Gallery', 'About', 'Services', 'Gear', 'Journal', 'Contact'].map(link => (
               <a
                 key={link}
@@ -283,22 +281,23 @@ export default function DeveloperPortfolioTemplate() {
           </nav>
 
           {/* CTA Action Button */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+          <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem' }}>
             <button
               onClick={() => setBookingModalOpen(true)}
               style={{
                 background: '#ffffff',
                 color: '#07070a',
                 border: 'none',
-                padding: '0.625rem 1.35rem',
+                padding: '0.5rem 1.1rem',
                 borderRadius: '9999px',
                 fontWeight: 700,
-                fontSize: '0.85rem',
+                fontSize: '0.8rem',
                 cursor: 'pointer',
                 transition: 'all 0.2s ease',
                 display: 'flex',
                 alignItems: 'center',
-                gap: '0.375rem'
+                gap: '0.35rem',
+                whiteSpace: 'nowrap'
               }}
               onMouseEnter={e => { e.currentTarget.style.transform = 'translateY(-2px)'; e.currentTarget.style.boxShadow = '0 10px 20px -5px rgba(255,255,255,0.3)'; }}
               onMouseLeave={e => { e.currentTarget.style.transform = 'translateY(0)'; e.currentTarget.style.boxShadow = 'none'; }}
@@ -310,7 +309,7 @@ export default function DeveloperPortfolioTemplate() {
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
               style={{ background: 'none', border: 'none', color: '#ffffff', cursor: 'pointer', padding: '0.25rem' }}
-              className="show-mobile-only"
+              className="md:hidden"
             >
               {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
             </button>
@@ -327,16 +326,16 @@ export default function DeveloperPortfolioTemplate() {
             exit={{ opacity: 0, y: -20 }}
             style={{
               position: 'fixed',
-              top: 95,
+              top: 84,
               left: 0,
               right: 0,
               zIndex: 899,
               background: '#0f172a',
               borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-              padding: '1.5rem 2rem',
+              padding: '1.25rem 1.5rem',
               display: 'flex',
               flexDirection: 'column',
-              gap: '1.25rem'
+              gap: '1rem'
             }}
           >
             {['Gallery', 'About', 'Services', 'Gear', 'Journal', 'Contact'].map(link => (

@@ -226,37 +226,36 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- ABOUT --- */}
-      <section style={{ padding: '8rem 2rem', background: theme.white }}>
-        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', gap: '4rem', alignItems: 'center' }}>
+      <section style={{ padding: '4rem 1.25rem', background: theme.white }}>
+        <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem', alignItems: 'center' }}>
           <motion.div 
             initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.3 }} variants={fadeInUp}
-            style={{ flex: 1 }}
           >
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1.5rem', letterSpacing: '-0.02em', lineHeight: 1.2 }}>
               A Masterpiece of Modern Architecture.
             </h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', lineHeight: 1.8, marginBottom: '2rem' }}>
+            <p style={{ fontSize: '1.05rem', color: '#666', lineHeight: 1.8, marginBottom: '2rem' }}>
               Built to host the world's most spectacular events, Grand Horizon Convention Centre combines breathtaking aesthetics with state-of-the-art technology. From our towering 40-foot ceilings to our acoustic-treated walls, every inch is engineered for perfection.
             </p>
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '2rem' }}>
+            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1.5rem' }}>
               <div>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: theme.primary, marginBottom: '0.25rem' }}>50k+</div>
-                <div style={{ fontSize: '0.9rem', color: '#666', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sq Ft Space</div>
+                <div style={{ fontSize: '2.25rem', fontWeight: 800, color: theme.primary, marginBottom: '0.25rem' }}>50k+</div>
+                <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Sq Ft Space</div>
               </div>
               <div>
-                <div style={{ fontSize: '2.5rem', fontWeight: 800, color: theme.primary, marginBottom: '0.25rem' }}>5,000</div>
-                <div style={{ fontSize: '0.9rem', color: '#666', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Max Capacity</div>
+                <div style={{ fontSize: '2.25rem', fontWeight: 800, color: theme.primary, marginBottom: '0.25rem' }}>5,000</div>
+                <div style={{ fontSize: '0.85rem', color: '#666', fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Max Capacity</div>
               </div>
             </div>
           </motion.div>
           <motion.div 
             initial={{ opacity: 0, x: 40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true, amount: 0.3 }} transition={{ duration: 0.8 }}
-            style={{ flex: 1, position: 'relative' }}
+            style={{ position: 'relative' }}
           >
             <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?auto=format&fit=crop&q=80&w=800" alt="Interior" style={{ width: '100%', borderRadius: '8px', boxShadow: '0 20px 40px rgba(0,0,0,0.1)' }} />
-            <div style={{ position: 'absolute', bottom: '-2rem', left: '-2rem', background: theme.secondary, color: theme.white, padding: '2rem', borderRadius: '4px', maxWidth: 250 }}>
-              <Star color={theme.primary} size={32} style={{ marginBottom: '1rem' }} />
-              <h4 style={{ fontSize: '1.2rem', fontWeight: 700, marginBottom: '0.5rem' }}>Award Winning</h4>
+            <div style={{ position: 'relative', marginTop: '1rem', background: theme.secondary, color: theme.white, padding: '1.5rem', borderRadius: '4px' }}>
+              <Star color={theme.primary} size={28} style={{ marginBottom: '0.5rem' }} />
+              <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.25rem' }}>Award Winning</h4>
               <p style={{ fontSize: '0.85rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.5 }}>Voted 'Best Luxury Venue 2023' by EventAsia.</p>
             </div>
           </motion.div>
@@ -264,37 +263,37 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- VENUES --- */}
-      <section id="venues" style={{ padding: '8rem 2rem', background: theme.light }}>
+      <section id="venues" style={{ padding: '4rem 1.25rem', background: theme.light }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Our Venues</h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>Spaces designed to scale perfectly with your vision.</p>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Our Venues</h2>
+            <p style={{ fontSize: '1.05rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>Spaces designed to scale perfectly with your vision.</p>
           </div>
 
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} style={{ display: 'flex', flexDirection: 'column', gap: '4rem' }}>
-            {VENUES.map((venue, i) => (
-              <motion.div key={venue.id} variants={fadeInUp} style={{ display: 'flex', flexDirection: i % 2 === 0 ? 'row' : 'row-reverse', gap: '4rem', alignItems: 'center', background: theme.white, padding: '2rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
-                <div style={{ flex: 1.2, height: 400, overflow: 'hidden', borderRadius: '8px' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} style={{ display: 'flex', flexDirection: 'column', gap: '2.5rem' }}>
+            {VENUES.map(venue => (
+              <motion.div key={venue.id} variants={fadeInUp} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'center', background: theme.white, padding: '1.5rem', borderRadius: '16px', boxShadow: '0 10px 30px rgba(0,0,0,0.03)' }}>
+                <div style={{ height: 260, overflow: 'hidden', borderRadius: '8px' }}>
                   <img src={venue.image} alt={venue.name} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
                 </div>
-                <div style={{ flex: 1 }}>
-                  <h3 style={{ fontSize: '2rem', fontWeight: 800, marginBottom: '1rem' }}>{venue.name}</h3>
-                  <p style={{ fontSize: '1rem', color: '#666', lineHeight: 1.7, marginBottom: '2rem' }}>{venue.description}</p>
+                <div>
+                  <h3 style={{ fontSize: '1.65rem', fontWeight: 800, marginBottom: '0.75rem' }}>{venue.name}</h3>
+                  <p style={{ fontSize: '0.95rem', color: '#666', lineHeight: 1.7, marginBottom: '1.5rem' }}>{venue.description}</p>
                   
-                  <div style={{ display: 'flex', gap: '2rem', marginBottom: '2rem', paddingBottom: '2rem', borderBottom: '1px solid #eee' }}>
+                  <div style={{ display: 'flex', gap: '2rem', marginBottom: '1.5rem', paddingBottom: '1.5rem', borderBottom: '1px solid #eee' }}>
                     <div>
-                      <div style={{ fontSize: '0.8rem', color: '#999', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Capacity</div>
-                      <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>{venue.capacity}</div>
+                      <div style={{ fontSize: '0.75rem', color: '#999', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Capacity</div>
+                      <div style={{ fontWeight: 700, fontSize: '1.05rem' }}>{venue.capacity}</div>
                     </div>
                     <div>
-                      <div style={{ fontSize: '0.8rem', color: '#999', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Area</div>
-                      <div style={{ fontWeight: 700, fontSize: '1.1rem' }}>{venue.size}</div>
+                      <div style={{ fontSize: '0.75rem', color: '#999', textTransform: 'uppercase', letterSpacing: '0.05em', marginBottom: '0.25rem' }}>Area</div>
+                      <div style={{ fontWeight: 700, fontSize: '1.05rem' }}>{venue.size}</div>
                     </div>
                   </div>
 
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem' }}>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 140px), 1fr))', gap: '0.75rem' }}>
                     {venue.features.map(f => (
-                      <li key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.9rem', fontWeight: 500 }}>
+                      <li key={f} style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem', fontWeight: 500 }}>
                         <CheckCircle2 size={16} color={theme.primary} /> {f}
                       </li>
                     ))}
@@ -307,21 +306,21 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- AMENITIES --- */}
-      <section id="amenities" style={{ padding: '8rem 2rem', background: theme.secondary, color: theme.white }}>
+      <section id="amenities" style={{ padding: '4rem 1.25rem', background: theme.secondary, color: theme.white }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>World-Class Amenities</h2>
-            <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', maxWidth: 600, margin: '0 auto' }}>Everything you need for a flawless event execution.</p>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>World-Class Amenities</h2>
+            <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', maxWidth: 600, margin: '0 auto' }}>Everything you need for a flawless event execution.</p>
           </div>
 
-          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '2rem' }}>
+          <motion.div variants={stagger} initial="hidden" whileInView="visible" viewport={{ once: true, amount: 0.1 }} style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 220px), 1fr))', gap: '1.5rem' }}>
             {AMENITIES.map(item => (
-              <motion.div key={item.title} variants={fadeInUp} style={{ padding: '2rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '8px', textAlign: 'center' }}>
-                <div style={{ width: 64, height: 64, background: 'rgba(212, 175, 55, 0.1)', color: theme.primary, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.5rem' }}>
+              <motion.div key={item.title} variants={fadeInUp} style={{ padding: '1.5rem', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '8px', textAlign: 'center' }}>
+                <div style={{ width: 56, height: 56, background: 'rgba(212, 175, 55, 0.1)', color: theme.primary, borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 1.25rem' }}>
                   {item.icon}
                 </div>
-                <h4 style={{ fontSize: '1.1rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</h4>
-                <p style={{ fontSize: '0.9rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>{item.desc}</p>
+                <h4 style={{ fontSize: '1.05rem', fontWeight: 700, marginBottom: '0.5rem' }}>{item.title}</h4>
+                <p style={{ fontSize: '0.875rem', color: 'rgba(255,255,255,0.5)', lineHeight: 1.5 }}>{item.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -329,15 +328,15 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- CALENDAR UI (FRONTEND ONLY) --- */}
-      <section style={{ padding: '6rem 2rem', background: theme.white }}>
-        <div style={{ maxWidth: 800, margin: '0 auto', background: theme.light, padding: '3rem', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '2rem' }}>
+      <section style={{ padding: '4rem 1.25rem', background: theme.white }}>
+        <div style={{ maxWidth: 800, margin: '0 auto', background: theme.light, padding: '2rem 1.25rem', borderRadius: '16px', boxShadow: '0 20px 40px rgba(0,0,0,0.05)', border: '1px solid #eee' }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '1rem' }}>
             <div>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 800 }}>Check Availability</h3>
-              <p style={{ color: '#666', fontSize: '0.9rem' }}>Select your preferred date</p>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 800 }}>Check Availability</h3>
+              <p style={{ color: '#666', fontSize: '0.875rem' }}>Select your preferred date</p>
             </div>
             <div style={{ display: 'flex', gap: '1rem', alignItems: 'center' }}>
-              <span style={{ fontSize: '1.2rem', fontWeight: 700 }}>October 2026</span>
+              <span style={{ fontSize: '1.1rem', fontWeight: 700 }}>October 2026</span>
               <div style={{ display: 'flex', gap: '0.5rem' }}>
                 <button style={{ width: 32, height: 32, border: '1px solid #ddd', borderRadius: '4px', background: '#fff', cursor: 'pointer' }}>&lt;</button>
                 <button style={{ width: 32, height: 32, border: '1px solid #ddd', borderRadius: '4px', background: '#fff', cursor: 'pointer' }}>&gt;</button>
@@ -345,15 +344,14 @@ export default function ConventionCenterTemplate() {
             </div>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem', textAlign: 'center', marginBottom: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.35rem', textAlign: 'center', marginBottom: '0.75rem' }}>
             {['Su', 'Mo', 'Tu', 'We', 'Th', 'Fr', 'Sa'].map(d => (
-              <div key={d} style={{ fontWeight: 600, color: '#999', fontSize: '0.85rem' }}>{d}</div>
+              <div key={d} style={{ fontWeight: 600, color: '#999', fontSize: '0.8rem' }}>{d}</div>
             ))}
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.5rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(7, 1fr)', gap: '0.35rem' }}>
             {Array.from({length: 31}).map((_, i) => {
-              // Mock logic for booked vs available
               const isBooked = [3, 4, 5, 12, 18, 19, 25, 26].includes(i + 1)
               const isSelected = i + 1 === 15
               
@@ -362,62 +360,65 @@ export default function ConventionCenterTemplate() {
               if (isSelected) { bg = theme.primary; color = '#fff'; border = `1px solid ${theme.primary}` }
 
               return (
-                <div key={i} style={{ aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', background: bg, border: border, borderRadius: '4px', fontWeight: 600, color: color, cursor: isBooked ? 'not-allowed' : 'pointer', fontSize: '0.9rem' }}>
+                <div key={i} style={{ aspectRatio: '1', display: 'flex', alignItems: 'center', justifyContent: 'center', background: bg, border: border, borderRadius: '4px', fontWeight: 600, color: color, cursor: isBooked ? 'not-allowed' : 'pointer', fontSize: '0.85rem' }}>
                   {i + 1}
                 </div>
               )
             })}
           </div>
           
-          <div style={{ display: 'flex', gap: '1.5rem', marginTop: '2rem', justifyContent: 'center', fontSize: '0.85rem', fontWeight: 500, color: '#666' }}>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{ width: 12, height: 12, borderRadius: '50%', background: '#fff', border: '1px solid #ddd' }} /> Available</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{ width: 12, height: 12, borderRadius: '50%', background: '#f9f9f9', border: '1px solid #eee' }} /> Booked</div>
-            <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}><div style={{ width: 12, height: 12, borderRadius: '50%', background: theme.primary }} /> Selected</div>
+          <div style={{ display: 'flex', gap: '1rem', marginTop: '1.5rem', justifyContent: 'center', fontSize: '0.8rem', fontWeight: 500, color: '#666', flexWrap: 'wrap' }}>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}><div style={{ width: 10, height: 10, borderRadius: '50%', background: '#fff', border: '1px solid #ddd' }} /> Available</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}><div style={{ width: 10, height: 10, borderRadius: '50%', background: '#f9f9f9', border: '1px solid #eee' }} /> Booked</div>
+            <div style={{ display: 'flex', alignItems: 'center', gap: '0.35rem' }}><div style={{ width: 10, height: 10, borderRadius: '50%', background: theme.primary }} /> Selected</div>
           </div>
         </div>
       </section>
 
       {/* --- PRICING --- */}
-      <section id="pricing" style={{ padding: '8rem 2rem', background: theme.light }}>
+      <section id="pricing" style={{ padding: '4rem 1.25rem', background: theme.light }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Transparent Pricing</h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>Choose a package that fits the scale of your event.</p>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Transparent Pricing</h2>
+            <p style={{ fontSize: '1.05rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>Choose a package that fits the scale of your event.</p>
           </div>
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '2rem', alignItems: 'center' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 280px), 1fr))', gap: '2rem', alignItems: 'stretch' }}>
             {PACKAGES.map((pkg, i) => (
               <motion.div key={pkg.name} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
                 style={{
                   background: pkg.popular ? theme.secondary : theme.white,
                   color: pkg.popular ? theme.white : theme.secondary,
-                  padding: '3rem 2rem',
+                  padding: '2.5rem 1.5rem',
                   borderRadius: '16px',
                   boxShadow: pkg.popular ? '0 20px 40px rgba(0,0,0,0.2)' : '0 10px 30px rgba(0,0,0,0.03)',
                   border: pkg.popular ? 'none' : '1px solid #eee',
                   position: 'relative',
-                  transform: pkg.popular ? 'scale(1.05)' : 'scale(1)',
-                  zIndex: pkg.popular ? 2 : 1
+                  display: 'flex',
+                  flexDirection: 'column',
+                  justifyContent: 'space-between'
                 }}
               >
-                {pkg.popular && <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: theme.primary, color: theme.white, padding: '0.4rem 1rem', borderRadius: '20px', fontSize: '0.8rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Most Popular</div>}
+                {pkg.popular && <div style={{ position: 'absolute', top: 0, left: '50%', transform: 'translate(-50%, -50%)', background: theme.primary, color: theme.white, padding: '0.35rem 0.85rem', borderRadius: '20px', fontSize: '0.75rem', fontWeight: 700, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Most Popular</div>}
                 
-                <h3 style={{ fontSize: '1.5rem', fontWeight: 800, marginBottom: '0.5rem', textAlign: 'center' }}>{pkg.name}</h3>
-                <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '0.25rem', marginBottom: '2rem' }}>
-                  <span style={{ fontSize: '2.5rem', fontWeight: 900, letterSpacing: '-0.02em' }}>{pkg.price}</span>
-                  <span style={{ color: pkg.popular ? 'rgba(255,255,255,0.6)' : '#999', fontWeight: 500 }}>/{pkg.duration}</span>
+                <div>
+                  <h3 style={{ fontSize: '1.4rem', fontWeight: 800, marginBottom: '0.5rem', textAlign: 'center' }}>{pkg.name}</h3>
+                  <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'baseline', gap: '0.25rem', marginBottom: '1.75rem' }}>
+                    <span style={{ fontSize: '2.25rem', fontWeight: 900, letterSpacing: '-0.02em' }}>{pkg.price}</span>
+                    <span style={{ color: pkg.popular ? 'rgba(255,255,255,0.6)' : '#999', fontWeight: 500, fontSize: '0.875rem' }}>/{pkg.duration}</span>
+                  </div>
+                  
+                  <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2rem', display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
+                    {pkg.features.map(f => (
+                      <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.625rem', fontSize: '0.9rem' }}>
+                        <CheckCircle2 size={16} color={theme.primary} style={{ flexShrink: 0, marginTop: 2 }} />
+                        <span style={{ opacity: pkg.popular ? 0.9 : 0.8 }}>{f}</span>
+                      </li>
+                    ))}
+                  </ul>
                 </div>
                 
-                <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 2.5rem', display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {pkg.features.map(f => (
-                    <li key={f} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.75rem', fontSize: '0.95rem' }}>
-                      <CheckCircle2 size={18} color={theme.primary} style={{ flexShrink: 0, marginTop: 2 }} />
-                      <span style={{ opacity: pkg.popular ? 0.9 : 0.8 }}>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-                
-                <button style={{ width: '100%', padding: '1rem', borderRadius: '8px', border: 'none', background: pkg.popular ? theme.primary : '#f0f0f0', color: pkg.popular ? theme.white : theme.secondary, fontWeight: 700, fontSize: '1rem', cursor: 'pointer' }}>
+                <button style={{ width: '100%', padding: '0.875rem', borderRadius: '8px', border: 'none', background: pkg.popular ? theme.primary : '#f0f0f0', color: pkg.popular ? theme.white : theme.secondary, fontWeight: 700, fontSize: '0.95rem', cursor: 'pointer' }}>
                   Enquire Now
                 </button>
               </motion.div>
@@ -427,19 +428,19 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- GALLERY --- */}
-      <section id="gallery" style={{ padding: '8rem 2rem', background: theme.white }}>
+      <section id="gallery" style={{ padding: '4rem 1.25rem', background: theme.white }}>
         <div style={{ maxWidth: 1200, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Gallery</h2>
-            <p style={{ fontSize: '1.1rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>A glimpse into the spectacular events hosted at Grand Horizon.</p>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Gallery</h2>
+            <p style={{ fontSize: '1.05rem', color: '#666', maxWidth: 600, margin: '0 auto' }}>A glimpse into the spectacular events hosted at Grand Horizon.</p>
           </div>
           
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 260px), 1fr))', gap: '1rem' }}>
             {GALLERY.map((img, i) => (
               <motion.div key={i} initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} viewport={{ once: true }} transition={{ delay: i * 0.1 }}
-                style={{ height: 300, overflow: 'hidden', borderRadius: '8px' }}
+                style={{ height: 240, overflow: 'hidden', borderRadius: '8px' }}
               >
-                <img src={img} alt="Gallery" style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s' }} onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.05)'} onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'} />
+                <img src={img} alt="Gallery" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
               </motion.div>
             ))}
           </div>
@@ -447,26 +448,26 @@ export default function ConventionCenterTemplate() {
       </section>
 
       {/* --- FAQ --- */}
-      <section style={{ padding: '8rem 2rem', background: theme.light }}>
+      <section style={{ padding: '4rem 1.25rem', background: theme.light }}>
         <div style={{ maxWidth: 800, margin: '0 auto' }}>
-          <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Frequently Asked Questions</h2>
+          <div style={{ textAlign: 'center', marginBottom: '3rem' }}>
+            <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Frequently Asked Questions</h2>
           </div>
           
-          <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+          <div style={{ display: 'flex', flexDirection: 'column', gap: '0.85rem' }}>
             {FAQS.map((faq, i) => (
               <div key={i} style={{ background: theme.white, borderRadius: '8px', border: '1px solid #eee', overflow: 'hidden' }}>
                 <button 
                   onClick={() => setActiveFaq(activeFaq === i ? null : i)}
-                  style={{ width: '100%', padding: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'transparent', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '1.05rem', color: theme.secondary, textAlign: 'left' }}
+                  style={{ width: '100%', padding: '1.125rem 1.25rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', background: 'transparent', border: 'none', cursor: 'pointer', fontWeight: 600, fontSize: '0.95rem', color: theme.secondary, textAlign: 'left', gap: '0.5rem' }}
                 >
                   {faq.q}
-                  <ChevronDown size={20} style={{ transform: activeFaq === i ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s' }} />
+                  <ChevronDown size={18} style={{ transform: activeFaq === i ? 'rotate(180deg)' : 'none', transition: 'transform 0.3s', flexShrink: 0 }} />
                 </button>
                 <AnimatePresence>
                   {activeFaq === i && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: 'auto', opacity: 1 }} exit={{ height: 0, opacity: 0 }} style={{ overflow: 'hidden' }}>
-                      <p style={{ padding: '0 1.5rem 1.5rem', color: '#666', lineHeight: 1.6, margin: 0 }}>
+                      <p style={{ padding: '0 1.25rem 1.25rem', color: '#666', lineHeight: 1.6, margin: 0, fontSize: '0.9rem' }}>
                         {faq.a}
                       </p>
                     </motion.div>
@@ -480,54 +481,54 @@ export default function ConventionCenterTemplate() {
 
       {/* --- CONTACT & FOOTER --- */}
       <section id="contact" style={{ background: theme.secondary, color: theme.white }}>
-        <div style={{ padding: '8rem 2rem' }}>
-          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', gap: '4rem' }}>
-            <div style={{ flex: 1 }}>
-              <h2 style={{ fontSize: '3rem', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Let's Talk Events.</h2>
-              <p style={{ fontSize: '1.1rem', color: 'rgba(255,255,255,0.7)', marginBottom: '3rem', lineHeight: 1.6 }}>Ready to host your dream event? Our dedicated planning team is ready to assist you.</p>
+        <div style={{ padding: '4rem 1.25rem' }}>
+          <div style={{ maxWidth: 1200, margin: '0 auto', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 300px), 1fr))', gap: '2.5rem' }}>
+            <div>
+              <h2 style={{ fontSize: 'clamp(2rem, 4vw, 3rem)', fontWeight: 800, marginBottom: '1rem', letterSpacing: '-0.02em' }}>Let's Talk Events.</h2>
+              <p style={{ fontSize: '1.05rem', color: 'rgba(255,255,255,0.7)', marginBottom: '2.5rem', lineHeight: 1.6 }}>Ready to host your dream event? Our dedicated planning team is ready to assist you.</p>
               
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.5rem', marginBottom: '3rem' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem', marginBottom: '2.5rem' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 48, height: 48, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><MapPin color={theme.primary} /></div>
+                  <div style={{ width: 44, height: 44, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><MapPin color={theme.primary} size={20} /></div>
                   <div>
-                    <div style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Location</div>
-                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>123 Horizon Blvd, Metro City, IN 500001</div>
+                    <div style={{ fontWeight: 600, marginBottom: '0.25rem', fontSize: '0.9rem' }}>Location</div>
+                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>123 Horizon Blvd, Metro City, IN 500001</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 48, height: 48, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Phone color={theme.primary} /></div>
+                  <div style={{ width: 44, height: 44, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Phone color={theme.primary} size={20} /></div>
                   <div>
-                    <div style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Phone</div>
-                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>+91 98765 43210</div>
+                    <div style={{ fontWeight: 600, marginBottom: '0.25rem', fontSize: '0.9rem' }}>Phone</div>
+                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>+91 98765 43210</div>
                   </div>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
-                  <div style={{ width: 48, height: 48, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center' }}><Mail color={theme.primary} /></div>
+                  <div style={{ width: 44, height: 44, background: 'rgba(255,255,255,0.05)', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0 }}><Mail color={theme.primary} size={20} /></div>
                   <div>
-                    <div style={{ fontWeight: 600, marginBottom: '0.25rem' }}>Email</div>
-                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.9rem' }}>events@grandhorizon.in</div>
+                    <div style={{ fontWeight: 600, marginBottom: '0.25rem', fontSize: '0.9rem' }}>Email</div>
+                    <div style={{ color: 'rgba(255,255,255,0.6)', fontSize: '0.85rem' }}>events@grandhorizon.in</div>
                   </div>
                 </div>
               </div>
             </div>
             
-            <div style={{ flex: 1, background: 'rgba(255,255,255,0.03)', padding: '3rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)' }}>
-              <h3 style={{ fontSize: '1.5rem', fontWeight: 700, marginBottom: '2rem' }}>Send an Enquiry</h3>
+            <div style={{ background: 'rgba(255,255,255,0.03)', padding: '1.5rem', borderRadius: '16px', border: '1px solid rgba(255,255,255,0.05)', width: '100%', boxSizing: 'border-box' }}>
+              <h3 style={{ fontSize: '1.35rem', fontWeight: 700, marginBottom: '1.5rem' }}>Send an Enquiry</h3>
               <form style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                <div style={{ display: 'flex', gap: '1rem' }}>
-                  <input type="text" placeholder="First Name" style={{ flex: 1, padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none' }} />
-                  <input type="text" placeholder="Last Name" style={{ flex: 1, padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none' }} />
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 130px), 1fr))', gap: '1rem' }}>
+                  <input type="text" placeholder="First Name" style={{ width: '100%', padding: '0.875rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', boxSizing: 'border-box' }} />
+                  <input type="text" placeholder="Last Name" style={{ width: '100%', padding: '0.875rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', boxSizing: 'border-box' }} />
                 </div>
-                <input type="email" placeholder="Email Address" style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none' }} />
-                <select style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', appearance: 'none' }}>
-                  <option value="" disabled selected>Select Event Type</option>
-                  <option value="wedding">Wedding / Reception</option>
-                  <option value="corporate">Corporate Conference</option>
-                  <option value="exhibition">Exhibition / Trade Show</option>
-                  <option value="other">Other Event</option>
+                <input type="email" placeholder="Email Address" style={{ width: '100%', padding: '0.875rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', boxSizing: 'border-box' }} />
+                <select style={{ width: '100%', padding: '0.875rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', appearance: 'none', boxSizing: 'border-box' }}>
+                  <option value="" disabled selected style={{ color: '#000' }}>Select Event Type</option>
+                  <option value="wedding" style={{ color: '#000' }}>Wedding / Reception</option>
+                  <option value="corporate" style={{ color: '#000' }}>Corporate Conference</option>
+                  <option value="exhibition" style={{ color: '#000' }}>Exhibition / Trade Show</option>
+                  <option value="other" style={{ color: '#000' }}>Other Event</option>
                 </select>
-                <textarea placeholder="Tell us about your event..." rows={4} style={{ padding: '1rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', resize: 'none' }} />
-                <button type="button" style={{ background: theme.primary, color: theme.white, padding: '1rem', borderRadius: '4px', border: 'none', fontWeight: 700, fontSize: '1rem', cursor: 'pointer', marginTop: '1rem' }}>
+                <textarea placeholder="Tell us about your event..." rows={4} style={{ width: '100%', padding: '0.875rem', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '4px', color: '#fff', outline: 'none', resize: 'none', boxSizing: 'border-box' }} />
+                <button type="button" style={{ width: '100%', background: theme.primary, color: theme.white, padding: '0.875rem', borderRadius: '4px', border: 'none', fontWeight: 700, fontSize: '1rem', cursor: 'pointer', marginTop: '0.5rem' }}>
                   Submit Enquiry
                 </button>
               </form>
@@ -535,7 +536,7 @@ export default function ConventionCenterTemplate() {
           </div>
         </div>
         
-        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '2rem', textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem' }}>
+        <div style={{ borderTop: '1px solid rgba(255,255,255,0.05)', padding: '1.5rem', textAlign: 'center', color: 'rgba(255,255,255,0.4)', fontSize: '0.85rem' }}>
           &copy; {new Date().getFullYear()} Grand Horizon Convention Centre. Built by RivixoTech.
         </div>
       </section>

@@ -66,16 +66,16 @@ export default function PlaceholderTemplate({
 
       {/* NAV */}
       <nav style={{
-        position: 'fixed', top: 40, left: 0, right: 0, zIndex: 100,
-        padding: '1rem 2rem', display: 'flex', alignItems: 'center',
+        position: 'fixed', top: 44, left: 0, right: 0, zIndex: 100,
+        padding: '0.75rem 1.25rem', display: 'flex', alignItems: 'center',
         justifyContent: 'space-between',
-        background: 'rgba(13,13,13,0.9)', backdropFilter: 'blur(16px)',
+        background: 'rgba(13,13,13,0.95)', backdropFilter: 'blur(16px)',
         borderBottom: `1px solid ${primaryColor}22`,
       }}>
         <span style={{ fontWeight: 800, fontSize: '1.125rem', letterSpacing: '-0.02em', color: textColor }}>
           {brandName}
         </span>
-        <div style={{ display: 'flex', gap: '1.5rem' }}>
+        <div className="hidden md:flex" style={{ gap: '1.5rem' }}>
           {['Services', 'About', 'Gallery', 'Contact'].map(item => (
             <a key={item} href={`#${item.toLowerCase()}`}
               style={{ color: 'rgba(240,240,240,0.6)', textDecoration: 'none', fontSize: '0.9rem', transition: 'color 0.2s' }}
@@ -87,9 +87,9 @@ export default function PlaceholderTemplate({
           ))}
         </div>
         <a href="#contact" style={{
-          padding: '0.5rem 1.25rem', background: primaryColor, color: '#fff',
-          textDecoration: 'none', borderRadius: 8, fontWeight: 600, fontSize: '0.875rem',
-          transition: 'opacity 0.2s',
+          padding: '0.45rem 1rem', background: primaryColor, color: '#fff',
+          textDecoration: 'none', borderRadius: 8, fontWeight: 600, fontSize: '0.8125rem',
+          transition: 'opacity 0.2s', whiteSpace: 'nowrap'
         }}>
           Get In Touch
         </a>
@@ -109,12 +109,12 @@ export default function PlaceholderTemplate({
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1] }}
-          style={{ textAlign: 'center', padding: '2rem', maxWidth: 760, position: 'relative', zIndex: 1 }}
+          style={{ textAlign: 'center', padding: '2rem 1.25rem', maxWidth: 760, position: 'relative', zIndex: 1 }}
         >
           <p style={{ color: primaryColor, letterSpacing: '0.2em', fontSize: '0.8rem', textTransform: 'uppercase', marginBottom: '1.25rem', fontWeight: 600 }}>
             {categoryLabel}
           </p>
-          <h1 style={{ fontSize: 'clamp(2.5rem, 6vw, 5rem)', fontWeight: 900, letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.05, marginBottom: '1.25rem' }}>
+          <h1 style={{ fontSize: 'clamp(2.25rem, 6vw, 4.5rem)', fontWeight: 900, letterSpacing: '-0.04em', color: '#fff', lineHeight: 1.05, marginBottom: '1.25rem' }}>
             {tagline}
           </h1>
           <p style={{ fontSize: '1.0625rem', color: 'rgba(255,255,255,0.7)', lineHeight: 1.75, marginBottom: '2.5rem', maxWidth: 540, margin: '0 auto 2.5rem' }}>
@@ -139,9 +139,9 @@ export default function PlaceholderTemplate({
       </section>
 
       {/* GALLERY PLACEHOLDER */}
-      <section style={{ padding: '4rem 2rem', background: '#111' }}>
-        <h2 style={{ textAlign: 'center', fontSize: '2rem', fontWeight: 700, marginBottom: '2rem', color: '#fff' }}>Our Gallery</h2>
-        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.875rem', maxWidth: 1100, margin: '0 auto' }}>
+      <section style={{ padding: '4rem 1.25rem', background: '#111' }}>
+        <h2 style={{ textAlign: 'center', fontSize: 'clamp(1.75rem, 4vw, 2rem)', fontWeight: 700, marginBottom: '2rem', color: '#fff' }}>Our Gallery</h2>
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(min(100%, 200px), 1fr))', gap: '0.875rem', maxWidth: 1100, margin: '0 auto' }}>
           {Array.from({ length: 6 }).map((_, i) => (
             <motion.div key={i}
               initial={{ opacity: 0, scale: 0.95 }}
@@ -149,13 +149,12 @@ export default function PlaceholderTemplate({
               viewport={{ once: true, amount: 0 }}
               transition={{ delay: i * 0.08 }}
               style={{
-                height: i === 0 ? 260 : 180,
+                height: 180,
                 borderRadius: 12,
                 background: i % 2 === 0 ? heroGradient : `linear-gradient(135deg, #1a1a1a, #2a2a2a)`,
                 border: '1px solid rgba(255,255,255,0.06)',
                 display: 'flex', alignItems: 'center', justifyContent: 'center',
                 color: 'rgba(255,255,255,0.2)', fontSize: '0.8rem',
-                gridColumn: i === 0 ? 'span 2' : 'span 1',
               }}
             >
               Gallery Image {i + 1}
